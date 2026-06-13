@@ -1,0 +1,173 @@
+vocabulary:
+  name: Salesflare API Vocabulary
+  description: Domain terms and concepts used across the Salesflare CRM REST API
+  source: https://api.salesflare.com/docs
+  version: "1.0.0"
+
+terms:
+  - term: Account
+    definition: >-
+      A company or organization record in the CRM. Accounts serve as the
+      primary entity for organizing contacts, opportunities, and activities.
+    related:
+      - Contact
+      - Opportunity
+    api_paths:
+      - /accounts
+      - /accounts/{account_id}
+
+  - term: Contact
+    definition: >-
+      An individual person associated with an Account. Contacts include personal
+      information, email addresses, phone numbers, and social profiles. Salesflare
+      automatically enriches contact records from email and calendar data.
+    related:
+      - Account
+      - Task
+    api_paths:
+      - /contacts
+      - /contacts/{contact_id}
+
+  - term: Opportunity
+    definition: >-
+      A potential sale or deal associated with an Account. Opportunities move
+      through pipeline Stages and carry value, probability, and close date
+      information.
+    related:
+      - Account
+      - Stage
+      - Pipeline
+    api_paths:
+      - /opportunities
+      - /opportunities/{id}
+
+  - term: Pipeline
+    definition: >-
+      A structured sales process containing an ordered set of Stages through
+      which Opportunities progress. Multiple pipelines can be configured for
+      different product lines or teams.
+    related:
+      - Stage
+      - Opportunity
+    api_paths:
+      - /pipelines
+
+  - term: Stage
+    definition: >-
+      A discrete step within a Pipeline representing a phase of the sales
+      process (e.g., Qualified, Demo Scheduled, Proposal Sent, Closed Won).
+    related:
+      - Pipeline
+      - Opportunity
+    api_paths:
+      - /stages
+      - /stages/{stage_id}
+
+  - term: Task
+    definition: >-
+      A to-do or action item associated with an Account, Contact, or Opportunity.
+      Tasks have a due date, assignee, and completion status.
+    related:
+      - Account
+      - Contact
+      - Opportunity
+    api_paths:
+      - /tasks
+      - /tasks/{id}
+
+  - term: Tag
+    definition: >-
+      A label that can be applied to Accounts, Contacts, or Opportunities for
+      categorization and filtering purposes.
+    related:
+      - Account
+      - Contact
+      - Opportunity
+    api_paths:
+      - /tags
+      - /tags/{tag_id}
+
+  - term: User
+    definition: >-
+      A member of the Salesflare team account. Users can own Accounts, Contacts,
+      and Opportunities and be assigned Tasks.
+    related:
+      - Account
+      - Contact
+      - Task
+    api_paths:
+      - /users
+      - /users/{id}
+      - /me
+
+  - term: Workflow
+    definition: >-
+      An automation sequence that triggers actions based on CRM events or
+      conditions (e.g., send an email when an Opportunity changes stage).
+    api_paths:
+      - /workflows
+      - /workflows/{id}
+
+  - term: CustomField
+    definition: >-
+      A user-defined data field that extends the default schema for Accounts,
+      Contacts, or Opportunities. Custom fields can be of various types including
+      text, number, date, dropdown, and multi-select.
+    api_paths:
+      - /customfields/{itemClass}
+      - /customfields/{itemClass}/{id}
+
+  - term: DataSource
+    definition: >-
+      An email or calendar integration that Salesflare uses to automatically
+      capture and enrich CRM data. Currently covers email data sources.
+    api_paths:
+      - /datasources/email
+      - /datasources/email/{id}
+
+  - term: BearerToken
+    definition: >-
+      The authentication mechanism used by the Salesflare API. API keys are
+      generated in the Salesflare settings dashboard and passed as a Bearer token
+      in the Authorization HTTP header.
+    example: "Authorization: Bearer YOUR_API_KEY"
+
+  - term: Feed
+    definition: >-
+      A chronological activity log associated with an Account, showing emails,
+      meetings, calls, notes, and other interactions.
+    related:
+      - Account
+    api_paths:
+      - /accounts/{account_id}/feed
+
+  - term: Meeting
+    definition: >-
+      A calendar event or scheduled call logged against CRM records. Meetings
+      can be linked to Accounts and Contacts.
+    api_paths:
+      - /meetings
+      - /meetings/{meeting_id}
+
+  - term: Message
+    definition: >-
+      An email or communication record associated with an Account or Contact.
+      Messages are automatically captured via connected email data sources.
+    api_paths:
+      - /messages
+      - /accounts/{account_id}/messages
+
+  - term: Group
+    definition: >-
+      A segment or list grouping of users or records used for targeting and
+      organization within Salesflare.
+    api_paths:
+      - /groups
+      - /groups/{id}
+
+  - term: FilterField
+    definition: >-
+      A metadata descriptor for the fields available to filter a given entity
+      type when making list requests.
+    api_paths:
+      - /filterfields/{entity}

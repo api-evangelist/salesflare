@@ -50,7 +50,13 @@ apis:
       - type: Documentation
         url: https://api.salesflare.com/docs
       - type: OpenAPI
-        url: https://api.salesflare.com/docs
+        url: https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/openapi/salesflare-api-openapi.yml
+      - type: JSONSchema
+        url: https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+      - type: JSONLDContext
+        url: https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+      - type: Vocabulary
+        url: https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
 common:
   - type: Website
     url: https://salesflare.com

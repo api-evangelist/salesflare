@@ -1,0 +1,18 @@
+{
+  "id": 55,
+  "name": "Acme Corp - Enterprise Deal",
+  "account": 1,
+  "stage": 3,
+  "owner": 42,
+  "value": 25000,
+  "currency": "USD",
+  "probability": 65,
+  "closed_date": "2024-09-30",
+  "lost_reason": null,
+  "description": "Potential enterprise license for 50 seats",
+  "tags": [
+    {"id": 5, "name": "Enterprise"}
+  ],
+  "creation_date": "2024-03-01T08:00:00.000Z",
+  "modification_date": "2024-06-10T12:00:00.000Z"
+}

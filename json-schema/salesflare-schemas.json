@@ -1,0 +1,355 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Salesflare API Schemas",
+  "description": "JSON Schema definitions for Salesflare CRM API resources",
+  "$defs": {
+    "Account": {
+      "type": "object",
+      "description": "A company or organization in Salesflare CRM",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique account identifier"
+        },
+        "name": {
+          "type": "string",
+          "description": "Company name"
+        },
+        "domain": {
+          "type": "string",
+          "description": "Primary email/web domain of the company"
+        },
+        "website": {
+          "type": "string",
+          "format": "uri",
+          "description": "Company website URL"
+        },
+        "picture": {
+          "type": "string",
+          "format": "uri",
+          "description": "Company logo URL"
+        },
+        "size": {
+          "type": "string",
+          "description": "Company size range"
+        },
+        "description": {
+          "type": "string",
+          "description": "Company description"
+        },
+        "owner": {
+          "type": "integer",
+          "description": "User ID of the account owner"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "Account tags"
+        },
+        "phone_numbers": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "Phone numbers"
+        },
+        "social_profiles": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "Social profile links"
+        },
+        "creation_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the account was created"
+        },
+        "modification_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the account was last modified"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "Contact": {
+      "type": "object",
+      "description": "A person or contact in Salesflare CRM",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique contact identifier"
+        },
+        "prefix": {
+          "type": "string",
+          "description": "Name prefix (Mr., Ms., Dr., etc.)"
+        },
+        "firstname": {
+          "type": "string",
+          "description": "First name"
+        },
+        "middle": {
+          "type": "string",
+          "description": "Middle name"
+        },
+        "lastname": {
+          "type": "string",
+          "description": "Last name"
+        },
+        "suffix": {
+          "type": "string",
+          "description": "Name suffix"
+        },
+        "email": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "Email addresses"
+        },
+        "phone_number": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "Phone numbers"
+        },
+        "account": {
+          "type": "integer",
+          "description": "Associated account ID"
+        },
+        "owner": {
+          "type": "integer",
+          "description": "User ID of the contact owner"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "Contact tags"
+        },
+        "creation_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the contact was created"
+        },
+        "modification_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the contact was last modified"
+        }
+      }
+    },
+    "Opportunity": {
+      "type": "object",
+      "description": "A sales opportunity or deal in Salesflare CRM",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique opportunity identifier"
+        },
+        "name": {
+          "type": "string",
+          "description": "Opportunity name"
+        },
+        "account": {
+          "type": "integer",
+          "description": "Associated account ID"
+        },
+        "stage": {
+          "type": "integer",
+          "description": "Pipeline stage ID"
+        },
+        "owner": {
+          "type": "integer",
+          "description": "User ID of the opportunity owner"
+        },
+        "value": {
+          "type": "number",
+          "description": "Monetary value of the opportunity"
+        },
+        "currency": {
+          "type": "string",
+          "description": "Currency code (e.g. USD)"
+        },
+        "probability": {
+          "type": "number",
+          "description": "Win probability percentage (0-100)"
+        },
+        "closed_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Expected or actual close date"
+        },
+        "lost_reason": {
+          "type": "string",
+          "description": "Reason for losing the opportunity"
+        },
+        "description": {
+          "type": "string",
+          "description": "Opportunity description"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "Opportunity tags"
+        },
+        "creation_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the opportunity was created"
+        },
+        "modification_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the opportunity was last modified"
+        }
+      },
+      "required": [
+        "account",
+        "stage"
+      ]
+    },
+    "Task": {
+      "type": "object",
+      "description": "A task or to-do item in Salesflare CRM",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique task identifier"
+        },
+        "description": {
+          "type": "string",
+          "description": "Task description or title"
+        },
+        "due_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Task due date and time"
+        },
+        "assigned_to": {
+          "type": "integer",
+          "description": "User ID the task is assigned to"
+        },
+        "account": {
+          "type": "integer",
+          "description": "Associated account ID"
+        },
+        "contact": {
+          "type": "integer",
+          "description": "Associated contact ID"
+        },
+        "opportunity": {
+          "type": "integer",
+          "description": "Associated opportunity ID"
+        },
+        "done": {
+          "type": "boolean",
+          "description": "Whether the task has been completed"
+        },
+        "reminder": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Reminder date and time"
+        },
+        "creation_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the task was created"
+        }
+      }
+    },
+    "Tag": {
+      "type": "object",
+      "description": "A label or tag used to categorize CRM records",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique tag identifier"
+        },
+        "name": {
+          "type": "string",
+          "description": "Tag name"
+        },
+        "creation_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the tag was created"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "Pipeline": {
+      "type": "object",
+      "description": "A sales pipeline in Salesflare CRM",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique pipeline identifier"
+        },
+        "name": {
+          "type": "string",
+          "description": "Pipeline name"
+        },
+        "stages": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "Pipeline stages"
+        },
+        "creation_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the pipeline was created"
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "description": "A Salesflare user account",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique user identifier"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "User email address"
+        },
+        "firstname": {
+          "type": "string",
+          "description": "First name"
+        },
+        "lastname": {
+          "type": "string",
+          "description": "Last name"
+        },
+        "name": {
+          "type": "string",
+          "description": "Full display name"
+        },
+        "role": {
+          "type": "string",
+          "description": "User role in the team"
+        },
+        "creation_date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the user was created"
+        }
+      }
+    }
+  }
+}
