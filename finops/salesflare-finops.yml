@@ -1,0 +1,78 @@
+name: Salesflare FinOps Framework
+description: >-
+  FinOps cost management guidance for Salesflare CRM API usage, aligned with
+  the FinOps Foundation FOCUS specification. Salesflare pricing is seat-based
+  with no usage-based API costs, making cost management primarily driven by
+  user seat count and plan tier selection rather than API call volume.
+specificationVersion: '1.0'
+provider: Salesflare
+billingModel: seat-based
+currency: USD
+costDrivers:
+  - name: User Seats
+    description: >-
+      The primary cost driver is the number of active user seats multiplied by
+      the per-seat subscription rate. Costs scale linearly with team size.
+    type: fixed
+    unit: user/month
+    pricingTiers:
+      - tier: Growth
+        monthlyPrice: 39.00
+        annualPrice: 29.00
+      - tier: Pro
+        monthlyPrice: 64.00
+        annualPrice: 49.00
+      - tier: Enterprise
+        monthlyPrice: 124.00
+        annualPrice: 99.00
+        minimumSeats: 5
+  - name: Lead Credits
+    description: >-
+      Variable cost for the built-in email finder feature. Each plan includes
+      a monthly allowance; additional credits can be purchased. Usage depends
+      on lead generation activity volume.
+    type: variable
+    unit: credit-bundle
+    includedCredits:
+      - tier: Growth
+        credits: 5
+      - tier: Pro
+        credits: 100
+      - tier: Enterprise
+        credits: 250
+    addonBundles:
+      - credits: 250
+        price: 39.00
+      - credits: 500
+        price: 69.00
+      - credits: 1000
+        price: 129.00
+optimization:
+  - strategy: Annual Billing
+    description: >-
+      Switching from monthly to annual billing saves approximately 25% across
+      all plan tiers. For a 5-seat Enterprise team, annual billing saves $1,500
+      per year ($620/month vs $495/month).
+    savingsPercent: 25
+  - strategy: Right-size Plan Selection
+    description: >-
+      Evaluate whether Pro features (workflow sequences, custom dashboards,
+      permission controls) are required before upgrading from Growth. Teams
+      that only need basic CRM and email tracking can remain on Growth.
+  - strategy: Seat Hygiene
+    description: >-
+      Regularly audit active user seats and deactivate accounts for departed
+      team members. Each unused seat represents $29-$99/month in wasted spend
+      depending on plan tier.
+  - strategy: Lead Credit Monitoring
+    description: >-
+      Track monthly lead credit consumption to avoid purchasing add-on bundles
+      unnecessarily. Pro and Enterprise plans include substantial credit
+      allowances that may be sufficient for most teams.
+focusAlignment:
+  billingPeriod: monthly
+  chargeType: subscription
+  pricingCategory: seat-based-saas
+  commitmentDiscountType: annual-prepay
+  skuId: salesflare-{tier}-{billing-cycle}
+  resourceType: crm-seat

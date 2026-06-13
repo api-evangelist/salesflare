@@ -1,0 +1,79 @@
+aid: salesflare
+name: Salesflare
+description: >-
+  Salesflare is an intelligent CRM built for B2B startups and small businesses
+  that automates data input by pulling contact and company information from
+  emails, calendars, phone logs, and social profiles. The platform provides a
+  REST API for programmatically managing accounts, contacts, opportunities,
+  tasks, and email messages. Developers can use the API to integrate CRM data
+  into their own applications, automate sales workflows, and synchronize data
+  across systems. Salesflare supports bearer token authentication via API keys
+  generated from the settings dashboard, with endpoints covering the full CRM
+  object model including leads, pipelines, and enriched contact records.
+type: Index
+image: >-
+  https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/apis.yml
+created: '2026-06-12'
+modified: '2026-06-12'
+specificationVersion: '0.19'
+tags:
+  - CRM
+  - Sales
+  - B2B
+  - Contacts
+  - Accounts
+  - Opportunities
+  - Email
+  - Automation
+  - Lead Generation
+apis:
+  - name: Salesflare API
+    description: >-
+      The Salesflare REST API provides programmatic access to the Salesflare CRM
+      platform, enabling management of accounts, contacts, opportunities, tasks,
+      and email communications. It supports automated data enrichment workflows
+      and integration with third-party tools via bearer token authentication.
+    image: >-
+      https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://api.salesflare.com/docs
+    baseURL: https://api.salesflare.com
+    tags:
+      - CRM
+      - Contacts
+      - Accounts
+      - Opportunities
+      - Tasks
+      - Email
+    properties:
+      - type: Documentation
+        url: https://api.salesflare.com/docs
+      - type: OpenAPI
+        url: https://api.salesflare.com/docs
+common:
+  - type: Website
+    url: https://salesflare.com
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: GitHubOrg
+    url: https://github.com/Salesflare
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/salesflare
+  - type: Blog
+    url: https://blog.salesflare.com
+  - type: Pricing
+    url: https://salesflare.com/pricing
+  - type: StatusPage
+    url: https://status.salesflare.com
+  - type: X
+    url: https://twitter.com/salesflare
+  - type: Plans
+    url: plans/salesflare-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/salesflare-rate-limits.yml
+  - type: FinOps
+    url: finops/salesflare-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

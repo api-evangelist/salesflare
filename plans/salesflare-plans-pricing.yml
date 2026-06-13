@@ -1,0 +1,99 @@
+name: Salesflare Plans and Pricing
+description: >-
+  Salesflare offers three subscription tiers designed for B2B sales teams of
+  varying sizes. All plans include a 30-day free trial, no setup fees, and
+  no hard limits on contacts, pipelines, templates, or tracked emails. Annual
+  billing provides approximately 25% savings over monthly billing. Additional
+  lead credits for the built-in email finder can be purchased as add-ons.
+specificationVersion: '0.1'
+plans:
+  - name: Growth
+    description: >-
+      Core CRM functionality with automated data input, email and link tracking,
+      website visit monitoring, LinkedIn and Gmail/Outlook sidebars, mobile apps,
+      and personalized email campaigns. Includes 5 monthly lead credits.
+    url: https://salesflare.com/pricing
+    price: 29.00
+    unit: user/month
+    currency: USD
+    billingCycle: annual
+    pricingModel: per-seat
+    features:
+      - Automated data input from email and social profiles
+      - Email and link tracking
+      - Website visit tracking
+      - LinkedIn sidebar integration
+      - Gmail and Outlook sidebar
+      - Mobile apps (iOS and Android)
+      - Personalized email campaigns
+      - Visual sales pipeline
+      - 5 monthly lead credits
+    additionalPricing:
+      - billingCycle: monthly
+        price: 39.00
+        unit: user/month
+        currency: USD
+  - name: Pro
+    description: >-
+      All Growth features plus multi-email workflow sequences, user permission
+      controls with role-based access, custom dashboard creation, and enhanced
+      reporting. Includes 100 monthly lead credits. Most popular plan.
+    url: https://salesflare.com/pricing
+    price: 49.00
+    unit: user/month
+    currency: USD
+    billingCycle: annual
+    pricingModel: per-seat
+    features:
+      - All Growth plan features
+      - Multi-email workflow sequences
+      - User permission controls
+      - Role-based access
+      - Custom dashboard creation
+      - Advanced reporting
+      - 100 monthly lead credits
+    additionalPricing:
+      - billingCycle: monthly
+        price: 64.00
+        unit: user/month
+        currency: USD
+  - name: Enterprise
+    description: >-
+      All Pro features plus customized onboarding, team training, data migration
+      assistance, and a dedicated account manager. Minimum 5 users required.
+      Includes 250 monthly lead credits.
+    url: https://salesflare.com/pricing
+    price: 99.00
+    unit: user/month
+    currency: USD
+    billingCycle: annual
+    pricingModel: per-seat
+    minimumSeats: 5
+    features:
+      - All Pro plan features
+      - Customized onboarding
+      - Team training
+      - Data migration assistance
+      - Dedicated account manager
+      - 250 monthly lead credits
+    additionalPricing:
+      - billingCycle: monthly
+        price: 124.00
+        unit: user/month
+        currency: USD
+addOns:
+  - name: Lead Credits (250)
+    description: Additional lead credits for the built-in email finder feature
+    price: 39.00
+    currency: USD
+    billingCycle: monthly
+  - name: Lead Credits (500)
+    description: Additional lead credits for the built-in email finder feature
+    price: 69.00
+    currency: USD
+    billingCycle: monthly
+  - name: Lead Credits (1000)
+    description: Additional lead credits for the built-in email finder feature
+    price: 129.00
+    currency: USD
+    billingCycle: monthly

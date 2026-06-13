@@ -1,0 +1,31 @@
+name: Salesflare API Rate Limits
+description: >-
+  Salesflare's API rate limit details are not publicly documented on their
+  developer portal. The API uses bearer token authentication via API keys.
+  Developers should implement retry logic with exponential backoff to handle
+  rate limit responses gracefully. For specific rate limit thresholds, contact
+  Salesflare support at support@salesflare.com or consult the API documentation
+  at https://api.salesflare.com/docs.
+specificationVersion: '0.1'
+limits:
+  - name: API Request Rate Limit
+    description: >-
+      Salesflare enforces API rate limits to ensure platform stability, but
+      specific numeric thresholds are not publicly disclosed. Clients should
+      handle HTTP 429 Too Many Requests responses and implement exponential
+      backoff retry strategies.
+    scope: account
+    documented: false
+    errorCode: 429
+    retryStrategy: exponential-backoff
+    notes: >-
+      The Salesflare API documentation at https://api.salesflare.com/docs
+      contains the authoritative rate limit policies. Contact
+      support@salesflare.com for enterprise rate limit inquiries.
+authentication:
+  type: bearer-token
+  headerName: Authorization
+  headerFormat: 'Bearer {apiKey}'
+  keyManagement: >-
+    API keys are created in Settings > API keys within the Salesflare
+    application dashboard.
