@@ -12,7 +12,7 @@ description: >-
   object model including leads, pipelines, and enriched contact records.
 type: Index
 image: >-
-  https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: >-
   https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/apis.yml
 created: '2026-06-12'
@@ -36,7 +36,7 @@ apis:
       and email communications. It supports automated data enrichment workflows
       and integration with third-party tools via bearer token authentication.
     image: >-
-      https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+      https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://api.salesflare.com/docs
     baseURL: https://api.salesflare.com
     tags:
