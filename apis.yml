@@ -58,6 +58,8 @@ apis:
       - type: Vocabulary
         url: https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/salesflare-agentic-access.yml
   - type: DomainSecurity
     url: security/salesflare-domain-security.yml
   - type: Website
