@@ -1,0 +1,433 @@
+openapi: 3.0.0
+info:
+  title: Salesflare Accounts Custom Fields API
+  version: 1.0.0
+  description: '# Introduction
+
+
+    ## Getting Started
+
+
+    The Salesflare API allows you to access and build your own applications or integrations that interact with Salesflare.
+
+
+    The Salesflare API provides a RESTful interface with JSON-formatted responses to access most Salesflare resources.
+
+
+    ## Authentication
+
+
+    The Salesflare API uses bearer token based authentication, which means you need to use the key-value pair "Authorization : Bearer APIKEY" in the header to authenticate.
+
+
+    You can make an API key in ["Settings" > "API keys"](https://app.salesflare.com/#/settings/apikeys).
+
+
+    Click on the large orange "+" button on the bottom right of the screen to create an API key.
+
+
+    ![Screenshot API Key Settings](https://lib.salesflare.com/api_docs/screenshot_settings_apikeys.png?v=2)
+
+
+    ## Requests
+
+
+    All requests must be sent using HTTPS with TLS 1.2 or higher. Please make sure your developer tools support this version of TLS as older versions or SSL are not supported for security reasons.
+
+
+    For PUT or POST requests (e.g. create, update), the payload must be provided as JSON in the request body.
+
+
+    ## Responses
+
+
+    Responses use HTTP status codes, with the most typical ones being:
+
+
+    | Code                   | Meaning               |
+
+    |------------------------|-----------------------|
+
+    | Successful Responses                           |
+
+    | 200                    | OK                    |
+
+    | Error Responses                                |
+
+    | 400                    | Bad Request           |
+
+    | 401                    | Unauthorized          |
+
+    | 404                    | Not Found             |
+
+    | 429                    | Too Many Requests     |
+
+    | 500                    | Internal Server Error |
+
+
+    ## Testing
+
+
+    We recommend testing our API with Postman.
+
+
+    ### Download specification
+
+
+    Our API is documented following the OpenAPI specification. You can download it [here](https://api.salesflare.com/openapi.json)
+
+
+    ### Import in Postman
+
+
+    To import the collection, open Postman and click Import, then select "Import From Link"
+
+
+    Copy & Paste the following link and press the "Import" button:
+
+
+    > https://api.salesflare.com/openapi.json
+
+
+    ![Screenshot Postman Import](https://lib.salesflare.com/api_docs/screenshot_postman_import.png)
+
+
+    ## Support
+
+
+    For API questions and support, please email support@salesflare.com or click the chat bubble below.'
+  contact:
+    email: support@salesflare.com
+  x-logo:
+    url: https://lib.salesflare.com/api_docs/sf-logo-inverted.svg
+    backgroundColor: '#0f1528'
+    altText: Salesflare logo
+servers:
+- url: https://api.salesflare.com
+tags:
+- name: Custom Fields
+paths:
+  /customfields/types:
+    get:
+      summary: List custom field types
+      operationId: getCustomfieldsTypes
+      tags:
+      - Custom Fields
+      responses:
+        default:
+          description: Successful
+          content:
+            '*/*':
+              schema:
+                type: string
+  /customfields/{itemClass}:
+    get:
+      summary: List custom fields of a type
+      operationId: getCustomfieldsItemclass
+      parameters:
+      - name: itemClass
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - accounts
+          - contacts
+          - opportunities
+      - name: includeDisabled
+        in: query
+        schema:
+          type: boolean
+      - name: pipeline
+        in: query
+        schema:
+          type: number
+      - name: name
+        in: query
+        schema:
+          type: string
+      tags:
+      - Custom Fields
+      responses:
+        default:
+          description: Successful
+          content:
+            '*/*':
+              schema:
+                type: string
+    post:
+      summary: Create a custom field of a type
+      operationId: postCustomfieldsItemclass
+      parameters:
+      - name: itemClass
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - accounts
+          - contacts
+          - opportunities
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: number
+                name:
+                  type: string
+                enabled:
+                  type: boolean
+                archived:
+                  type: boolean
+                required:
+                  type: boolean
+                pipeline:
+                  type: number
+                predefined_customfield:
+                  type: number
+                users_can_add_options:
+                  type: boolean
+                options:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      order:
+                        type: number
+                      archived:
+                        type: boolean
+                      name:
+                        type: string
+                    required:
+                    - name
+                order_alphabetically:
+                  type: boolean
+                  default: false
+                min_number:
+                  type: number
+                max_number:
+                  type: number
+                min_date:
+                  type: string
+                  format: date-time
+                max_date:
+                  type: string
+                  format: date-time
+                default_boolean_value:
+                  type: boolean
+      tags:
+      - Custom Fields
+      responses:
+        '200':
+          description: Successful
+          content:
+            '*/*':
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: number
+  /customfields/{itemClass}/{id}:
+    get:
+      summary: Get custom field details
+      operationId: getCustomfieldsItemclassId
+      parameters:
+      - name: itemClass
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - accounts
+          - contacts
+          - opportunities
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      tags:
+      - Custom Fields
+      responses:
+        default:
+          description: Successful
+          content:
+            '*/*':
+              schema:
+                type: string
+    put:
+      summary: Update a custom field
+      operationId: putCustomfieldsItemclassId
+      parameters:
+      - name: itemClass
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - accounts
+          - contacts
+          - opportunities
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: number
+                type:
+                  type: number
+                  description: Deprecated. Do not use this field.
+                name:
+                  type: string
+                enabled:
+                  type: boolean
+                archived:
+                  type: boolean
+                required:
+                  type: boolean
+                pipeline:
+                  type: number
+                pipelineName:
+                  type: string
+                order:
+                  type: number
+                predefined_customfield:
+                  type: number
+                users_can_add_options:
+                  type: boolean
+                options:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      order:
+                        type: number
+                      archived:
+                        type: boolean
+                      name:
+                        type: string
+                    required:
+                    - name
+                order_alphabetically:
+                  type: boolean
+                min_number:
+                  type: number
+                max_number:
+                  type: number
+                min_date:
+                  type: string
+                  format: date-time
+                max_date:
+                  type: string
+                  format: date-time
+              required:
+              - id
+      tags:
+      - Custom Fields
+      responses:
+        default:
+          description: Successful
+          content:
+            '*/*':
+              schema:
+                type: string
+    delete:
+      summary: Delete a custom field
+      operationId: deleteCustomfieldsItemclassId
+      parameters:
+      - name: itemClass
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - accounts
+          - contacts
+          - opportunities
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      tags:
+      - Custom Fields
+      responses:
+        default:
+          description: Successful
+          content:
+            '*/*':
+              schema:
+                type: string
+  /customfields/{itemClass}/{customFieldApiField}/options:
+    get:
+      summary: List a custom field's options
+      operationId: getCustomfieldsItemclassCustomfieldapifieldOptions
+      parameters:
+      - name: itemClass
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - accounts
+          - contacts
+          - opportunities
+      - name: customFieldApiField
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: searchString
+        in: query
+        schema:
+          type: string
+      tags:
+      - Custom Fields
+      responses:
+        default:
+          description: Successful
+          content:
+            '*/*':
+              schema:
+                type: string
+x-tagGroups:
+- name: General
+  tags:
+  - Tasks
+  - Accounts
+  - Contacts
+  - Opportunities
+  - Workflows
+  - Insights
+- name: Interactions
+  tags:
+  - Calls
+  - Meetings
+  - Internal Notes
+- name: User Management
+  tags:
+  - Users
+  - Groups
+- name: Configuration
+  tags:
+  - Regional Settings
+  - Pipelines
+  - Custom Fields
+  - Email Data Sources
+  - Tags
+  - Filter Fields
+  - Persons

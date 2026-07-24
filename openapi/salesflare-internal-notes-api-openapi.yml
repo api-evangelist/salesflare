@@ -1,0 +1,212 @@
+openapi: 3.0.0
+info:
+  title: Salesflare Accounts Internal Notes API
+  version: 1.0.0
+  description: '# Introduction
+
+
+    ## Getting Started
+
+
+    The Salesflare API allows you to access and build your own applications or integrations that interact with Salesflare.
+
+
+    The Salesflare API provides a RESTful interface with JSON-formatted responses to access most Salesflare resources.
+
+
+    ## Authentication
+
+
+    The Salesflare API uses bearer token based authentication, which means you need to use the key-value pair "Authorization : Bearer APIKEY" in the header to authenticate.
+
+
+    You can make an API key in ["Settings" > "API keys"](https://app.salesflare.com/#/settings/apikeys).
+
+
+    Click on the large orange "+" button on the bottom right of the screen to create an API key.
+
+
+    ![Screenshot API Key Settings](https://lib.salesflare.com/api_docs/screenshot_settings_apikeys.png?v=2)
+
+
+    ## Requests
+
+
+    All requests must be sent using HTTPS with TLS 1.2 or higher. Please make sure your developer tools support this version of TLS as older versions or SSL are not supported for security reasons.
+
+
+    For PUT or POST requests (e.g. create, update), the payload must be provided as JSON in the request body.
+
+
+    ## Responses
+
+
+    Responses use HTTP status codes, with the most typical ones being:
+
+
+    | Code                   | Meaning               |
+
+    |------------------------|-----------------------|
+
+    | Successful Responses                           |
+
+    | 200                    | OK                    |
+
+    | Error Responses                                |
+
+    | 400                    | Bad Request           |
+
+    | 401                    | Unauthorized          |
+
+    | 404                    | Not Found             |
+
+    | 429                    | Too Many Requests     |
+
+    | 500                    | Internal Server Error |
+
+
+    ## Testing
+
+
+    We recommend testing our API with Postman.
+
+
+    ### Download specification
+
+
+    Our API is documented following the OpenAPI specification. You can download it [here](https://api.salesflare.com/openapi.json)
+
+
+    ### Import in Postman
+
+
+    To import the collection, open Postman and click Import, then select "Import From Link"
+
+
+    Copy & Paste the following link and press the "Import" button:
+
+
+    > https://api.salesflare.com/openapi.json
+
+
+    ![Screenshot Postman Import](https://lib.salesflare.com/api_docs/screenshot_postman_import.png)
+
+
+    ## Support
+
+
+    For API questions and support, please email support@salesflare.com or click the chat bubble below.'
+  contact:
+    email: support@salesflare.com
+  x-logo:
+    url: https://lib.salesflare.com/api_docs/sf-logo-inverted.svg
+    backgroundColor: '#0f1528'
+    altText: Salesflare logo
+servers:
+- url: https://api.salesflare.com
+tags:
+- name: Internal Notes
+paths:
+  /messages:
+    post:
+      summary: Create an internal note
+      operationId: postMessages
+      requestBody:
+        $ref: '#/components/requestBodies/postMessagesBody'
+      tags:
+      - Internal Notes
+      responses:
+        default:
+          description: Successful
+          content:
+            '*/*':
+              schema:
+                type: string
+  /messages/{message_id}:
+    put:
+      summary: Update an internal note
+      operationId: putMessagesMessage_id
+      parameters:
+      - name: message_id
+        in: path
+        required: true
+        schema:
+          type: number
+      requestBody:
+        $ref: '#/components/requestBodies/postMessagesBody'
+      tags:
+      - Internal Notes
+      responses:
+        default:
+          description: Successful
+          content:
+            '*/*':
+              schema:
+                type: string
+    delete:
+      summary: Delete an internal note
+      operationId: deleteMessagesMessage_id
+      parameters:
+      - name: message_id
+        in: path
+        required: true
+        schema:
+          type: number
+      tags:
+      - Internal Notes
+      responses:
+        default:
+          description: Successful
+          content:
+            '*/*':
+              schema:
+                type: string
+components:
+  requestBodies:
+    postMessagesBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              account:
+                type: number
+              body:
+                type: string
+              mentions:
+                type: array
+                items:
+                  type: number
+              date:
+                type: string
+                format: date-time
+            required:
+            - account
+            - body
+x-tagGroups:
+- name: General
+  tags:
+  - Tasks
+  - Accounts
+  - Contacts
+  - Opportunities
+  - Workflows
+  - Insights
+- name: Interactions
+  tags:
+  - Calls
+  - Meetings
+  - Internal Notes
+- name: User Management
+  tags:
+  - Users
+  - Groups
+- name: Configuration
+  tags:
+  - Regional Settings
+  - Pipelines
+  - Custom Fields
+  - Email Data Sources
+  - Tags
+  - Filter Fields
+  - Persons

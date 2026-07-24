@@ -1,0 +1,1775 @@
+openapi: 3.0.0
+info:
+  title: Salesflare Accounts Tasks API
+  version: 1.0.0
+  description: '# Introduction
+
+
+    ## Getting Started
+
+
+    The Salesflare API allows you to access and build your own applications or integrations that interact with Salesflare.
+
+
+    The Salesflare API provides a RESTful interface with JSON-formatted responses to access most Salesflare resources.
+
+
+    ## Authentication
+
+
+    The Salesflare API uses bearer token based authentication, which means you need to use the key-value pair "Authorization : Bearer APIKEY" in the header to authenticate.
+
+
+    You can make an API key in ["Settings" > "API keys"](https://app.salesflare.com/#/settings/apikeys).
+
+
+    Click on the large orange "+" button on the bottom right of the screen to create an API key.
+
+
+    ![Screenshot API Key Settings](https://lib.salesflare.com/api_docs/screenshot_settings_apikeys.png?v=2)
+
+
+    ## Requests
+
+
+    All requests must be sent using HTTPS with TLS 1.2 or higher. Please make sure your developer tools support this version of TLS as older versions or SSL are not supported for security reasons.
+
+
+    For PUT or POST requests (e.g. create, update), the payload must be provided as JSON in the request body.
+
+
+    ## Responses
+
+
+    Responses use HTTP status codes, with the most typical ones being:
+
+
+    | Code                   | Meaning               |
+
+    |------------------------|-----------------------|
+
+    | Successful Responses                           |
+
+    | 200                    | OK                    |
+
+    | Error Responses                                |
+
+    | 400                    | Bad Request           |
+
+    | 401                    | Unauthorized          |
+
+    | 404                    | Not Found             |
+
+    | 429                    | Too Many Requests     |
+
+    | 500                    | Internal Server Error |
+
+
+    ## Testing
+
+
+    We recommend testing our API with Postman.
+
+
+    ### Download specification
+
+
+    Our API is documented following the OpenAPI specification. You can download it [here](https://api.salesflare.com/openapi.json)
+
+
+    ### Import in Postman
+
+
+    To import the collection, open Postman and click Import, then select "Import From Link"
+
+
+    Copy & Paste the following link and press the "Import" button:
+
+
+    > https://api.salesflare.com/openapi.json
+
+
+    ![Screenshot Postman Import](https://lib.salesflare.com/api_docs/screenshot_postman_import.png)
+
+
+    ## Support
+
+
+    For API questions and support, please email support@salesflare.com or click the chat bubble below.'
+  contact:
+    email: support@salesflare.com
+  x-logo:
+    url: https://lib.salesflare.com/api_docs/sf-logo-inverted.svg
+    backgroundColor: '#0f1528'
+    altText: Salesflare logo
+servers:
+- url: https://api.salesflare.com
+tags:
+- name: Tasks
+paths:
+  /tasks:
+    get:
+      summary: List tasks
+      operationId: getTasks
+      description: Request a list of tasks with optional filters and pagination
+      parameters:
+      - x-constraint:
+          single: true
+        name: id
+        in: query
+        explode: true
+        schema:
+          type: array
+          items:
+            type: number
+      - description: Search tasks by name or description.
+        name: search
+        in: query
+        schema:
+          type: string
+      - description: List of user IDs from the team. Defaults to the authenticated user's ID.
+        x-constraint:
+          single: true
+        name: assignees
+        in: query
+        explode: true
+        schema:
+          type: array
+          items:
+            type: number
+      - description: A list of task type ids.
+        x-constraint:
+          single: true
+        name: type
+        in: query
+        explode: true
+        schema:
+          type: array
+          items:
+            type: number
+      - description: A list of account ids.
+        x-constraint:
+          single: true
+        name: account
+        in: query
+        explode: true
+        schema:
+          type: array
+          items:
+            type: number
+      - description: Sort instructions. Provide either 'key' (ascending) or 'key desc' (descending). Default sort order is ascending. You can fetch available sort keys via a discover mode call.
+        x-constraint:
+          single: true
+        name: order_by
+        in: query
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+      - description: The number of tasks to return. Defaults to 20.
+        name: limit
+        in: query
+        schema:
+          type: number
+      - description: The number of tasks to skip.
+        name: offset
+        in: query
+        schema:
+          type: number
+      - name: export
+        in: query
+        schema:
+          type: string
+      - x-alternatives:
+        - type: object
+          required:
+          - condition
+          - rules
+          x-properties:
+            condition:
+              type: string
+              enum:
+              - AND
+              - OR
+            rules:
+              type: array
+              items:
+                type: object
+                description: Deprecated. Use the slim version with only `id`, `operator`, and `value`.
+                required:
+                - id
+                - customfield_id
+                - operator
+                - enabled
+                x-alternatives:
+                - type: object
+                  description: Deprecated. Use the slim version with only `id`, `operator`, and `value`.
+                  required:
+                  - id
+                  - customfield_id
+                  - operator
+                  - enabled
+                  x-properties:
+                    id:
+                      type: string
+                    query_builder_id:
+                      type: string
+                    customfield_id:
+                      type: string
+                    label:
+                      type: string
+                    type:
+                      type: string
+                      enum:
+                      - integer
+                      - double
+                      - boolean
+                      - tri_state_boolean
+                      - string
+                      - long_string
+                      - select
+                      - date
+                      - datetime
+                      - file
+                    input:
+                      type: string
+                    operator:
+                      type: string
+                      enum:
+                      - equal
+                      - not_equal
+                      - in
+                      - not_in
+                      - less
+                      - less_or_equal
+                      - greater
+                      - greater_or_equal
+                      - between
+                      - not_between
+                      - begins_with
+                      - not_begins_with
+                      - contains
+                      - not_contains
+                      - ends_with
+                      - not_ends_with
+                      - is_empty
+                      - is_not_empty
+                      - is_null
+                      - is_not_null
+                      - 'true'
+                      - 'false'
+                      - past_less
+                      - past_exactly
+                      - past_more_than
+                      - future_less
+                      - future_exactly
+                      - future_more_than
+                      - after
+                      - 'on'
+                      - before
+                      - is
+                      - is_not
+                    value:
+                      type: array
+                      x-constraint:
+                        single: true
+                      items:
+                        type: string
+                        x-alternatives:
+                        - type: string
+                        - type: number
+                        - type: string
+                          format: date-time
+                        - type: boolean
+                        - type: object
+                          x-properties:
+                            value1:
+                              type: string
+                              x-alternatives:
+                              - type: string
+                              - type: number
+                            value2:
+                              type: string
+                              x-alternatives:
+                              - type: string
+                              - type: number
+                      collectionFormat: multi
+                      name: value
+                    entity:
+                      type: string
+                      enum:
+                      - account
+                      - person
+                      - opportunity
+                      - campaign
+                      - tag
+                      - task
+                      - workflow
+                      - workflow_record
+                      - workflow_step_record
+                      - lead
+                    display_entity:
+                      type: string
+                      enum:
+                      - Account
+                      - Contact
+                      - Opportunity
+                      - Campaign
+                      - Tag
+                      - Task
+                      - Workflow
+                      - Lead
+                    pipeline:
+                      type: number
+                    enabled:
+                      type: string
+                    internal:
+                      type: boolean
+                - type: object
+                  required:
+                  - id
+                  - operator
+                  - value
+                  - raw_value
+                  x-properties:
+                    id:
+                      type: string
+                    operator:
+                      type: string
+                      description: '`is_empty`, `is_not_empty`, `is_null`, `is_not_null`, `true` and `false` are Deprecated. Do not use this field. and should not be used.'
+                      enum:
+                      - equal
+                      - not_equal
+                      - in
+                      - not_in
+                      - less
+                      - less_or_equal
+                      - greater
+                      - greater_or_equal
+                      - between
+                      - not_between
+                      - begins_with
+                      - not_begins_with
+                      - contains
+                      - not_contains
+                      - ends_with
+                      - not_ends_with
+                      - is_empty
+                      - is_not_empty
+                      - is_null
+                      - is_not_null
+                      - 'true'
+                      - 'false'
+                      - past_less
+                      - past_exactly
+                      - past_more_than
+                      - future_less
+                      - future_exactly
+                      - future_more_than
+                      - after
+                      - 'on'
+                      - before
+                      - is
+                      - is_not
+                    value:
+                      type: array
+                      x-constraint:
+                        single: true
+                      items:
+                        type: string
+                        x-alternatives:
+                        - type: string
+                        - type: number
+                        - type: string
+                          format: date-time
+                        - type: boolean
+                      collectionFormat: multi
+                      name: value
+                    raw_value:
+                      type: array
+                      items:
+                        type: object
+                      collectionFormat: multi
+                      name: raw_value
+                    pipeline:
+                      type: number
+                - type: object
+                  required:
+                  - condition
+                  x-properties:
+                    condition:
+                      type: string
+                      enum:
+                      - AND
+                      - OR
+                    rules:
+                      type: array
+                      items:
+                        type: object
+                        description: Deprecated. Use the slim version with only `id`, `operator`, and `value`.
+                        required:
+                        - id
+                        - customfield_id
+                        - operator
+                        - enabled
+                        x-properties:
+                          id:
+                            type: string
+                          query_builder_id:
+                            type: string
+                          customfield_id:
+                            type: string
+                          label:
+                            type: string
+                          type:
+                            type: string
+                            enum:
+                            - integer
+                            - double
+                            - boolean
+                            - tri_state_boolean
+                            - string
+                            - long_string
+                            - select
+                            - date
+                            - datetime
+                            - file
+                          input:
+                            type: string
+                          operator:
+                            type: string
+                            enum:
+                            - equal
+                            - not_equal
+                            - in
+                            - not_in
+                            - less
+                            - less_or_equal
+                            - greater
+                            - greater_or_equal
+                            - between
+                            - not_between
+                            - begins_with
+                            - not_begins_with
+                            - contains
+                            - not_contains
+                            - ends_with
+                            - not_ends_with
+                            - is_empty
+                            - is_not_empty
+                            - is_null
+                            - is_not_null
+                            - 'true'
+                            - 'false'
+                            - past_less
+                            - past_exactly
+                            - past_more_than
+                            - future_less
+                            - future_exactly
+                            - future_more_than
+                            - after
+                            - 'on'
+                            - before
+                            - is
+                            - is_not
+                          value:
+                            type: array
+                            x-constraint:
+                              single: true
+                            items:
+                              type: string
+                              x-alternatives:
+                              - type: string
+                              - type: number
+                              - type: string
+                                format: date-time
+                              - type: boolean
+                              - type: object
+                                x-properties:
+                                  value1:
+                                    type: string
+                                    x-alternatives:
+                                    - type: string
+                                    - type: number
+                                  value2:
+                                    type: string
+                                    x-alternatives:
+                                    - type: string
+                                    - type: number
+                            collectionFormat: multi
+                            name: value
+                          entity:
+                            type: string
+                            enum:
+                            - account
+                            - person
+                            - opportunity
+                            - campaign
+                            - tag
+                            - task
+                            - workflow
+                            - workflow_record
+                            - workflow_step_record
+                            - lead
+                          display_entity:
+                            type: string
+                            enum:
+                            - Account
+                            - Contact
+                            - Opportunity
+                            - Campaign
+                            - Tag
+                            - Task
+                            - Workflow
+                            - Lead
+                          pipeline:
+                            type: number
+                          enabled:
+                            type: string
+                          internal:
+                            type: boolean
+                      collectionFormat: multi
+                      name: rules
+                    not:
+                      type: boolean
+                    valid:
+                      type: boolean
+                x-properties:
+                  id:
+                    type: string
+                  query_builder_id:
+                    type: string
+                  customfield_id:
+                    type: string
+                  label:
+                    type: string
+                  type:
+                    type: string
+                    enum:
+                    - integer
+                    - double
+                    - boolean
+                    - tri_state_boolean
+                    - string
+                    - long_string
+                    - select
+                    - date
+                    - datetime
+                    - file
+                  input:
+                    type: string
+                  operator:
+                    type: string
+                    enum:
+                    - equal
+                    - not_equal
+                    - in
+                    - not_in
+                    - less
+                    - less_or_equal
+                    - greater
+                    - greater_or_equal
+                    - between
+                    - not_between
+                    - begins_with
+                    - not_begins_with
+                    - contains
+                    - not_contains
+                    - ends_with
+                    - not_ends_with
+                    - is_empty
+                    - is_not_empty
+                    - is_null
+                    - is_not_null
+                    - 'true'
+                    - 'false'
+                    - past_less
+                    - past_exactly
+                    - past_more_than
+                    - future_less
+                    - future_exactly
+                    - future_more_than
+                    - after
+                    - 'on'
+                    - before
+                    - is
+                    - is_not
+                  value:
+                    type: array
+                    x-constraint:
+                      single: true
+                    items:
+                      type: string
+                      x-alternatives:
+                      - type: string
+                      - type: number
+                      - type: string
+                        format: date-time
+                      - type: boolean
+                      - type: object
+                        x-properties:
+                          value1:
+                            type: string
+                            x-alternatives:
+                            - type: string
+                            - type: number
+                          value2:
+                            type: string
+                            x-alternatives:
+                            - type: string
+                            - type: number
+                    collectionFormat: multi
+                    name: value
+                  entity:
+                    type: string
+                    enum:
+                    - account
+                    - person
+                    - opportunity
+                    - campaign
+                    - tag
+                    - task
+                    - workflow
+                    - workflow_record
+                    - workflow_step_record
+                    - lead
+                  display_entity:
+                    type: string
+                    enum:
+                    - Account
+                    - Contact
+                    - Opportunity
+                    - Campaign
+                    - Tag
+                    - Task
+                    - Workflow
+                    - Lead
+                  pipeline:
+                    type: number
+                  enabled:
+                    type: string
+                  internal:
+                    type: boolean
+              collectionFormat: multi
+              name: rules
+            order_by:
+              type: string
+              description: Sort instructions. Provide either 'key' (ascending) or 'key desc' (descending). Default sort order is ascending. You can fetch available sort keys via a discover mode call.
+            not:
+              type: boolean
+            valid:
+              type: boolean
+            search:
+              type: string
+        - type: array
+          items:
+            type: object
+            required:
+            - condition
+            x-alternatives:
+            - type: object
+              required:
+              - condition
+              x-properties:
+                condition:
+                  type: string
+                  enum:
+                  - AND
+                  - OR
+                rules:
+                  type: array
+                  items:
+                    type: object
+                    description: Deprecated. Use the slim version with only `id`, `operator`, and `value`.
+                    required:
+                    - id
+                    - customfield_id
+                    - operator
+                    - enabled
+                    x-properties:
+                      id:
+                        type: string
+                      query_builder_id:
+                        type: string
+                      customfield_id:
+                        type: string
+                      label:
+                        type: string
+                      type:
+                        type: string
+                        enum:
+                        - integer
+                        - double
+                        - boolean
+                        - tri_state_boolean
+                        - string
+                        - long_string
+                        - select
+                        - date
+                        - datetime
+                        - file
+                      input:
+                        type: string
+                      operator:
+                        type: string
+                        enum:
+                        - equal
+                        - not_equal
+                        - in
+                        - not_in
+                        - less
+                        - less_or_equal
+                        - greater
+                        - greater_or_equal
+                        - between
+                        - not_between
+                        - begins_with
+                        - not_begins_with
+                        - contains
+                        - not_contains
+                        - ends_with
+                        - not_ends_with
+                        - is_empty
+                        - is_not_empty
+                        - is_null
+                        - is_not_null
+                        - 'true'
+                        - 'false'
+                        - past_less
+                        - past_exactly
+                        - past_more_than
+                        - future_less
+                        - future_exactly
+                        - future_more_than
+                        - after
+                        - 'on'
+                        - before
+                        - is
+                        - is_not
+                      value:
+                        type: array
+                        x-constraint:
+                          single: true
+                        items:
+                          type: string
+                          x-alternatives:
+                          - type: string
+                          - type: number
+                          - type: string
+                            format: date-time
+                          - type: boolean
+                          - type: object
+                            x-properties:
+                              value1:
+                                type: string
+                                x-alternatives:
+                                - type: string
+                                - type: number
+                              value2:
+                                type: string
+                                x-alternatives:
+                                - type: string
+                                - type: number
+                        collectionFormat: multi
+                        name: value
+                      entity:
+                        type: string
+                        enum:
+                        - account
+                        - person
+                        - opportunity
+                        - campaign
+                        - tag
+                        - task
+                        - workflow
+                        - workflow_record
+                        - workflow_step_record
+                        - lead
+                      display_entity:
+                        type: string
+                        enum:
+                        - Account
+                        - Contact
+                        - Opportunity
+                        - Campaign
+                        - Tag
+                        - Task
+                        - Workflow
+                        - Lead
+                      pipeline:
+                        type: number
+                      enabled:
+                        type: string
+                      internal:
+                        type: boolean
+                  collectionFormat: multi
+                  name: rules
+                not:
+                  type: boolean
+                valid:
+                  type: boolean
+            - type: object
+              description: Deprecated. Use the slim version with only `id`, `operator`, and `value`.
+              required:
+              - id
+              - customfield_id
+              - operator
+              - enabled
+              x-properties:
+                id:
+                  type: string
+                query_builder_id:
+                  type: string
+                customfield_id:
+                  type: string
+                label:
+                  type: string
+                type:
+                  type: string
+                  enum:
+                  - integer
+                  - double
+                  - boolean
+                  - tri_state_boolean
+                  - string
+                  - long_string
+                  - select
+                  - date
+                  - datetime
+                  - file
+                input:
+                  type: string
+                operator:
+                  type: string
+                  enum:
+                  - equal
+                  - not_equal
+                  - in
+                  - not_in
+                  - less
+                  - less_or_equal
+                  - greater
+                  - greater_or_equal
+                  - between
+                  - not_between
+                  - begins_with
+                  - not_begins_with
+                  - contains
+                  - not_contains
+                  - ends_with
+                  - not_ends_with
+                  - is_empty
+                  - is_not_empty
+                  - is_null
+                  - is_not_null
+                  - 'true'
+                  - 'false'
+                  - past_less
+                  - past_exactly
+                  - past_more_than
+                  - future_less
+                  - future_exactly
+                  - future_more_than
+                  - after
+                  - 'on'
+                  - before
+                  - is
+                  - is_not
+                value:
+                  type: array
+                  x-constraint:
+                    single: true
+                  items:
+                    type: string
+                    x-alternatives:
+                    - type: string
+                    - type: number
+                    - type: string
+                      format: date-time
+                    - type: boolean
+                    - type: object
+                      x-properties:
+                        value1:
+                          type: string
+                          x-alternatives:
+                          - type: string
+                          - type: number
+                        value2:
+                          type: string
+                          x-alternatives:
+                          - type: string
+                          - type: number
+                  collectionFormat: multi
+                  name: value
+                entity:
+                  type: string
+                  enum:
+                  - account
+                  - person
+                  - opportunity
+                  - campaign
+                  - tag
+                  - task
+                  - workflow
+                  - workflow_record
+                  - workflow_step_record
+                  - lead
+                display_entity:
+                  type: string
+                  enum:
+                  - Account
+                  - Contact
+                  - Opportunity
+                  - Campaign
+                  - Tag
+                  - Task
+                  - Workflow
+                  - Lead
+                pipeline:
+                  type: number
+                enabled:
+                  type: string
+                internal:
+                  type: boolean
+            - type: object
+              required:
+              - id
+              - operator
+              - value
+              - raw_value
+              x-properties:
+                id:
+                  type: string
+                operator:
+                  type: string
+                  description: '`is_empty`, `is_not_empty`, `is_null`, `is_not_null`, `true` and `false` are Deprecated. Do not use this field. and should not be used.'
+                  enum:
+                  - equal
+                  - not_equal
+                  - in
+                  - not_in
+                  - less
+                  - less_or_equal
+                  - greater
+                  - greater_or_equal
+                  - between
+                  - not_between
+                  - begins_with
+                  - not_begins_with
+                  - contains
+                  - not_contains
+                  - ends_with
+                  - not_ends_with
+                  - is_empty
+                  - is_not_empty
+                  - is_null
+                  - is_not_null
+                  - 'true'
+                  - 'false'
+                  - past_less
+                  - past_exactly
+                  - past_more_than
+                  - future_less
+                  - future_exactly
+                  - future_more_than
+                  - after
+                  - 'on'
+                  - before
+                  - is
+                  - is_not
+                value:
+                  type: array
+                  x-constraint:
+                    single: true
+                  items:
+                    type: string
+                    x-alternatives:
+                    - type: string
+                    - type: number
+                    - type: string
+                      format: date-time
+                    - type: boolean
+                  collectionFormat: multi
+                  name: value
+                raw_value:
+                  type: array
+                  items:
+                    type: object
+                  collectionFormat: multi
+                  name: raw_value
+                pipeline:
+                  type: number
+            x-properties:
+              condition:
+                type: string
+                enum:
+                - AND
+                - OR
+              rules:
+                type: array
+                items:
+                  type: object
+                  description: Deprecated. Use the slim version with only `id`, `operator`, and `value`.
+                  required:
+                  - id
+                  - customfield_id
+                  - operator
+                  - enabled
+                  x-properties:
+                    id:
+                      type: string
+                    query_builder_id:
+                      type: string
+                    customfield_id:
+                      type: string
+                    label:
+                      type: string
+                    type:
+                      type: string
+                      enum:
+                      - integer
+                      - double
+                      - boolean
+                      - tri_state_boolean
+                      - string
+                      - long_string
+                      - select
+                      - date
+                      - datetime
+                      - file
+                    input:
+                      type: string
+                    operator:
+                      type: string
+                      enum:
+                      - equal
+                      - not_equal
+                      - in
+                      - not_in
+                      - less
+                      - less_or_equal
+                      - greater
+                      - greater_or_equal
+                      - between
+                      - not_between
+                      - begins_with
+                      - not_begins_with
+                      - contains
+                      - not_contains
+                      - ends_with
+                      - not_ends_with
+                      - is_empty
+                      - is_not_empty
+                      - is_null
+                      - is_not_null
+                      - 'true'
+                      - 'false'
+                      - past_less
+                      - past_exactly
+                      - past_more_than
+                      - future_less
+                      - future_exactly
+                      - future_more_than
+                      - after
+                      - 'on'
+                      - before
+                      - is
+                      - is_not
+                    value:
+                      type: array
+                      x-constraint:
+                        single: true
+                      items:
+                        type: string
+                        x-alternatives:
+                        - type: string
+                        - type: number
+                        - type: string
+                          format: date-time
+                        - type: boolean
+                        - type: object
+                          x-properties:
+                            value1:
+                              type: string
+                              x-alternatives:
+                              - type: string
+                              - type: number
+                            value2:
+                              type: string
+                              x-alternatives:
+                              - type: string
+                              - type: number
+                      collectionFormat: multi
+                      name: value
+                    entity:
+                      type: string
+                      enum:
+                      - account
+                      - person
+                      - opportunity
+                      - campaign
+                      - tag
+                      - task
+                      - workflow
+                      - workflow_record
+                      - workflow_step_record
+                      - lead
+                    display_entity:
+                      type: string
+                      enum:
+                      - Account
+                      - Contact
+                      - Opportunity
+                      - Campaign
+                      - Tag
+                      - Task
+                      - Workflow
+                      - Lead
+                    pipeline:
+                      type: number
+                    enabled:
+                      type: string
+                    internal:
+                      type: boolean
+                collectionFormat: multi
+                name: rules
+              not:
+                type: boolean
+              valid:
+                type: boolean
+          collectionFormat: multi
+          name: q
+        name: q
+        in: query
+        x-type: object
+        x-properties:
+          condition:
+            type: string
+            enum:
+            - AND
+            - OR
+          rules:
+            type: array
+            items:
+              type: object
+              description: Deprecated. Use the slim version with only `id`, `operator`, and `value`.
+              required:
+              - id
+              - customfield_id
+              - operator
+              - enabled
+              x-alternatives:
+              - type: object
+                description: Deprecated. Use the slim version with only `id`, `operator`, and `value`.
+                required:
+                - id
+                - customfield_id
+                - operator
+                - enabled
+                x-properties:
+                  id:
+                    type: string
+                  query_builder_id:
+                    type: string
+                  customfield_id:
+                    type: string
+                  label:
+                    type: string
+                  type:
+                    type: string
+                    enum:
+                    - integer
+                    - double
+                    - boolean
+                    - tri_state_boolean
+                    - string
+                    - long_string
+                    - select
+                    - date
+                    - datetime
+                    - file
+                  input:
+                    type: string
+                  operator:
+                    type: string
+                    enum:
+                    - equal
+                    - not_equal
+                    - in
+                    - not_in
+                    - less
+                    - less_or_equal
+                    - greater
+                    - greater_or_equal
+                    - between
+                    - not_between
+                    - begins_with
+                    - not_begins_with
+                    - contains
+                    - not_contains
+                    - ends_with
+                    - not_ends_with
+                    - is_empty
+                    - is_not_empty
+                    - is_null
+                    - is_not_null
+                    - 'true'
+                    - 'false'
+                    - past_less
+                    - past_exactly
+                    - past_more_than
+                    - future_less
+                    - future_exactly
+                    - future_more_than
+                    - after
+                    - 'on'
+                    - before
+                    - is
+                    - is_not
+                  value:
+                    type: array
+                    x-constraint:
+                      single: true
+                    items:
+                      type: string
+                      x-alternatives:
+                      - type: string
+                      - type: number
+                      - type: string
+                        format: date-time
+                      - type: boolean
+                      - type: object
+                        x-properties:
+                          value1:
+                            type: string
+                            x-alternatives:
+                            - type: string
+                            - type: number
+                          value2:
+                            type: string
+                            x-alternatives:
+                            - type: string
+                            - type: number
+                    collectionFormat: multi
+                    name: value
+                  entity:
+                    type: string
+                    enum:
+                    - account
+                    - person
+                    - opportunity
+                    - campaign
+                    - tag
+                    - task
+                    - workflow
+                    - workflow_record
+                    - workflow_step_record
+                    - lead
+                  display_entity:
+                    type: string
+                    enum:
+                    - Account
+                    - Contact
+                    - Opportunity
+                    - Campaign
+                    - Tag
+                    - Task
+                    - Workflow
+                    - Lead
+                  pipeline:
+                    type: number
+                  enabled:
+                    type: string
+                  internal:
+                    type: boolean
+              - type: object
+                required:
+                - id
+                - operator
+                - value
+                - raw_value
+                x-properties:
+                  id:
+                    type: string
+                  operator:
+                    type: string
+                    description: '`is_empty`, `is_not_empty`, `is_null`, `is_not_null`, `true` and `false` are Deprecated. Do not use this field. and should not be used.'
+                    enum:
+                    - equal
+                    - not_equal
+                    - in
+                    - not_in
+                    - less
+                    - less_or_equal
+                    - greater
+                    - greater_or_equal
+                    - between
+                    - not_between
+                    - begins_with
+                    - not_begins_with
+                    - contains
+                    - not_contains
+                    - ends_with
+                    - not_ends_with
+                    - is_empty
+                    - is_not_empty
+                    - is_null
+                    - is_not_null
+                    - 'true'
+                    - 'false'
+                    - past_less
+                    - past_exactly
+                    - past_more_than
+                    - future_less
+                    - future_exactly
+                    - future_more_than
+                    - after
+                    - 'on'
+                    - before
+                    - is
+                    - is_not
+                  value:
+                    type: array
+                    x-constraint:
+                      single: true
+                    items:
+                      type: string
+                      x-alternatives:
+                      - type: string
+                      - type: number
+                      - type: string
+                        format: date-time
+                      - type: boolean
+                    collectionFormat: multi
+                    name: value
+                  raw_value:
+                    type: array
+                    items:
+                      type: object
+                    collectionFormat: multi
+                    name: raw_value
+                  pipeline:
+                    type: number
+              - type: object
+                required:
+                - condition
+                x-properties:
+                  condition:
+                    type: string
+                    enum:
+                    - AND
+                    - OR
+                  rules:
+                    type: array
+                    items:
+                      type: object
+                      description: Deprecated. Use the slim version with only `id`, `operator`, and `value`.
+                      required:
+                      - id
+                      - customfield_id
+                      - operator
+                      - enabled
+                      x-properties:
+                        id:
+                          type: string
+                        query_builder_id:
+                          type: string
+                        customfield_id:
+                          type: string
+                        label:
+                          type: string
+                        type:
+                          type: string
+                          enum:
+                          - integer
+                          - double
+                          - boolean
+                          - tri_state_boolean
+                          - string
+                          - long_string
+                          - select
+                          - date
+                          - datetime
+                          - file
+                        input:
+                          type: string
+                        operator:
+                          type: string
+                          enum:
+                          - equal
+                          - not_equal
+                          - in
+                          - not_in
+                          - less
+                          - less_or_equal
+                          - greater
+                          - greater_or_equal
+                          - between
+                          - not_between
+                          - begins_with
+                          - not_begins_with
+                          - contains
+                          - not_contains
+                          - ends_with
+                          - not_ends_with
+                          - is_empty
+                          - is_not_empty
+                          - is_null
+                          - is_not_null
+                          - 'true'
+                          - 'false'
+                          - past_less
+                          - past_exactly
+                          - past_more_than
+                          - future_less
+                          - future_exactly
+                          - future_more_than
+                          - after
+                          - 'on'
+                          - before
+                          - is
+                          - is_not
+                        value:
+                          type: array
+                          x-constraint:
+                            single: true
+                          items:
+                            type: string
+                            x-alternatives:
+                            - type: string
+                            - type: number
+                            - type: string
+                              format: date-time
+                            - type: boolean
+                            - type: object
+                              x-properties:
+                                value1:
+                                  type: string
+                                  x-alternatives:
+                                  - type: string
+                                  - type: number
+                                value2:
+                                  type: string
+                                  x-alternatives:
+                                  - type: string
+                                  - type: number
+                          collectionFormat: multi
+                          name: value
+                        entity:
+                          type: string
+                          enum:
+                          - account
+                          - person
+                          - opportunity
+                          - campaign
+                          - tag
+                          - task
+                          - workflow
+                          - workflow_record
+                          - workflow_step_record
+                          - lead
+                        display_entity:
+                          type: string
+                          enum:
+                          - Account
+                          - Contact
+                          - Opportunity
+                          - Campaign
+                          - Tag
+                          - Task
+                          - Workflow
+                          - Lead
+                        pipeline:
+                          type: number
+                        enabled:
+                          type: string
+                        internal:
+                          type: boolean
+                    collectionFormat: multi
+                    name: rules
+                  not:
+                    type: boolean
+                  valid:
+                    type: boolean
+              x-properties:
+                id:
+                  type: string
+                query_builder_id:
+                  type: string
+                customfield_id:
+                  type: string
+                label:
+                  type: string
+                type:
+                  type: string
+                  enum:
+                  - integer
+                  - double
+                  - boolean
+                  - tri_state_boolean
+                  - string
+                  - long_string
+                  - select
+                  - date
+                  - datetime
+                  - file
+                input:
+                  type: string
+                operator:
+                  type: string
+                  enum:
+                  - equal
+                  - not_equal
+                  - in
+                  - not_in
+                  - less
+                  - less_or_equal
+                  - greater
+                  - greater_or_equal
+                  - between
+                  - not_between
+                  - begins_with
+                  - not_begins_with
+                  - contains
+                  - not_contains
+                  - ends_with
+                  - not_ends_with
+                  - is_empty
+                  - is_not_empty
+                  - is_null
+                  - is_not_null
+                  - 'true'
+                  - 'false'
+                  - past_less
+                  - past_exactly
+                  - past_more_than
+                  - future_less
+                  - future_exactly
+                  - future_more_than
+                  - after
+                  - 'on'
+                  - before
+                  - is
+                  - is_not
+                value:
+                  type: array
+                  x-constraint:
+                    single: true
+                  items:
+                    type: string
+                    x-alternatives:
+                    - type: string
+                    - type: number
+                    - type: string
+                      format: date-time
+                    - type: boolean
+                    - type: object
+                      x-properties:
+                        value1:
+                          type: string
+                          x-alternatives:
+                          - type: string
+                          - type: number
+                        value2:
+                          type: string
+                          x-alternatives:
+                          - type: string
+                          - type: number
+                  collectionFormat: multi
+                  name: value
+                entity:
+                  type: string
+                  enum:
+                  - account
+                  - person
+                  - opportunity
+                  - campaign
+                  - tag
+                  - task
+                  - workflow
+                  - workflow_record
+                  - workflow_step_record
+                  - lead
+                display_entity:
+                  type: string
+                  enum:
+                  - Account
+                  - Contact
+                  - Opportunity
+                  - Campaign
+                  - Tag
+                  - Task
+                  - Workflow
+                  - Lead
+                pipeline:
+                  type: number
+                enabled:
+                  type: string
+                internal:
+                  type: boolean
+            collectionFormat: multi
+            name: rules
+          order_by:
+            type: string
+            description: Sort instructions. Provide either 'key' (ascending) or 'key desc' (descending). Default sort order is ascending. You can fetch available sort keys via a discover mode call.
+          not:
+            type: boolean
+          valid:
+            type: boolean
+          search:
+            type: string
+        schema:
+          type: string
+      tags:
+      - Tasks
+      responses:
+        default:
+          description: Successful
+          content:
+            '*/*':
+              schema:
+                type: string
+    post:
+      summary: Create a task
+      operationId: postTasks
+      description: Create a task
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              x-constraint:
+                single: true
+              items:
+                type: object
+                properties:
+                  account:
+                    type: number
+                    description: The ID of the account linked to the task.
+                  description:
+                    type: string
+                    description: The task description.
+                  reminder_date:
+                    type: string
+                    format: date
+                    description: The task due date and time (ISO 8601 date-time).
+                    default: '2026-06-12T18:22:56.098Z'
+                  assignees:
+                    type: array
+                    description: List of user IDs assigned to the task.
+                    x-constraint:
+                      single: true
+                    items:
+                      type: number
+                required:
+                - description
+      tags:
+      - Tasks
+      responses:
+        '200':
+          description: Successful
+          content:
+            '*/*':
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: number
+  /tasks/{id}:
+    put:
+      summary: Update a task
+      operationId: putTasksId
+      description: Update a task
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                account:
+                  type: number
+                  description: The ID of the account linked to the task.
+                description:
+                  type: string
+                  description: The task description.
+                reminder_date:
+                  type: string
+                  format: date
+                  description: The task due date and time (ISO 8601 date-time).
+                assignees:
+                  type: array
+                  description: List of user IDs assigned to the task.
+                  x-constraint:
+                    single: true
+                  items:
+                    type: number
+                completed:
+                  type: boolean
+                  description: Whether the task is completed.
+      tags:
+      - Tasks
+      responses:
+        '200':
+          description: Successful
+          content:
+            '*/*':
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    delete:
+      summary: Delete a task
+      operationId: deleteTasksId
+      tags:
+      - Tasks
+      responses:
+        '200':
+          description: Successful
+          content:
+            '*/*':
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+x-tagGroups:
+- name: General
+  tags:
+  - Tasks
+  - Accounts
+  - Contacts
+  - Opportunities
+  - Workflows
+  - Insights
+- name: Interactions
+  tags:
+  - Calls
+  - Meetings
+  - Internal Notes
+- name: User Management
+  tags:
+  - Users
+  - Groups
+- name: Configuration
+  tags:
+  - Regional Settings
+  - Pipelines
+  - Custom Fields
+  - Email Data Sources
+  - Tags
+  - Filter Fields
+  - Persons

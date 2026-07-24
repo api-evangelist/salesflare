@@ -1,0 +1,286 @@
+openapi: 3.0.0
+info:
+  title: Salesflare Accounts Email Data Sources API
+  version: 1.0.0
+  description: '# Introduction
+
+
+    ## Getting Started
+
+
+    The Salesflare API allows you to access and build your own applications or integrations that interact with Salesflare.
+
+
+    The Salesflare API provides a RESTful interface with JSON-formatted responses to access most Salesflare resources.
+
+
+    ## Authentication
+
+
+    The Salesflare API uses bearer token based authentication, which means you need to use the key-value pair "Authorization : Bearer APIKEY" in the header to authenticate.
+
+
+    You can make an API key in ["Settings" > "API keys"](https://app.salesflare.com/#/settings/apikeys).
+
+
+    Click on the large orange "+" button on the bottom right of the screen to create an API key.
+
+
+    ![Screenshot API Key Settings](https://lib.salesflare.com/api_docs/screenshot_settings_apikeys.png?v=2)
+
+
+    ## Requests
+
+
+    All requests must be sent using HTTPS with TLS 1.2 or higher. Please make sure your developer tools support this version of TLS as older versions or SSL are not supported for security reasons.
+
+
+    For PUT or POST requests (e.g. create, update), the payload must be provided as JSON in the request body.
+
+
+    ## Responses
+
+
+    Responses use HTTP status codes, with the most typical ones being:
+
+
+    | Code                   | Meaning               |
+
+    |------------------------|-----------------------|
+
+    | Successful Responses                           |
+
+    | 200                    | OK                    |
+
+    | Error Responses                                |
+
+    | 400                    | Bad Request           |
+
+    | 401                    | Unauthorized          |
+
+    | 404                    | Not Found             |
+
+    | 429                    | Too Many Requests     |
+
+    | 500                    | Internal Server Error |
+
+
+    ## Testing
+
+
+    We recommend testing our API with Postman.
+
+
+    ### Download specification
+
+
+    Our API is documented following the OpenAPI specification. You can download it [here](https://api.salesflare.com/openapi.json)
+
+
+    ### Import in Postman
+
+
+    To import the collection, open Postman and click Import, then select "Import From Link"
+
+
+    Copy & Paste the following link and press the "Import" button:
+
+
+    > https://api.salesflare.com/openapi.json
+
+
+    ![Screenshot Postman Import](https://lib.salesflare.com/api_docs/screenshot_postman_import.png)
+
+
+    ## Support
+
+
+    For API questions and support, please email support@salesflare.com or click the chat bubble below.'
+  contact:
+    email: support@salesflare.com
+  x-logo:
+    url: https://lib.salesflare.com/api_docs/sf-logo-inverted.svg
+    backgroundColor: '#0f1528'
+    altText: Salesflare logo
+servers:
+- url: https://api.salesflare.com
+tags:
+- name: Email Data Sources
+paths:
+  /datasources/email:
+    get:
+      summary: List email data sources
+      operationId: getDatasourcesEmail
+      parameters:
+      - description: Team data sources will only be included when the session user is an admin.
+        name: includeTeamDataSources
+        in: query
+        schema:
+          type: boolean
+          default: false
+      tags:
+      - Email Data Sources
+      responses:
+        '200':
+          description: Successful
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    aliases:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          email:
+                            type: string
+                            x-format:
+                              email:
+                                ignoreLength: true
+                                tlds:
+                                  allow: false
+                                minDomainSegments: 1
+                            x-convert:
+                              case: lower
+                          display_name:
+                            type: string
+                        required:
+                        - email
+                        - display_name
+                    email:
+                      type: string
+                    type:
+                      type: string
+                      enum:
+                      - google
+                      - office365
+                      - nylas
+                      - imap
+                    name:
+                      type: string
+                    team:
+                      type: number
+                    user:
+                      type: number
+                    email_signature:
+                      type: string
+                    add_signature_to_campaign:
+                      type: boolean
+                    add_signature_to_replies:
+                      type: boolean
+                    max_emails_day:
+                      type: number
+                    max_emails_hour:
+                      type: number
+                    primary:
+                      type: boolean
+                    host:
+                      type: string
+                    port:
+                      type: number
+                    smtp_host:
+                      type: string
+                    smtp_port:
+                      type: number
+                    store_sent_emails:
+                      type: boolean
+                    status:
+                      type: string
+                      enum:
+                      - OK
+                      - RECONNECT
+                      - ERROR
+                    sync_status:
+                      type: string
+                      enum:
+                      - initial
+                      - cache
+                      - sync
+                      - enrich
+                      - done
+                  required:
+                  - id
+                  - aliases
+                  - email
+                  - type
+                  - name
+                  - team
+                  - user
+                  - add_signature_to_campaign
+                  - add_signature_to_replies
+                  - max_emails_day
+                  - max_emails_hour
+                  - primary
+                  - status
+                  - sync_status
+  /datasources/email/{id}:
+    put:
+      summary: Update an email data source
+      operationId: putDatasourcesEmailId
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: number
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email_signature:
+                  type: string
+                add_signature_to_campaign:
+                  type: boolean
+                add_signature_to_replies:
+                  type: boolean
+                max_emails_day:
+                  type: number
+                  minimum: 0
+                  maximum: 2000
+                max_emails_hour:
+                  type: number
+                  minimum: 0
+                  maximum: 200
+      tags:
+      - Email Data Sources
+      responses:
+        default:
+          description: Successful
+          content:
+            '*/*':
+              schema:
+                type: string
+x-tagGroups:
+- name: General
+  tags:
+  - Tasks
+  - Accounts
+  - Contacts
+  - Opportunities
+  - Workflows
+  - Insights
+- name: Interactions
+  tags:
+  - Calls
+  - Meetings
+  - Internal Notes
+- name: User Management
+  tags:
+  - Users
+  - Groups
+- name: Configuration
+  tags:
+  - Regional Settings
+  - Pipelines
+  - Custom Fields
+  - Email Data Sources
+  - Tags
+  - Filter Fields
+  - Persons
