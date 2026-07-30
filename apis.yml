@@ -11,7 +11,19 @@ description: >-
   generated from the settings dashboard, with endpoints covering the full CRM
   object model including leads, pipelines, and enriched contact records.
 type: Index
-image: >-
+accessModel:
+  pricing: paid
+  onboarding: approval
+  trial: true
+  try_now: false
+  public: false
+  label: Paid (free trial) · Requires approval
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/salesflare.png
   https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: >-
   https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/apis.yml
@@ -29,34 +41,426 @@ tags:
   - Automation
   - Lead Generation
 apis:
-  - name: Salesflare API
-    description: >-
-      The Salesflare REST API provides programmatic access to the Salesflare CRM
-      platform, enabling management of accounts, contacts, opportunities, tasks,
-      and email communications. It supports automated data enrichment workflows
-      and integration with third-party tools via bearer token authentication.
-    image: >-
-      https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://api.salesflare.com/docs
-    baseURL: https://api.salesflare.com
-    tags:
-      - CRM
-      - Contacts
-      - Accounts
-      - Opportunities
-      - Tasks
-      - Email
-    properties:
-      - type: Documentation
-        url: https://api.salesflare.com/docs
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/openapi/salesflare-api-openapi.yml
-      - type: JSONSchema
-        url: https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
-      - type: JSONLDContext
-        url: https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
-      - type: Vocabulary
-        url: https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-accounts-api
+  name: Salesflare Accounts API
+  description: The Accounts API from Salesflare — 6 operation(s) for accounts.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-ai-message-feedbacks-api
+  name: Salesflare AI Message Feedbacks API
+  description: The AI Message Feedbacks API from Salesflare — 2 operation(s) for ai message feedbacks.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - AI Message Feedbacks
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-ai-message-feedbacks-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-aisetings-api
+  name: Salesflare AISetings API
+  description: The AISetings API from Salesflare — 1 operation(s) for aisetings.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - AISetings
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-aisetings-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-aisettings-api
+  name: Salesflare AISettings API
+  description: The AISettings API from Salesflare — 1 operation(s) for aisettings.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - AISettings
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-aisettings-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-calls-api
+  name: Salesflare Calls API
+  description: The Calls API from Salesflare — 2 operation(s) for calls.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - Calls
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-calls-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-contacts-api
+  name: Salesflare Contacts API
+  description: The Contacts API from Salesflare — 2 operation(s) for contacts.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - Contacts
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-contacts-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-custom-fields-api
+  name: Salesflare Custom Fields API
+  description: The Custom Fields API from Salesflare — 4 operation(s) for custom fields.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - Custom Fields
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-custom-fields-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-email-data-sources-api
+  name: Salesflare Email Data Sources API
+  description: The Email Data Sources API from Salesflare — 2 operation(s) for email data sources.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - Email Data Sources
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-email-data-sources-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-filter-fields-api
+  name: Salesflare Filter Fields API
+  description: The Filter Fields API from Salesflare — 1 operation(s) for filter fields.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - Filter Fields
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-filter-fields-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-groups-api
+  name: Salesflare Groups API
+  description: The Groups API from Salesflare — 2 operation(s) for groups.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-groups-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-internal-notes-api
+  name: Salesflare Internal Notes API
+  description: The Internal Notes API from Salesflare — 2 operation(s) for internal notes.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - Internal Notes
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-internal-notes-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-meetings-api
+  name: Salesflare Meetings API
+  description: The Meetings API from Salesflare — 3 operation(s) for meetings.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - Meetings
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-meetings-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-opportunities-api
+  name: Salesflare Opportunities API
+  description: The Opportunities API from Salesflare — 2 operation(s) for opportunities.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - Opportunities
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-opportunities-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-persons-api
+  name: Salesflare Persons API
+  description: The Persons API from Salesflare — 1 operation(s) for persons.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - Persons
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-persons-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-pipelines-api
+  name: Salesflare Pipelines API
+  description: The Pipelines API from Salesflare — 3 operation(s) for pipelines.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - Pipelines
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-pipelines-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-regional-settings-api
+  name: Salesflare Regional Settings API
+  description: The Regional Settings API from Salesflare — 1 operation(s) for regional settings.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - Regional Settings
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-regional-settings-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-tags-api
+  name: Salesflare Tags API
+  description: The Tags API from Salesflare — 3 operation(s) for tags.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-tags-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-tasks-api
+  name: Salesflare Tasks API
+  description: The Tasks API from Salesflare — 2 operation(s) for tasks.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - Tasks
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-tasks-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-users-api
+  name: Salesflare Users API
+  description: The Users API from Salesflare — 4 operation(s) for users.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-users-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-workflows-api
+  name: Salesflare Workflows API
+  description: The Workflows API from Salesflare — 4 operation(s) for workflows.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - Workflows
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-workflows-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
 common:
   - type: AgenticAccess
     url: agentic-access/salesflare-agentic-access.yml
