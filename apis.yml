@@ -24,11 +24,10 @@ accessModel:
   generated: '2026-07-22'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/salesflare.png
-  https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: >-
   https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/apis.yml
 created: '2026-06-12'
-modified: '2026-06-12'
+modified: '2026-08-13'
 specificationVersion: '0.19'
 tags:
   - CRM
@@ -51,6 +50,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-accounts-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-accounts-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -72,6 +73,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-ai-message-feedbacks-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-ai-message-feedbacks-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -93,6 +96,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-aisetings-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-aisetings-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -114,6 +119,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-aisettings-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-aisettings-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -135,6 +142,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-calls-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-calls-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -156,6 +165,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-contacts-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-contacts-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -177,6 +188,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-custom-fields-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-custom-fields-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -198,6 +211,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-email-data-sources-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-email-data-sources-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -219,6 +234,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-filter-fields-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-filter-fields-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -240,6 +257,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-groups-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-groups-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -261,6 +280,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-internal-notes-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-internal-notes-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -282,6 +303,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-meetings-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-meetings-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -303,6 +326,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-opportunities-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-opportunities-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -324,6 +349,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-persons-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-persons-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -345,6 +372,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-pipelines-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-pipelines-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -366,6 +395,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-regional-settings-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-regional-settings-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -387,6 +418,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-tags-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-tags-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -408,6 +441,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-tasks-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-tasks-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -429,6 +464,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-users-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-users-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -450,6 +487,8 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/salesflare-workflows-api-openapi.yml
+  - type: Overlay
+    url: overlays/salesflare-workflows-overlay.yaml
   - type: Documentation
     url: https://api.salesflare.com/docs
   - type: JSONSchema
@@ -488,6 +527,55 @@ common:
     url: rate-limits/salesflare-rate-limits.yml
   - type: FinOps
     url: finops/salesflare-finops.yml
+  - type: OpenAPI
+    name: Salesflare API (provider-published Swagger 2.0)
+    url: https://api.salesflare.com/openapi.json
+  - type: APIReference
+    url: https://api.salesflare.com/docs
+  - type: GettingStarted
+    url: https://api.salesflare.com/docs#section/Introduction/Getting-Started
+  - type: Support
+    url: https://howto.salesflare.com
+  - type: TermsOfService
+    url: https://salesflare.com/terms
+  - type: PrivacyPolicy
+    url: https://salesflare.com/privacy
+  - type: SignUp
+    url: https://salesflare.com/signup
+  - type: Integrations
+    url: https://integrations.salesflare.com
+  - type: Authentication
+    url: authentication/salesflare-authentication.yml
+  - type: OAuthScopes
+    url: scopes/salesflare-scopes.yml
+  - type: Conventions
+    url: conventions/salesflare-conventions.yml
+  - type: ErrorCatalog
+    url: errors/salesflare-problem-types.yml
+  - type: Lifecycle
+    url: lifecycle/salesflare-lifecycle.yml
+  - type: Conformance
+    url: conformance/salesflare-conformance.yml
+  - type: DataModel
+    url: data-model/salesflare-data-model.yml
+  - type: Packages
+    url: packages/salesflare-packages.yml
+  - type: WellKnown
+    url: well-known/salesflare-well-known.yml
+  - type: MCPServer
+    name: Salesflare hosted MCP server
+    url: mcp/salesflare-mcp.yml
+  - type: ToolCrosswalk
+    url: mcp/salesflare-tool-crosswalk.yml
+  - type: AgentSkill
+    url: skills/_index.yml
+  - type: LLMsTxt
+    url: llms/salesflare-llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-13'
+  status: enriched
+  artifacts_added: 41
+  pass: local-v1
