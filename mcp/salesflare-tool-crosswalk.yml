@@ -1,0 +1,186 @@
+generated: '2026-08-13'
+method: derived
+source: >-
+  mcp/salesflare-mcp.yml (published capability list) bound against
+  openapi/_original/salesflare-openapi.json (71 operations, verified operationIds)
+note: >-
+  Salesflare's MCP tool manifest is OAuth-gated — POST tools/list to
+  https://mcp.salesflare.com/mcp returns 401 invalid_token — so no MCP tool NAMES
+  were observed. What Salesflare does publish is a six-item capability list on its
+  own MCP integration listing. Each row below is therefore a CAPABILITY GROUP, not
+  a tool name, bound to the REST operationIds that implement it. Every operationId
+  was grepped out of the live spec; none are invented. Confidence is capped at
+  medium for that reason: the binding is semantically sound but the tool
+  granularity (one tool per capability vs one per object vs one per operation) is
+  unknown until an authenticated introspection is run.
+surfaces:
+  openapi:
+    path: openapi/_original/salesflare-openapi.json
+    refined: openapi/salesflare-*-api-openapi.yml
+    format: Swagger 2.0
+    base_url: https://api.salesflare.com
+    operations: 71
+    gated: false
+  mcp:
+    url: https://mcp.salesflare.com/mcp
+    gated: true
+    gate: OAuth 2.1 bearer (401 invalid_token on anonymous tools/list)
+  graphql:
+    present: false
+crosswalk:
+  - tool: look-up-crm-records
+    capability: >-
+      Look up accounts, contacts, opportunities, tasks, pipelines, tags, and team
+      members
+    category: read
+    binding: rest
+    confidence: medium
+    rest:
+      - getAccounts
+      - getAccountsAccount_id
+      - getContacts
+      - getContactsContact_id
+      - getOpportunities
+      - getOpportunitiesId
+      - getTasks
+      - getPipelines
+      - getStages
+      - getStagesStage_id
+      - getTags
+      - getTagsTag_id
+      - getUsers
+      - getUsersId
+      - getMe
+  - tool: create-crm-records
+    capability: Create new accounts, contacts, opportunities, and tasks
+    category: write
+    binding: rest
+    confidence: medium
+    rest:
+      - postAccounts
+      - postContacts
+      - postOpportunities
+      - postTasks
+  - tool: update-crm-records
+    capability: Update CRM records and complete tasks
+    category: write
+    binding: rest
+    confidence: medium
+    note: >-
+      "Complete tasks" maps to putTasksId — the Tasks PUT body carries the
+      completion state; there is no separate complete-task operation.
+    rest:
+      - putAccountsAccount_id
+      - putContactsContact_id
+      - putOpportunitiesId
+      - putTasksId
+  - tool: review-account-timeline
+    capability: >-
+      Review account timelines with emails, messages, meetings, web visits, and
+      other activities
+    category: read
+    binding: rest
+    confidence: medium
+    rest:
+      - getAccountsAccount_idFeed
+      - getAccountsAccount_idMessages
+      - getMeetingsMeeting_id
+  - tool: filter-and-sort-crm-data
+    capability: Filter and sort CRM data to build lists, reports, and workflows
+    category: read
+    binding: rest
+    confidence: low
+    note: >-
+      Not a distinct REST operation. Implemented as the shared query surface on
+      every list operation — q (filter-rule object), order_by, limit, offset,
+      search, custom — with getFilterfieldsEntity supplying the filterable field
+      registry per entity. See conventions/salesflare-conventions.yml.
+    rest:
+      - getFilterfieldsEntity
+      - getAccounts
+      - getContacts
+      - getOpportunities
+      - getTasks
+mcp_only:
+  - tool: ask-questions-about-your-data
+    reason: >-
+      "Ask questions about your Salesflare data" is a server-side composite over
+      the read operations above rather than a single public REST operation. No
+      natural-language query endpoint exists in the REST contract.
+rest_only:
+  - group: Custom fields
+    reason: Not named in the published MCP capability list.
+    operations:
+      - getCustomfieldsTypes
+      - getCustomfieldsItemclass
+      - getCustomfieldsItemclassId
+      - getCustomfieldsItemclassCustomfieldapifieldOptions
+      - postCustomfieldsItemclass
+      - putCustomfieldsItemclassId
+      - deleteCustomfieldsItemclassId
+  - group: Workflows and campaigns
+    reason: >-
+      The listing says MCP can build "lists, reports, and workflows" but names no
+      workflow write capability; recorded as REST-only rather than assumed.
+    operations:
+      - getWorkflows
+      - getWorkflowsId
+      - postWorkflows
+      - putWorkflowsId
+      - putWorkflowsIdAudienceRecord_id
+      - getCampaignsMergefields
+  - group: Meetings and calls
+    reason: Read of meetings is bound; creation and update of meetings/calls are not.
+    operations:
+      - postMeetings
+      - putMeetingsMeeting_id
+      - deleteMeetingsMeeting_id
+      - postCalls
+      - putCallsMeeting_id
+  - group: Internal notes and message feedback
+    operations:
+      - postMessages
+      - putMessagesMessage_id
+      - deleteMessagesMessage_id
+      - postMessagesMessage_idFeedback
+      - postMessageMessage_idFeedback
+  - group: Deletes
+    reason: >-
+      No destructive capability is advertised on the MCP surface. Recorded as
+      REST-only; do not assume the MCP server can delete.
+    operations:
+      - deleteAccountsAccount_id
+      - deleteContactsContact_id
+      - deleteOpportunitiesId
+      - deleteTasksId
+      - deleteTagsTag_id
+  - group: Account membership
+    operations:
+      - postAccountsAccount_idContacts
+      - putAccountsAccount_idContacts
+      - postAccountsAccount_idUsers
+      - putAccountsAccount_idUsers
+  - group: Tags write
+    operations:
+      - postTags
+      - putTagsTag_id
+      - getTagsTag_idUsage
+  - group: Settings, data sources and reference data
+    operations:
+      - getSettingsAi
+      - putSettingsAi
+      - getDatasourcesEmail
+      - putDatasourcesEmailId
+      - getCurrencies
+      - getGroups
+      - getGroupsId
+      - getPersons
+      - getMeContacts
+coverage:
+  mcp_tools_named_by_provider: 0
+  mcp_capabilities_published: 6
+  capabilities_bound_to_rest: 5
+  mcp_only: 1
+  rest_operations_total: 71
+  rest_operations_with_a_capability_binding: 27
+  rest_operations_unbound: 44

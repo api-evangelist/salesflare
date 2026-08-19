@@ -1,0 +1,33 @@
+generated: '2026-08-13'
+method: generated
+source: >-
+  openapi/_original/salesflare-openapi.json (every operationId verified present in
+  the refined openapi/ specs), conventions/salesflare-conventions.yml,
+  errors/salesflare-problem-types.yml, mcp/salesflare-mcp.yml
+note: >-
+  Five packaged agent skills over Salesflare's public surface. Every operationId
+  named in a skill was grepped out of the repo's OpenAPI before it was written;
+  none are invented. Each skill carries the two facts an agent most needs and the
+  spec does not encode: that no create operation is idempotent, and that no
+  operation declares a 4xx/5xx response.
+skills:
+  - file: salesflare-create-account-and-contact.md
+    name: Create a Salesflare account and attach a contact
+    api: openapi/salesflare-accounts-api-openapi.yml
+    operations: [getAccounts, postAccounts, postContacts, postAccountsAccount_idContacts]
+  - file: salesflare-move-opportunity-through-pipeline.md
+    name: Create and advance a Salesflare opportunity through a pipeline
+    api: openapi/salesflare-opportunities-api-openapi.yml
+    operations: [getPipelines, getStages, getAccounts, postOpportunities, getOpportunities, putOpportunitiesId]
+  - file: salesflare-review-account-timeline.md
+    name: Review a Salesflare account timeline and leave an internal note
+    api: openapi/salesflare-accounts-api-openapi.yml
+    operations: [getAccounts, getAccountsAccount_idFeed, getAccountsAccount_idMessages, getMe, postMessages]
+  - file: salesflare-filter-crm-data.md
+    name: Build a filtered, sorted Salesflare list with custom fields
+    api: openapi/salesflare-filter-fields-api-openapi.yml
+    operations: [getFilterfieldsEntity, getCustomfieldsTypes, getCustomfieldsItemclass, getCustomfieldsItemclassCustomfieldapifieldOptions, getAccounts, getContacts, getOpportunities]
+  - file: salesflare-connect-mcp-agent.md
+    name: Connect an agent to the Salesflare hosted MCP server
+    api: mcp/salesflare-mcp.yml
+    operations: []

@@ -1,0 +1,73 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  https://api.salesflare.com/docs, https://status.salesflare.com, and
+  openapi/_original/salesflare-openapi.json
+note: >-
+  Salesflare runs a public status page and ships a live, self-published OpenAPI —
+  but it publishes no API versioning policy, no deprecation policy, no sunset
+  commitment, no changelog and no SLA. Product changes are announced on the
+  marketing blog (blog.salesflare.com), which is not an API changelog. Probes for
+  a dedicated changelog or roadmap page returned 404
+  (salesflare.com/changelog, salesflare.com/roadmap, salesflare.canny.io).
+versioning:
+  scheme: none
+  current: null
+  path_prefix: '/'
+  info_version: '1.0.0'
+  policy_url: null
+  note: >-
+    basePath is "/" — there is no /v1 segment, no version header and no date
+    pinning. A consumer has no way to pin a contract version.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  rfc8594: false
+  deprecated_operations: []
+  in_spec_deprecations:
+    - target: 'q filter rule object (fat form)'
+      note: >-
+        The OpenAPI marks the full filter-rule shape "Deprecated. Use the slim
+        version with only `id`, `operator`, and `value`." This is a schema
+        annotation on the q parameter, not a dated policy, and no operation
+        carries `deprecated: true`.
+      source: openapi/_original/salesflare-openapi.json
+  note: >-
+    No published deprecation policy. No operation in the 71-operation spec is
+    flagged deprecated. No Sunset or Deprecation response headers are documented.
+sla:
+  url: null
+  uptime_target: null
+  note: Not published.
+status_page:
+  url: https://status.salesflare.com
+  title: Salesflare Service Status
+  http_status: 200
+  subscribe: true
+  method: probed
+changelog:
+  url: null
+  note: >-
+    No dated API changelog. Product updates appear as posts on
+    https://blog.salesflare.com; they are marketing-facing and do not record API
+    changes. Recorded as absent rather than pointing a ChangeLog type at a blog.
+support:
+  email: support@salesflare.com
+  help_center: https://howto.salesflare.com
+  source: https://api.salesflare.com/docs
+spec_publication:
+  url: https://api.salesflare.com/openapi.json
+  format: Swagger 2.0
+  self_published: true
+  note: >-
+    Salesflare publishes its own machine-readable contract at the API host root
+    and tells developers to import it into Postman. That is a real lifecycle
+    asset — it means the spec tracks the running service rather than a
+    hand-maintained copy.
+gaps:
+  - No versioning scheme; breaking changes cannot be pinned against.
+  - No deprecation policy and no Sunset/Deprecation header support.
+  - No API changelog.
+  - No published SLA or uptime target.
+  - Contract is Swagger 2.0, two major versions behind OpenAPI 3.1.

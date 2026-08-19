@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Salesflare Accounts AISettings API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AISettings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Update AI Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.salesflare.com/settings/ai",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update AI Settings"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

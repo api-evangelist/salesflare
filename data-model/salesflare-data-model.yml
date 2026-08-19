@@ -1,0 +1,277 @@
+generated: '2026-08-13'
+method: derived
+source: >-
+  openapi/_original/salesflare-openapi.json (request-body properties and path
+  parameters across 71 operations), cross-checked against
+  json-schema/salesflare-schemas.json and examples/
+note: >-
+  Derived, not read off a published object reference — Salesflare publishes none,
+  and the Swagger 2.0 document has an EMPTY `definitions` block (zero named
+  schemas), so there are no $ref edges to walk. The graph below is reconstructed
+  from two things that are real in the spec: id-reference fields in the
+  request-body property lists (owner, account, parent_account, stage,
+  main_contact, assignee) and the path structure of the sub-resource routes
+  (/accounts/{account_id}/contacts, /accounts/{account_id}/users,
+  /accounts/{account_id}/feed). Where a body list came back empty in the spec
+  (postContacts, postTasks, postMeetings, postCalls declare a body parameter with
+  no properties), the entity's fields are taken from the repo's existing
+  examples/ and json-schema/ artifacts and marked accordingly — they are NOT
+  invented here.
+identifiers:
+  style: integer
+  prefixed: false
+  note: >-
+    All ids are plain integers with no type prefix, so an id is not
+    self-describing — an agent holding "42" cannot tell whether it is a user, an
+    account or an opportunity without knowing the field it came from. Contrast
+    with prefixed-id APIs where the identifier carries its own type.
+entities:
+  - name: Account
+    description: A company or organization in the CRM. The hub of the data model.
+    operations: [getAccounts, getAccountsAccount_id, postAccounts, putAccountsAccount_id, deleteAccountsAccount_id]
+    fields_source: openapi request body (postAccounts)
+    fields:
+      - name
+      - domain
+      - website
+      - picture
+      - size
+      - description
+      - owner
+      - parent_account
+      - address
+      - addresses
+      - email
+      - email_addresses
+      - phone_number
+      - phone_numbers
+      - social_profiles
+      - links
+      - tags
+      - customers
+      - custom
+  - name: Contact
+    description: A person, normally attached to an Account.
+    operations: [getContacts, getContactsContact_id, postContacts, putContactsContact_id, deleteContactsContact_id, getMeContacts]
+    fields_source: json-schema/salesflare-schemas.json + examples/salesflare-contact-example.json
+    fields_note: >-
+      postContacts declares a body parameter with no properties in the published
+      spec, so the field list could not be derived from the contract.
+  - name: Opportunity
+    description: A deal, always attached to an Account and positioned on a Stage.
+    operations: [getOpportunities, getOpportunitiesId, postOpportunities, putOpportunitiesId, deleteOpportunitiesId]
+    fields_source: openapi request body (postOpportunities)
+    fields:
+      - name
+      - account
+      - main_contact
+      - stage
+      - owner
+      - creator
+      - assignee
+      - value
+      - currency
+      - probability
+      - status
+      - status_date
+      - closed
+      - close_date
+      - lost_reason
+      - lead_source
+      - start_date
+      - contract_start_date
+      - contract_end_date
+      - recurring_price_per_unit
+      - frequency
+      - units
+      - files
+      - tags
+      - custom
+  - name: Task
+    description: A to-do item, optionally attached to an Account or Contact.
+    operations: [getTasks, postTasks, putTasksId, deleteTasksId]
+    fields_source: examples/salesflare-task-example.json
+  - name: Pipeline
+    description: A named sales process. Contains ordered Stages.
+    operations: [getPipelines]
+  - name: Stage
+    description: A step within a Pipeline. Opportunities sit on a Stage.
+    operations: [getStages, getStagesStage_id]
+  - name: User
+    description: A Salesflare team member. Owns Accounts, Contacts and Opportunities.
+    operations: [getUsers, getUsersId, getMe]
+  - name: Group
+    description: A grouping of users.
+    operations: [getGroups, getGroupsId]
+  - name: Tag
+    description: A label applied to Accounts, Contacts and Opportunities.
+    operations: [getTags, getTagsTag_id, postTags, putTagsTag_id, deleteTagsTag_id, getTagsTag_idUsage]
+    fields_source: openapi request body (postTags)
+    fields: [name]
+  - name: Meeting
+    description: A calendar event on an Account timeline.
+    operations: [getMeetingsMeeting_id, postMeetings, putMeetingsMeeting_id, deleteMeetingsMeeting_id]
+  - name: Call
+    description: A logged phone call. Shares the meeting id space — PUT /calls/{meeting_id}.
+    operations: [postCalls, putCallsMeeting_id]
+    note: >-
+      The update path parameter is literally named meeting_id, so Calls and
+      Meetings are the same underlying record type with different subtypes.
+  - name: InternalNote
+    description: A note posted against an Account, with mentions.
+    operations: [postMessages, putMessagesMessage_id, deleteMessagesMessage_id, getAccountsAccount_idMessages]
+    fields_source: openapi request body (postMessages)
+    fields: [account, body, date, mentions]
+  - name: CustomField
+    description: A tenant-defined field on an item class. Discoverable at runtime.
+    operations: [getCustomfieldsTypes, getCustomfieldsItemclass, getCustomfieldsItemclassId, getCustomfieldsItemclassCustomfieldapifieldOptions, postCustomfieldsItemclass, putCustomfieldsItemclassId, deleteCustomfieldsItemclassId]
+  - name: Workflow
+    description: An email campaign / automation with an audience filter and steps.
+    operations: [getWorkflows, getWorkflowsId, postWorkflows, putWorkflowsId, putWorkflowsIdAudienceRecord_id]
+    fields_source: openapi request body (postWorkflows)
+    fields:
+      - name
+      - record_type
+      - filter
+      - individual_record_filter
+      - goal
+      - steps
+      - status
+      - status_message
+      - continuous
+      - exit_after_days
+      - schedule_date
+      - schedule_days
+      - schedule_time_start
+      - schedule_time_end
+  - name: EmailDataSource
+    description: A connected mailbox feeding automatic data capture.
+    operations: [getDatasourcesEmail, putDatasourcesEmailId]
+  - name: Person
+    description: A person record outside the Contact model (lead search).
+    operations: [getPersons]
+  - name: Feed
+    description: The activity timeline of an Account — emails, meetings, notes, web visits.
+    operations: [getAccountsAccount_idFeed]
+relationships:
+  - from: Account
+    to: User
+    type: belongs_to
+    via: owner
+    evidence: postAccounts body property "owner"
+  - from: Account
+    to: Account
+    type: belongs_to
+    via: parent_account
+    evidence: postAccounts body property "parent_account"
+    note: Self-referential — accounts form a parent/child hierarchy.
+  - from: Account
+    to: Contact
+    type: has_many
+    via: /accounts/{account_id}/contacts
+    evidence: postAccountsAccount_idContacts, putAccountsAccount_idContacts
+  - from: Account
+    to: User
+    type: has_many
+    via: /accounts/{account_id}/users
+    evidence: postAccountsAccount_idUsers, putAccountsAccount_idUsers
+  - from: Account
+    to: Feed
+    type: has_many
+    via: /accounts/{account_id}/feed
+    evidence: getAccountsAccount_idFeed
+  - from: Account
+    to: InternalNote
+    type: has_many
+    via: /accounts/{account_id}/messages
+    evidence: getAccountsAccount_idMessages
+  - from: Account
+    to: Tag
+    type: has_many
+    via: tags
+    evidence: postAccounts body property "tags"
+  - from: Contact
+    to: Account
+    type: belongs_to
+    via: account
+    evidence: getContacts "account" query filter; examples/salesflare-contact-example.json
+  - from: Opportunity
+    to: Account
+    type: belongs_to
+    via: account
+    evidence: postOpportunities body property "account"
+  - from: Opportunity
+    to: Contact
+    type: belongs_to
+    via: main_contact
+    evidence: postOpportunities body property "main_contact"
+  - from: Opportunity
+    to: Stage
+    type: belongs_to
+    via: stage
+    evidence: postOpportunities body property "stage"
+  - from: Opportunity
+    to: User
+    type: belongs_to
+    via: owner
+    evidence: postOpportunities body property "owner"
+  - from: Opportunity
+    to: User
+    type: belongs_to
+    via: assignee
+    evidence: postOpportunities body property "assignee"
+  - from: Opportunity
+    to: User
+    type: belongs_to
+    via: creator
+    evidence: postOpportunities body property "creator"
+  - from: Opportunity
+    to: Tag
+    type: has_many
+    via: tags
+    evidence: postOpportunities body property "tags"
+  - from: Stage
+    to: Pipeline
+    type: belongs_to
+    via: pipeline
+    evidence: getOpportunities "pipeline" query filter alongside "stage"
+  - from: InternalNote
+    to: Account
+    type: belongs_to
+    via: account
+    evidence: postMessages body property "account"
+  - from: InternalNote
+    to: User
+    type: has_many
+    via: mentions
+    evidence: postMessages body property "mentions"
+  - from: Call
+    to: Meeting
+    type: belongs_to
+    via: meeting_id
+    evidence: 'path parameter of PUT /calls/{meeting_id}'
+  - from: CustomField
+    to: Account
+    type: has_many
+    via: 'custom'
+    evidence: >-
+      "custom" object on account/contact/opportunity/task bodies and filters,
+      registry at /customfields/{itemClass}
+  - from: Workflow
+    to: Account
+    type: has_many
+    via: audience
+    evidence: 'PUT /workflows/{id}/audience/{record_id}'
+coverage:
+  entities: 17
+  relationships: 22
+  schemas_in_spec: 0
+gaps:
+  - >-
+    The published Swagger 2.0 has an empty `definitions` block — zero reusable
+    schemas across 71 operations. Response bodies are typed as untyped strings.
+  - >-
+    Four create operations (postContacts, postTasks, postMeetings, postCalls)
+    declare a body with no properties, so their payload contract is undiscoverable
+    from the spec.
+  - Integer ids carry no type prefix.

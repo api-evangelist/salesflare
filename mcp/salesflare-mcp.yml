@@ -1,0 +1,79 @@
+generated: '2026-08-13'
+method: searched
+source: https://integrations.salesflare.com/listings/model-context-protocol
+status: published
+note: >-
+  Salesflare ships a first-party hosted remote MCP server. It was found two ways
+  and both agree: the RFC 9728 protected-resource document at
+  https://api.salesflare.com/.well-known/oauth-protected-resource names
+  https://mcp.salesflare.com/mcp/ as the protected resource, and Salesflare's own
+  integration listing tells users to "Connect your favorite AI to
+  https://mcp.salesflare.com/mcp". A live POST of tools/list to that endpoint
+  returns HTTP 401 with
+  WWW-Authenticate: Bearer realm="MCP", error="invalid_token" — the server is
+  real and reachable, and its tool manifest is OAuth-gated, so the tool list
+  below is the capability set Salesflare publishes in prose, not an
+  authenticated tools/list response. Tool names and inputSchemas require an
+  authenticated introspection and are deliberately NOT invented here.
+server:
+  name: salesflare
+  transport: http
+  url: https://mcp.salesflare.com/mcp
+  protocol: Streamable HTTP
+deployment:
+  mode: remote
+  endpoint: https://mcp.salesflare.com/mcp
+  auth: oauth
+  verified: probed
+authorization:
+  model: OAuth 2.1 / OIDC
+  issuer: https://api.salesflare.com/oidc
+  authorization_endpoint: https://api.salesflare.com/oidc/auth
+  token_endpoint: https://api.salesflare.com/oidc/token
+  registration_endpoint: https://api.salesflare.com/oidc/register
+  dynamic_client_registration: true
+  pkce: [S256]
+  scopes: [openid, offline_access]
+  protected_resource_metadata: https://mcp.salesflare.com/.well-known/oauth-protected-resource
+  authorization_server_metadata: https://api.salesflare.com/.well-known/oauth-authorization-server
+availability:
+  plans: Included in all Salesflare plans
+  source: https://integrations.salesflare.com/listings/model-context-protocol
+  setup_docs: https://howto.salesflare.com/en/articles/14432597-how-can-i-use-salesflare-with-chatgpt-or-claude
+  clients_named_by_provider: [ChatGPT, Claude, Cursor]
+capabilities:
+  method: searched
+  source: https://integrations.salesflare.com/listings/model-context-protocol
+  note: >-
+    Verbatim capability statements from the provider's own listing. These are
+    capability groups, not MCP tool names — the server did not disclose tool
+    names anonymously.
+  published:
+    - Ask questions about your Salesflare data
+    - Look up accounts, contacts, opportunities, tasks, pipelines, tags, and team members
+    - Create new accounts, contacts, opportunities, and tasks
+    - Update CRM records and complete tasks
+    - Review account timelines with emails, messages, meetings, web visits, and other activities
+    - Filter and sort CRM data to build lists, reports, and workflows
+tools: []
+tools_note: >-
+  Empty by design. tools/list is OAuth-gated (401 invalid_token), so no real tool
+  names or inputSchemas could be observed. See mcp/salesflare-tool-crosswalk.yml
+  for the capability-to-REST-operation binding derived from the published
+  capability list.
+x-evidence:
+  - fetched: '2026-08-13'
+    url: https://mcp.salesflare.com/mcp
+    method: POST tools/list
+    http_status: 401
+    www_authenticate: >-
+      Bearer realm="MCP", error="invalid_token", error_description="See resource
+      metadata", resource_metadata="https://mcp.salesflare.com/.well-known/oauth-protected-resource"
+  - fetched: '2026-08-13'
+    url: https://mcp.salesflare.com/.well-known/oauth-protected-resource
+    http_status: 200
+    content_type: application/json
+  - fetched: '2026-08-13'
+    url: https://api.salesflare.com/.well-known/oauth-protected-resource
+    http_status: 200
+    content_type: application/json

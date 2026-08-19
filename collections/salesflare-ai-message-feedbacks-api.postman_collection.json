@@ -1,0 +1,232 @@
+{
+  "item": [
+    {
+      "id": "844dbd45-0dfd-4315-bc12-101008145ca2",
+      "name": "AI Message Feedbacks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c6d359cd-ac9a-48de-9946-25efc41f7bfd",
+          "name": "Create an internal note",
+          "request": {
+            "name": "Create an internal note",
+            "description": {},
+            "url": {
+              "path": [
+                "message",
+                ":message_id",
+                "feedback"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "message_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"feedback\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a5f68d4d-3d5b-43b2-8d23-88f293aaa37b",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "message",
+                    ":message_id",
+                    "feedback"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "message_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "32de0878-02e8-4c51-81cf-92456f799744",
+          "name": "Create an internal note",
+          "request": {
+            "name": "Create an internal note",
+            "description": {},
+            "url": {
+              "path": [
+                "messages",
+                ":message_id",
+                "feedback"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "message_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"feedback\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "509bb574-844d-4958-9260-c8ea5ca7f09b",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "messages",
+                    ":message_id",
+                    "feedback"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "message_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.salesflare.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3fe15547-fcff-4a1c-bb8a-7e4905617e7d",
+    "name": "Salesflare Accounts AI Message Feedbacks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Introduction\n\n## Getting Started\n\nThe Salesflare API allows you to access and build your own applications or integrations that interact with Salesflare.\n\nThe Salesflare API provides a RESTful interface with JSON-formatted responses to access most Salesflare resources.\n\n## Authentication\n\nThe Salesflare API uses bearer token based authentication, which means you need to use the key-value pair \"Authorization : Bearer APIKEY\" in the header to authenticate.\n\nYou can make an API key in [\"Settings\" > \"API keys\"](https://app.salesflare.com/#/settings/apikeys).\n\nClick on the large orange \"+\" button on the bottom right of the screen to create an API key.\n\n![Screenshot API Key Settings](https://lib.salesflare.com/api_docs/screenshot_settings_apikeys.png?v=2)\n\n## Requests\n\nAll requests must be sent using HTTPS with TLS 1.2 or higher. Please make sure your developer tools support this version of TLS as older versions or SSL are not supported for security reasons.\n\nFor PUT or POST requests (e.g. create, update), the payload must be provided as JSON in the request body.\n\n## Responses\n\nResponses use HTTP status codes, with the most typical ones being:\n\n| Code                   | Meaning               |\n|------------------------|-----------------------|\n| Successful Responses                           |\n| 200                    | OK                    |\n| Error Responses                                |\n| 400                    | Bad Request           |\n| 401                    | Unauthorized          |\n| 404                    | Not Found             |\n| 429                    | Too Many Requests     |\n| 500                    | Internal Server Error |\n\n## Testing\n\nWe recommend testing our API with Postman.\n\n### Download specification\n\nOur API is documented following the OpenAPI specification. You can download it [here](https://api.salesflare.com/openapi.json)\n\n### Import in Postman\n\nTo import the collection, open Postman and click Import, then select \"Import From Link\"\n\nCopy & Paste the following link and press the \"Import\" button:\n\n> https://api.salesflare.com/openapi.json\n\n![Screenshot Postman Import](https://lib.salesflare.com/api_docs/screenshot_postman_import.png)\n\n## Support\n\nFor API questions and support, please email support@salesflare.com or click the chat bubble below.\n\nContact Support:\n Email: support@salesflare.com",
+      "type": "text/plain"
+    }
+  }
+}

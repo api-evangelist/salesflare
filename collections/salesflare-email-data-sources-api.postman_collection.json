@@ -1,0 +1,221 @@
+{
+  "item": [
+    {
+      "id": "9b2ae5cc-a4a7-4597-9a30-230b1908adab",
+      "name": "Email Data Sources",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a47cc109-1339-4817-b5ab-042bc05efe0c",
+          "name": "List email data sources",
+          "request": {
+            "name": "List email data sources",
+            "description": {},
+            "url": {
+              "path": [
+                "datasources",
+                "email"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "includeTeamDataSources",
+                  "value": "false",
+                  "description": "Team data sources will only be included when the session user is an admin."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3d1f57d3-73cb-4c11-9409-6457f5a0d8c9",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datasources",
+                    "email"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeTeamDataSources",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 1134.3887817778664,\n    \"aliases\": [\n      {\n        \"email\": \"string\",\n        \"display_name\": \"string\"\n      },\n      {\n        \"email\": \"string\",\n        \"display_name\": \"string\"\n      }\n    ],\n    \"email\": \"string\",\n    \"type\": \"google\",\n    \"name\": \"string\",\n    \"team\": 9922.896224431612,\n    \"user\": 1875.7578875520142,\n    \"add_signature_to_campaign\": true,\n    \"add_signature_to_replies\": false,\n    \"max_emails_day\": 920.1563167934723,\n    \"max_emails_hour\": 938.5122741366824,\n    \"primary\": true,\n    \"status\": \"RECONNECT\",\n    \"sync_status\": \"enrich\",\n    \"email_signature\": \"string\",\n    \"host\": \"string\",\n    \"port\": 9370.245126966796,\n    \"smtp_host\": \"string\",\n    \"smtp_port\": 9830.364512675473,\n    \"store_sent_emails\": true\n  },\n  {\n    \"id\": 2549.204823895345,\n    \"aliases\": [\n      {\n        \"email\": \"string\",\n        \"display_name\": \"string\"\n      },\n      {\n        \"email\": \"string\",\n        \"display_name\": \"string\"\n      }\n    ],\n    \"email\": \"string\",\n    \"type\": \"nylas\",\n    \"name\": \"string\",\n    \"team\": 487.6649757178897,\n    \"user\": 6454.401786788969,\n    \"add_signature_to_campaign\": false,\n    \"add_signature_to_replies\": true,\n    \"max_emails_day\": 4195.487605373868,\n    \"max_emails_hour\": 6864.848633423876,\n    \"primary\": true,\n    \"status\": \"OK\",\n    \"sync_status\": \"enrich\",\n    \"email_signature\": \"string\",\n    \"host\": \"string\",\n    \"port\": 7810.471895124875,\n    \"smtp_host\": \"string\",\n    \"smtp_port\": 9087.025000125472,\n    \"store_sent_emails\": true\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a60d67f5-9dac-47bc-ae6e-969aebcd8a97",
+          "name": "Update an email data source",
+          "request": {
+            "name": "Update an email data source",
+            "description": {},
+            "url": {
+              "path": [
+                "datasources",
+                "email",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email_signature\": \"<string>\",\n  \"add_signature_to_campaign\": \"<boolean>\",\n  \"add_signature_to_replies\": \"<boolean>\",\n  \"max_emails_day\": \"<number>\",\n  \"max_emails_hour\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ffc7b62e-52d3-4017-a8aa-ee399658aa25",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "datasources",
+                    "email",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email_signature\": \"<string>\",\n  \"add_signature_to_campaign\": \"<boolean>\",\n  \"add_signature_to_replies\": \"<boolean>\",\n  \"max_emails_day\": \"<number>\",\n  \"max_emails_hour\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.salesflare.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1a853cac-c113-46b2-8f8a-4b394b90454e",
+    "name": "Salesflare Accounts Email Data Sources API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Introduction\n\n## Getting Started\n\nThe Salesflare API allows you to access and build your own applications or integrations that interact with Salesflare.\n\nThe Salesflare API provides a RESTful interface with JSON-formatted responses to access most Salesflare resources.\n\n## Authentication\n\nThe Salesflare API uses bearer token based authentication, which means you need to use the key-value pair \"Authorization : Bearer APIKEY\" in the header to authenticate.\n\nYou can make an API key in [\"Settings\" > \"API keys\"](https://app.salesflare.com/#/settings/apikeys).\n\nClick on the large orange \"+\" button on the bottom right of the screen to create an API key.\n\n![Screenshot API Key Settings](https://lib.salesflare.com/api_docs/screenshot_settings_apikeys.png?v=2)\n\n## Requests\n\nAll requests must be sent using HTTPS with TLS 1.2 or higher. Please make sure your developer tools support this version of TLS as older versions or SSL are not supported for security reasons.\n\nFor PUT or POST requests (e.g. create, update), the payload must be provided as JSON in the request body.\n\n## Responses\n\nResponses use HTTP status codes, with the most typical ones being:\n\n| Code                   | Meaning               |\n|------------------------|-----------------------|\n| Successful Responses                           |\n| 200                    | OK                    |\n| Error Responses                                |\n| 400                    | Bad Request           |\n| 401                    | Unauthorized          |\n| 404                    | Not Found             |\n| 429                    | Too Many Requests     |\n| 500                    | Internal Server Error |\n\n## Testing\n\nWe recommend testing our API with Postman.\n\n### Download specification\n\nOur API is documented following the OpenAPI specification. You can download it [here](https://api.salesflare.com/openapi.json)\n\n### Import in Postman\n\nTo import the collection, open Postman and click Import, then select \"Import From Link\"\n\nCopy & Paste the following link and press the \"Import\" button:\n\n> https://api.salesflare.com/openapi.json\n\n![Screenshot Postman Import](https://lib.salesflare.com/api_docs/screenshot_postman_import.png)\n\n## Support\n\nFor API questions and support, please email support@salesflare.com or click the chat bubble below.\n\nContact Support:\n Email: support@salesflare.com",
+      "type": "text/plain"
+    }
+  }
+}

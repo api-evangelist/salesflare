@@ -1,0 +1,109 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Salesflare Accounts Meetings API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Meetings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get meeting details by conference id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.salesflare.com/conferences/:conference_id",
+            "params": [
+              {
+                "name": "conference_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get meeting details by conference id"
+        },
+        {
+          "info": {
+            "name": "Get meeting details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.salesflare.com/meetings/:meeting_id",
+            "params": [
+              {
+                "name": "meeting_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get meeting details"
+        },
+        {
+          "info": {
+            "name": "Update a meeting",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.salesflare.com/meetings/:meeting_id",
+            "params": [
+              {
+                "name": "meeting_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a meeting"
+        },
+        {
+          "info": {
+            "name": "Delete a meeting",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.salesflare.com/meetings/:meeting_id",
+            "params": [
+              {
+                "name": "meeting_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a meeting"
+        },
+        {
+          "info": {
+            "name": "Create a meeting",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.salesflare.com/meetings",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a meeting"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

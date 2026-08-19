@@ -1,0 +1,473 @@
+{
+  "item": [
+    {
+      "id": "bb6e0ff0-7534-4896-b578-e309d0b418de",
+      "name": "Meetings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "824716eb-172c-4b6e-8678-3d4bdb573fa0",
+          "name": "Get meeting details by conference id",
+          "request": {
+            "name": "Get meeting details by conference id",
+            "description": {},
+            "url": {
+              "path": [
+                "conferences",
+                ":conference_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "conference_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "49b06444-e75d-47b6-9fec-6b3fc022166d",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "conferences",
+                    ":conference_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "conference_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c0f489bc-3f96-4ffd-bd0b-8b2e0df8eac6",
+          "name": "Get meeting details",
+          "request": {
+            "name": "Get meeting details",
+            "description": {},
+            "url": {
+              "path": [
+                "meetings",
+                ":meeting_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "meeting_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bdf65325-c3c6-4e09-92d8-6eb1c60b8d99",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "meetings",
+                    ":meeting_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "meeting_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8fa9f681-61d6-4dd1-b1ff-f20be2c52581",
+          "name": "Update a meeting",
+          "request": {
+            "name": "Update a meeting",
+            "description": {},
+            "url": {
+              "path": [
+                "meetings",
+                ":meeting_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "meeting_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"calendar_id\": \"<string>\",\n  \"external_id\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"minutes\": \"<string>\",\n  \"edited_by\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bd853b62-5f38-463e-b17b-89108ca4a1ec",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "meetings",
+                    ":meeting_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "meeting_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bba4134c-0561-456d-bf29-84bef02f87c1",
+          "name": "Delete a meeting",
+          "request": {
+            "name": "Delete a meeting",
+            "description": {},
+            "url": {
+              "path": [
+                "meetings",
+                ":meeting_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "meeting_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "037c9f37-01bb-4528-9321-3591e8aca4a5",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "meetings",
+                    ":meeting_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "meeting_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d80b181c-883d-4867-b590-0b5e4c158a85",
+          "name": "Create a meeting",
+          "request": {
+            "name": "Create a meeting",
+            "description": {},
+            "url": {
+              "path": [
+                "meetings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"date\": \"<dateTime>\",\n    \"participants\": [\n      \"<number>\",\n      \"<number>\"\n    ],\n    \"end_date\": \"<dateTime>\",\n    \"subject\": \"<string>\",\n    \"description\": \"<string>\",\n    \"minutes\": \"<string>\",\n    \"notes\": \"<string>\",\n    \"phone_type\": \"<string>\",\n    \"phone_number_hash\": \"<string>\",\n    \"type\": \"meeting-live\"\n  },\n  {\n    \"date\": \"<dateTime>\",\n    \"participants\": [\n      \"<number>\",\n      \"<number>\"\n    ],\n    \"end_date\": \"<dateTime>\",\n    \"subject\": \"<string>\",\n    \"description\": \"<string>\",\n    \"minutes\": \"<string>\",\n    \"notes\": \"<string>\",\n    \"phone_type\": \"<string>\",\n    \"phone_number_hash\": \"<string>\",\n    \"type\": \"meeting-live\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7ac82e96-fb28-4caa-8243-11f1e20b8e54",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "meetings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"date\": \"<dateTime>\",\n    \"participants\": [\n      \"<number>\",\n      \"<number>\"\n    ],\n    \"end_date\": \"<dateTime>\",\n    \"subject\": \"<string>\",\n    \"description\": \"<string>\",\n    \"minutes\": \"<string>\",\n    \"notes\": \"<string>\",\n    \"phone_type\": \"<string>\",\n    \"phone_number_hash\": \"<string>\",\n    \"type\": \"meeting-live\"\n  },\n  {\n    \"date\": \"<dateTime>\",\n    \"participants\": [\n      \"<number>\",\n      \"<number>\"\n    ],\n    \"end_date\": \"<dateTime>\",\n    \"subject\": \"<string>\",\n    \"description\": \"<string>\",\n    \"minutes\": \"<string>\",\n    \"notes\": \"<string>\",\n    \"phone_type\": \"<string>\",\n    \"phone_number_hash\": \"<string>\",\n    \"type\": \"meeting-live\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.salesflare.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d39acf87-4eb9-458b-9af7-026454bfe491",
+    "name": "Salesflare Accounts Meetings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Introduction\n\n## Getting Started\n\nThe Salesflare API allows you to access and build your own applications or integrations that interact with Salesflare.\n\nThe Salesflare API provides a RESTful interface with JSON-formatted responses to access most Salesflare resources.\n\n## Authentication\n\nThe Salesflare API uses bearer token based authentication, which means you need to use the key-value pair \"Authorization : Bearer APIKEY\" in the header to authenticate.\n\nYou can make an API key in [\"Settings\" > \"API keys\"](https://app.salesflare.com/#/settings/apikeys).\n\nClick on the large orange \"+\" button on the bottom right of the screen to create an API key.\n\n![Screenshot API Key Settings](https://lib.salesflare.com/api_docs/screenshot_settings_apikeys.png?v=2)\n\n## Requests\n\nAll requests must be sent using HTTPS with TLS 1.2 or higher. Please make sure your developer tools support this version of TLS as older versions or SSL are not supported for security reasons.\n\nFor PUT or POST requests (e.g. create, update), the payload must be provided as JSON in the request body.\n\n## Responses\n\nResponses use HTTP status codes, with the most typical ones being:\n\n| Code                   | Meaning               |\n|------------------------|-----------------------|\n| Successful Responses                           |\n| 200                    | OK                    |\n| Error Responses                                |\n| 400                    | Bad Request           |\n| 401                    | Unauthorized          |\n| 404                    | Not Found             |\n| 429                    | Too Many Requests     |\n| 500                    | Internal Server Error |\n\n## Testing\n\nWe recommend testing our API with Postman.\n\n### Download specification\n\nOur API is documented following the OpenAPI specification. You can download it [here](https://api.salesflare.com/openapi.json)\n\n### Import in Postman\n\nTo import the collection, open Postman and click Import, then select \"Import From Link\"\n\nCopy & Paste the following link and press the \"Import\" button:\n\n> https://api.salesflare.com/openapi.json\n\n![Screenshot Postman Import](https://lib.salesflare.com/api_docs/screenshot_postman_import.png)\n\n## Support\n\nFor API questions and support, please email support@salesflare.com or click the chat bubble below.\n\nContact Support:\n Email: support@salesflare.com",
+      "type": "text/plain"
+    }
+  }
+}

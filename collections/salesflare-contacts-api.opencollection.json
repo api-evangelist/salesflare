@@ -1,0 +1,244 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Salesflare Accounts Contacts API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Contacts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List contacts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.salesflare.com/contacts",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "phone_number",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "domain",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "modification_after",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "modification_before",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "creation_after",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "creation_before",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "account",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tag",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tag.name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "position.role",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "address.country",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "address.state_region",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "address.city",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeArchived",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "custom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_by",
+                "value": "",
+                "type": "query",
+                "description": "Sort instructions. Provide either 'key' (ascending) or 'key desc' (descending). Default sort order is ascending."
+              },
+              {
+                "name": "export",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Request a list of contacts with optional filters and pagination"
+        },
+        {
+          "info": {
+            "name": "Create a contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.salesflare.com/contacts",
+            "params": [
+              {
+                "name": "force",
+                "value": "",
+                "type": "query",
+                "description": "When `force` is `false`, the contact is not created if a contact with the same email address previously existed."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a contact. When payload is an array you will get an array back, if just an object or an array with 1 item you get an object back."
+        },
+        {
+          "info": {
+            "name": "Get contact details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.salesflare.com/contacts/:contact_id",
+            "params": [
+              {
+                "name": "contact_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get contact details"
+        },
+        {
+          "info": {
+            "name": "Update a contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.salesflare.com/contacts/:contact_id",
+            "params": [
+              {
+                "name": "contact_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "force",
+                "value": "",
+                "type": "query",
+                "description": "When `force` is `false`, the contact name is not updated if the provided name only matches the first part of the email address."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a contact"
+        },
+        {
+          "info": {
+            "name": "Delete a contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.salesflare.com/contacts/:contact_id",
+            "params": [
+              {
+                "name": "contact_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a contact"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

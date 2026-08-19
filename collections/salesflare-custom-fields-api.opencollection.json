@@ -1,0 +1,185 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Salesflare Accounts Custom Fields API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Custom Fields",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List custom field types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.salesflare.com/customfields/types"
+          },
+          "docs": "List custom field types"
+        },
+        {
+          "info": {
+            "name": "List custom fields of a type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.salesflare.com/customfields/:itemClass",
+            "params": [
+              {
+                "name": "itemClass",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeDisabled",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pipeline",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List custom fields of a type"
+        },
+        {
+          "info": {
+            "name": "Create a custom field of a type",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.salesflare.com/customfields/:itemClass",
+            "params": [
+              {
+                "name": "itemClass",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a custom field of a type"
+        },
+        {
+          "info": {
+            "name": "Get custom field details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.salesflare.com/customfields/:itemClass/:id",
+            "params": [
+              {
+                "name": "itemClass",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get custom field details"
+        },
+        {
+          "info": {
+            "name": "Update a custom field",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.salesflare.com/customfields/:itemClass/:id",
+            "params": [
+              {
+                "name": "itemClass",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a custom field"
+        },
+        {
+          "info": {
+            "name": "Delete a custom field",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.salesflare.com/customfields/:itemClass/:id",
+            "params": [
+              {
+                "name": "itemClass",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a custom field"
+        },
+        {
+          "info": {
+            "name": "List a custom field's options",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.salesflare.com/customfields/:itemClass/:customFieldApiField/options",
+            "params": [
+              {
+                "name": "itemClass",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "customFieldApiField",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "searchString",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List a custom field's options"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

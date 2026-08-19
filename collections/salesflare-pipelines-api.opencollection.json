@@ -1,0 +1,103 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Salesflare Accounts Pipelines API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Pipelines",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List pipelines",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.salesflare.com/pipelines",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_by",
+                "value": "",
+                "type": "query",
+                "description": "Sort instructions. Provide either 'key' (ascending) or 'key desc' (descending). Default sort order is ascending."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Request a list of pipelines with optional filters and pagination"
+        },
+        {
+          "info": {
+            "name": "List stages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.salesflare.com/stages",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pipeline.id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pipeline.name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_by",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List stages"
+        },
+        {
+          "info": {
+            "name": "Get stage details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.salesflare.com/stages/:stage_id",
+            "params": [
+              {
+                "name": "stage_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get stage details"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

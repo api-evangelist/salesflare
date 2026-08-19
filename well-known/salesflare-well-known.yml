@@ -1,0 +1,92 @@
+generated: '2026-08-13'
+method: probed
+source: live GET of /.well-known/* on every Salesflare host in apis.yml and openapi servers[]
+note: >-
+  Two real documents are served. api.salesflare.com publishes RFC 8414 OAuth 2.0
+  Authorization Server Metadata for its OIDC provider (issuer
+  https://api.salesflare.com/oidc) and RFC 9728 OAuth 2.0 Protected Resource
+  Metadata pointing at the hosted MCP server. mcp.salesflare.com serves the same
+  pair. salesflare.com answers every /.well-known/* path with an HTML page
+  reading "Invalid .well-known request" under a 404 — recorded as a miss, not a
+  document. No security.txt, no api-catalog, no ai-plugin.json, no agent card on
+  any host.
+hosts:
+  - host: https://api.salesflare.com
+    documents:
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        content_type: application/json
+        file: salesflare-oauth-authorization-server.json
+        spec: RFC 8414
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        content_type: application/json
+        spec: RFC 9728
+        note: >-
+          Returns resource https://mcp.salesflare.com/mcp/ with
+          authorization_servers [https://api.salesflare.com/oidc]. The
+          mcp.salesflare.com copy is the one saved to file.
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://mcp.salesflare.com
+    documents:
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        content_type: application/json
+        file: salesflare-oauth-protected-resource.json
+        spec: RFC 9728
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        content_type: application/json
+        spec: RFC 8414
+        note: Identical body to the api.salesflare.com document already saved.
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://salesflare.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        note: HTML body "Invalid .well-known request" — not a document.
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://app.salesflare.com
+    documents:
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+security_txt: false
+api_catalog: false
+agent_card: false

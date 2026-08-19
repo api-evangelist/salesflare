@@ -1,0 +1,87 @@
+generated: '2026-08-13'
+method: searched
+source: https://api.salesflare.com/docs
+docs: https://api.salesflare.com/docs#section/Introduction/Authentication
+note: >-
+  Salesflare runs TWO distinct authentication surfaces and the OpenAPI describes
+  neither of them formally. The published Swagger 2.0 at
+  https://api.salesflare.com/openapi.json declares NO securityDefinitions and NO
+  security block at all — the bearer-token model is documented only in prose in
+  info.description, which is why the mechanical derive pass
+  (0-working/derive-authentication.py) found zero schemes. This file is searched
+  from the provider's own docs and from its live RFC 8414 / RFC 9728 discovery
+  documents, not derived from the spec.
+summary:
+  types: [http, oauth2, openIdConnect]
+  api_key_in: [header]
+  oauth2_flows: [authorizationCode, implicit, clientCredentials, refreshToken]
+  spec_declares_security: false
+schemes:
+  - name: bearerApiKey
+    type: http
+    scheme: bearer
+    in: header
+    parameter: Authorization
+    format: 'Bearer {APIKEY}'
+    surface: REST API (https://api.salesflare.com)
+    method: searched
+    source: https://api.salesflare.com/docs
+    key_management: >-
+      Keys are created by the account holder in the Salesflare web app under
+      "Settings" > "API keys" (https://app.salesflare.com/#/settings/apikeys).
+    rotation_policy: not published
+    scoped: false
+    note: >-
+      A Salesflare API key is a long-lived account-level bearer credential. It
+      carries no scopes and no expiry that the provider documents; it inherits
+      the permissions of the user who created it.
+  - name: salesflareOIDC
+    type: openIdConnect
+    surface: MCP server (https://mcp.salesflare.com/mcp)
+    method: probed
+    source: https://api.salesflare.com/.well-known/oauth-authorization-server
+    issuer: https://api.salesflare.com/oidc
+    authorization_endpoint: https://api.salesflare.com/oidc/auth
+    token_endpoint: https://api.salesflare.com/oidc/token
+    userinfo_endpoint: https://api.salesflare.com/oidc/userinfo
+    jwks_uri: https://api.salesflare.com/oidc/jwks
+    registration_endpoint: https://api.salesflare.com/oidc/register
+    end_session_endpoint: https://api.salesflare.com/oidc/session/end
+    pushed_authorization_request_endpoint: https://api.salesflare.com/oidc/request
+    grant_types: [authorization_code, implicit, refresh_token, client_credentials]
+    response_types: [code, 'code id_token', id_token, none]
+    code_challenge_methods: [S256]
+    token_endpoint_auth_methods:
+      - client_secret_basic
+      - client_secret_jwt
+      - client_secret_post
+      - private_key_jwt
+      - none
+    id_token_signing_alg: [RS256]
+    dpop_signing_alg: [ES256, EdDSA]
+    scopes: [openid, offline_access]
+    dynamic_client_registration: true
+    note: >-
+      Standards-complete OIDC provider. PKCE S256, DPoP, PAR and RFC 7591 dynamic
+      client registration are all advertised, which is what lets an arbitrary MCP
+      client connect to https://mcp.salesflare.com/mcp without a pre-registered
+      client_id. No openid-configuration document is served at
+      /.well-known/openid-configuration — only the RFC 8414 oauth-authorization-server
+      path answers.
+transport:
+  https_required: true
+  minimum_tls: '1.2'
+  source: https://api.salesflare.com/docs
+  note: >-
+    "All requests must be sent using HTTPS with TLS 1.2 or higher... older
+    versions or SSL are not supported for security reasons." Observed TLS on
+    api.salesflare.com is TLSv1.3 (see security/salesflare-domain-security.yml).
+unauthenticated_response:
+  status: 401
+  source: https://api.salesflare.com/docs
+gaps:
+  - The OpenAPI declares no securitySchemes, so generated clients get no auth wiring.
+  - REST API keys are unscoped and account-wide; no least-privilege model is published.
+  - No documented key rotation or expiry policy.
+  - The OIDC surface authorizes the MCP server only; it is not offered as an auth
+    option for the REST API.

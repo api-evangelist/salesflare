@@ -1,3 +1,19 @@
+generated: '2026-08-13'
+method: searched
+source: https://api.salesflare.com/docs
+limit_count: 0
+headers_documented: []
+retry_after_documented: false
+exhaustion_status: 429
+note: >-
+  An honest zero. Salesflare documents that HTTP 429 Too Many Requests is a
+  possible response — it appears in the status-code table in the OpenAPI
+  info.description at https://api.salesflare.com/docs — but publishes no numeric
+  threshold, no window, no scope, and critically NO response headers. There is no
+  Retry-After, no RateLimit-* and no X-RateLimit-* in the docs or in the 71
+  published operations. A client therefore has no runtime signal at all: it
+  cannot see how much budget is left, and on exhaustion it is not told how long
+  to wait. Exponential backoff on the 429 is the only available strategy.
 name: Salesflare API Rate Limits
 description: >-
   Salesflare's API rate limit details are not publicly documented on their

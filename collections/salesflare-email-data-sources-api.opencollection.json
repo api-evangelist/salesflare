@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Salesflare Accounts Email Data Sources API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Email Data Sources",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List email data sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.salesflare.com/datasources/email",
+            "params": [
+              {
+                "name": "includeTeamDataSources",
+                "value": "",
+                "type": "query",
+                "description": "Team data sources will only be included when the session user is an admin."
+              }
+            ]
+          },
+          "docs": "List email data sources"
+        },
+        {
+          "info": {
+            "name": "Update an email data source",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.salesflare.com/datasources/email/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an email data source"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,784 @@
+{
+  "item": [
+    {
+      "id": "99bd89b4-2a32-4429-a657-77ffea06ead9",
+      "name": "Opportunities",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2fc3e52e-ab8b-4f66-a50d-06893bd2965f",
+          "name": "List opportunities",
+          "request": {
+            "name": "List opportunities",
+            "description": {
+              "content": "Request a list of opportunities with optional filters and pagination<br/><br/>default date filter (from/to) is on close_date<br/><br/>setting scope to user gives back all opportunities from the user",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "opportunities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Deprecated. Do not use this field."
+                },
+                {
+                  "disabled": false,
+                  "key": "stage",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "stage.name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "owner",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "team_member",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "owner_group",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "assignee_group",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "team_member_group",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "account",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "assignee",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "min_value",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "max_value",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "close_after",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "close_before",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "creation_after",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "creation_before",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "closed",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "done",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tag",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tag",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tag.name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hotness",
+                  "value": "<number>",
+                  "description": "Hotness level. Allowed values: 1 (Room temp), 2 (Hot), 3 (On fire)."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_by",
+                  "value": "<string>",
+                  "description": "Sort instructions. Provide either 'key' (ascending) or 'key desc' (descending). Default sort order is ascending."
+                },
+                {
+                  "disabled": false,
+                  "key": "order_by",
+                  "value": "<string>",
+                  "description": "Sort instructions. Provide either 'key' (ascending) or 'key desc' (descending). Default sort order is ascending."
+                },
+                {
+                  "disabled": false,
+                  "key": "pipeline",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "custom",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "details",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "export",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b069c6f8-267d-4cfb-9260-3fc54d32becc",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "stage",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "stage.name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "owner",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "team_member",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "owner_group",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "assignee_group",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "team_member_group",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "account",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "assignee",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "min_value",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "max_value",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "close_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "close_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "creation_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "creation_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "closed",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "done",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "tag",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "tag",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "tag.name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "hotness",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pipeline",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "custom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "details",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "export",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3692684f-eae1-4494-b6dd-e56c9afad551",
+          "name": "Create an opportunity",
+          "request": {
+            "name": "Create an opportunity",
+            "description": {
+              "content": "Create an opportunity",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "opportunities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"account\": \"<number>\",\n  \"owner\": \"<number>\",\n  \"stage\": \"<number>\",\n  \"lost_reason\": \"<number>\",\n  \"files\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"lead_source\": \"<number>\",\n  \"start_date\": \"<dateTime>\",\n  \"probability\": \"<number>\",\n  \"assignee\": \"<number>\",\n  \"creator\": \"<number>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"value\": \"<number>\",\n  \"currency\": \"<number>\",\n  \"status_date\": \"<string>\",\n  \"close_date\": \"<dateTime>\",\n  \"closed\": \"<boolean>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"recurring_price_per_unit\": \"<number>\",\n  \"frequency\": \"<string>\",\n  \"units\": \"<number>\",\n  \"contract_start_date\": \"<dateTime>\",\n  \"contract_end_date\": \"<dateTime>\",\n  \"main_contact\": \"<number>\",\n  \"custom\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "65f6f277-e44f-4441-98b4-e1c99657325f",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"account\": \"<number>\",\n  \"owner\": \"<number>\",\n  \"stage\": \"<number>\",\n  \"lost_reason\": \"<number>\",\n  \"files\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"lead_source\": \"<number>\",\n  \"start_date\": \"<dateTime>\",\n  \"probability\": \"<number>\",\n  \"assignee\": \"<number>\",\n  \"creator\": \"<number>\",\n  \"status\": \"<string>\",\n  \"name\": \"<string>\",\n  \"value\": \"<number>\",\n  \"currency\": \"<number>\",\n  \"status_date\": \"<string>\",\n  \"close_date\": \"<dateTime>\",\n  \"closed\": \"<boolean>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"recurring_price_per_unit\": \"<number>\",\n  \"frequency\": \"<string>\",\n  \"units\": \"<number>\",\n  \"contract_start_date\": \"<dateTime>\",\n  \"contract_end_date\": \"<dateTime>\",\n  \"main_contact\": \"<number>\",\n  \"custom\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"id\": 5186.944118560516\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9fc3ea5b-0e33-4045-bc82-a07787e7432c",
+          "name": "Get opportunity details",
+          "request": {
+            "name": "Get opportunity details",
+            "description": {},
+            "url": {
+              "path": [
+                "opportunities",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4b8e6c7c-31b7-482e-b10d-9d107d0d6c60",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"id\": 5042.30182969625,\n  \"owner\": {\n    \"id\": 6175.362378497686,\n    \"name\": \"string\",\n    \"email\": \"string\",\n    \"picture\": \"string\",\n    \"disabled\": true\n  },\n  \"account\": {\n    \"id\": 6372.255621179825,\n    \"picture\": \"string\",\n    \"name\": \"string\",\n    \"hotness\": 2547.640998606212,\n    \"owner\": 2388.962920070553\n  },\n  \"name\": \"string\",\n  \"stage\": {\n    \"id\": 7721.72691682627,\n    \"name\": \"string\",\n    \"color\": \"string\",\n    \"fixed_stage\": 7258.688413626498,\n    \"order\": 6093.792947452509,\n    \"probability\": 8003.017494893614,\n    \"pipeline\": 4196.877721647644\n  },\n  \"assignee\": {\n    \"id\": 4609.982279859686,\n    \"name\": \"string\",\n    \"email\": \"string\",\n    \"picture\": \"string\"\n  },\n  \"value\": 3188.963278611159,\n  \"calculated_value\": 727.3510050465959,\n  \"frequency\": \"string\",\n  \"units\": 4120.328159615785,\n  \"contract_start_date\": \"string\",\n  \"contract_end_date\": \"string\",\n  \"recurring_price_per_unit\": 3081.0396534410343,\n  \"currency\": {\n    \"id\": 7664.989277040449,\n    \"iso\": \"string\",\n    \"html\": \"string\"\n  },\n  \"close_date\": \"string\",\n  \"done\": false,\n  \"creator\": 9085.415193573424,\n  \"last_modified_by\": 7723.611934755213,\n  \"can_edit\": false,\n  \"modification_date\": \"2014-05-20T20:58:23.682Z\",\n  \"creation_date\": \"2022-03-17T21:44:58.562Z\",\n  \"pipeline\": {\n    \"id\": 7713.892459338048,\n    \"name\": \"string\"\n  },\n  \"last_interaction\": {\n    \"type\": \"string\",\n    \"description\": \"string\",\n    \"date\": \"1971-10-24T19:25:44.120Z\",\n    \"person\": {\n      \"id\": 4954.98719988594,\n      \"picture\": \"string\",\n      \"name\": \"string\"\n    }\n  },\n  \"stage_updates\": [\n    {\n      \"duration_in_seconds\": 1016.1587308510944,\n      \"stage\": {\n        \"id\": 9510.884366417413,\n        \"order\": 9205.970701623279,\n        \"name\": \"string\",\n        \"color\": \"string\"\n      }\n    },\n    {\n      \"duration_in_seconds\": 9487.163421019064,\n      \"stage\": {\n        \"id\": 7553.736827981707,\n        \"order\": 2975.7353078866136,\n        \"name\": \"string\",\n        \"color\": \"string\"\n      }\n    }\n  ],\n  \"tags\": [\n    {\n      \"id\": 9805.096669983319,\n      \"name\": \"string\"\n    },\n    {\n      \"id\": 3378.1938798253273,\n      \"name\": \"string\"\n    }\n  ],\n  \"probability\": 2537.742912293979,\n  \"lost_reason\": {\n    \"id\": 5228.720336191072,\n    \"name\": \"string\",\n    \"order\": 7116.510472911952\n  },\n  \"lead_source\": {\n    \"id\": 5963.247444169334,\n    \"name\": \"string\"\n  },\n  \"start_date\": \"string\",\n  \"custom\": {},\n  \"main_contact\": {\n    \"id\": 5119.991159132665,\n    \"name\": \"string\",\n    \"email\": \"string\",\n    \"picture\": \"string\",\n    \"entity\": \"contact\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a6dcfbc5-149c-4f75-b737-3ee4d10ea5c9",
+          "name": "Update an opportunity",
+          "request": {
+            "name": "Update an opportunity",
+            "description": {
+              "content": "Update an opportunity",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "opportunities",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"owner\": \"<number>\",\n  \"account\": \"<number>\",\n  \"stage\": \"<number>\",\n  \"lost_reason\": \"<number>\",\n  \"files\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"lead_source\": \"<number>\",\n  \"start_date\": \"<dateTime>\",\n  \"probability\": \"<number>\",\n  \"assignee\": \"<number>\",\n  \"creator\": \"<number>\",\n  \"name\": \"<string>\",\n  \"value\": \"<number>\",\n  \"close_date\": \"<dateTime>\",\n  \"closed\": \"<boolean>\",\n  \"done\": \"<boolean>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"recurring_price_per_unit\": \"<number>\",\n  \"frequency\": \"<string>\",\n  \"units\": \"<number>\",\n  \"contract_start_date\": \"<dateTime>\",\n  \"contract_end_date\": \"<dateTime>\",\n  \"main_contact\": \"<number>\",\n  \"custom\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d817a6e3-1f7b-4293-8b61-5fc54794e6f7",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"owner\": \"<number>\",\n  \"account\": \"<number>\",\n  \"stage\": \"<number>\",\n  \"lost_reason\": \"<number>\",\n  \"files\": [\n    \"<object>\",\n    \"<object>\"\n  ],\n  \"lead_source\": \"<number>\",\n  \"start_date\": \"<dateTime>\",\n  \"probability\": \"<number>\",\n  \"assignee\": \"<number>\",\n  \"creator\": \"<number>\",\n  \"name\": \"<string>\",\n  \"value\": \"<number>\",\n  \"close_date\": \"<dateTime>\",\n  \"closed\": \"<boolean>\",\n  \"done\": \"<boolean>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"recurring_price_per_unit\": \"<number>\",\n  \"frequency\": \"<string>\",\n  \"units\": \"<number>\",\n  \"contract_start_date\": \"<dateTime>\",\n  \"contract_end_date\": \"<dateTime>\",\n  \"main_contact\": \"<number>\",\n  \"custom\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "28dfaecc-124d-421a-bfa8-1b39cfc919a7",
+          "name": "Delete an opportunity",
+          "request": {
+            "name": "Delete an opportunity",
+            "description": {},
+            "url": {
+              "path": [
+                "opportunities",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "46eca3b7-1248-4a19-8ced-21fbbcedb77f",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "opportunities",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.salesflare.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4315495d-53ee-4e13-81a9-3d9f82a427f0",
+    "name": "Salesflare Accounts Opportunities API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Introduction\n\n## Getting Started\n\nThe Salesflare API allows you to access and build your own applications or integrations that interact with Salesflare.\n\nThe Salesflare API provides a RESTful interface with JSON-formatted responses to access most Salesflare resources.\n\n## Authentication\n\nThe Salesflare API uses bearer token based authentication, which means you need to use the key-value pair \"Authorization : Bearer APIKEY\" in the header to authenticate.\n\nYou can make an API key in [\"Settings\" > \"API keys\"](https://app.salesflare.com/#/settings/apikeys).\n\nClick on the large orange \"+\" button on the bottom right of the screen to create an API key.\n\n![Screenshot API Key Settings](https://lib.salesflare.com/api_docs/screenshot_settings_apikeys.png?v=2)\n\n## Requests\n\nAll requests must be sent using HTTPS with TLS 1.2 or higher. Please make sure your developer tools support this version of TLS as older versions or SSL are not supported for security reasons.\n\nFor PUT or POST requests (e.g. create, update), the payload must be provided as JSON in the request body.\n\n## Responses\n\nResponses use HTTP status codes, with the most typical ones being:\n\n| Code                   | Meaning               |\n|------------------------|-----------------------|\n| Successful Responses                           |\n| 200                    | OK                    |\n| Error Responses                                |\n| 400                    | Bad Request           |\n| 401                    | Unauthorized          |\n| 404                    | Not Found             |\n| 429                    | Too Many Requests     |\n| 500                    | Internal Server Error |\n\n## Testing\n\nWe recommend testing our API with Postman.\n\n### Download specification\n\nOur API is documented following the OpenAPI specification. You can download it [here](https://api.salesflare.com/openapi.json)\n\n### Import in Postman\n\nTo import the collection, open Postman and click Import, then select \"Import From Link\"\n\nCopy & Paste the following link and press the \"Import\" button:\n\n> https://api.salesflare.com/openapi.json\n\n![Screenshot Postman Import](https://lib.salesflare.com/api_docs/screenshot_postman_import.png)\n\n## Support\n\nFor API questions and support, please email support@salesflare.com or click the chat bubble below.\n\nContact Support:\n Email: support@salesflare.com",
+      "type": "text/plain"
+    }
+  }
+}

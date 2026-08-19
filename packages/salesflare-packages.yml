@@ -1,0 +1,121 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  registry.npmjs.org search + package metadata, pypi.org, rubygems.org,
+  crates.io, and the Salesflare GitHub organization (47 public repos)
+note: >-
+  THE HEADLINE FINDING IS AN ABSENCE. Salesflare ships NO first-party client SDK
+  for its public REST API in any language. npm, PyPI, RubyGems and crates.io were
+  all queried; PyPI, RubyGems and crates.io return nothing at all for
+  "salesflare", and the 31 npm hits under the Salesflare name are internal
+  platform libraries (a Joi fork, hapi plugins, an eslint config, Cordova plugin
+  forks) plus vendor SDK forks for FullContact and Nylas. None of them wrap
+  api.salesflare.com. The provider's own docs point developers at Postman and the
+  raw OpenAPI instead of an SDK, so no `SDKs` pointer is emitted for this
+  provider — emitting one would credit a client library that does not exist.
+  Listed below are the first-party packages that are genuinely API-adjacent, and
+  the one third-party MCP package, clearly marked.
+sdk_count: 0
+official_client_library: false
+packages:
+  - language: javascript
+    registry: npm
+    name: "@salesflare/optimus"
+    url: https://www.npmjs.com/package/@salesflare/optimus
+    repository: https://github.com/Salesflare/optimus
+    install: npm install @salesflare/optimus
+    official: true
+    client_library: false
+    version: 7.2.7
+    published: '2023-08-02'
+    license: MIT
+    description: Transformer for Salesflare filter rules
+    relevance: >-
+      The only first-party package that touches the public API contract: it
+      transforms the filter-rule object the REST API accepts on the `q` query
+      parameter (see conventions/salesflare-conventions.yml). Useful to an
+      integrator building filters, but it is not an API client.
+    note: >-
+      Last published 2023-08-02 — three years stale against an API whose spec is
+      regenerated live.
+  - language: javascript
+    registry: npm
+    name: "@salesflare/lead-search-client"
+    url: https://www.npmjs.com/package/@salesflare/lead-search-client
+    repository: https://github.com/Salesflare/lead-search-client
+    install: npm install @salesflare/lead-search-client
+    official: true
+    client_library: true
+    public_api: false
+    version: 1.0.0
+    published: '2025-02-26'
+    license: ISC
+    description: Lightweight client library for lead-search-api
+    note: >-
+      Client for Salesflare's internal lead-search-api, which is NOT part of the
+      public REST surface documented at api.salesflare.com/docs. Recorded for
+      completeness; it does not count as a public-API SDK.
+  - language: javascript
+    registry: npm
+    name: "@salesflare/unimail"
+    url: https://www.npmjs.com/package/@salesflare/unimail
+    repository: https://github.com/Salesflare/unimail
+    install: npm install @salesflare/unimail
+    official: true
+    client_library: false
+    public_api: false
+    version: 3.1.2
+    published: '2026-06-22'
+    license: MIT
+    description: A unified API for mail access
+    note: >-
+      Salesflare's open-sourced internal abstraction over Gmail/Outlook mail
+      access. Actively maintained (2026-06-22) but unrelated to the Salesflare
+      public API.
+  - language: javascript
+    registry: npm
+    name: "@salesflare/unical"
+    url: https://www.npmjs.com/package/@salesflare/unical
+    repository: https://github.com/Salesflare/unical
+    install: npm install @salesflare/unical
+    official: true
+    client_library: false
+    public_api: false
+    version: 2.0.0
+    published: '2024-04-23'
+    license: MIT
+    description: A unified API for calendar access
+    note: Internal calendar abstraction, open-sourced. Not a Salesflare API client.
+  - language: javascript
+    registry: npm
+    name: salesflare-mcp-server
+    url: https://www.npmjs.com/package/salesflare-mcp-server
+    install: npx -y salesflare-mcp-server
+    official: false
+    client_library: false
+    version: 1.0.0
+    published: '2026-06-02'
+    license: MIT
+    description: MCP Server for Salesflare CRM - enables LLMs to interact with Salesflare API
+    note: >-
+      THIRD PARTY. Published by npm user "apazz", no repository field, no link
+      from any Salesflare property. Salesflare's own MCP offering is a hosted
+      remote server at https://mcp.salesflare.com/mcp
+      (see mcp/salesflare-mcp.yml). Listed here so the distinction is on the
+      record, explicitly NOT marked official.
+registries_checked:
+  - registry: npm
+    query: salesflare
+    result: 31 packages; no first-party public-API client
+  - registry: pypi
+    query: salesflare
+    result: 404 Not Found
+  - registry: rubygems
+    query: salesflare
+    result: not found
+  - registry: crates.io
+    query: salesflare
+    result: 0 crates
+  - registry: github
+    query: github.com/Salesflare
+    result: 47 public repos; no API client SDK, no .proto, no OpenAPI repo

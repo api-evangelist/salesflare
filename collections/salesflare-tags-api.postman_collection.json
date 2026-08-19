@@ -1,0 +1,614 @@
+{
+  "item": [
+    {
+      "id": "7e4bd587-6a2a-4112-82f5-ef5378d0abbd",
+      "name": "Tags",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8b5f2ad7-49b1-4d69-a449-daea68e1f5f1",
+          "name": "List tags",
+          "request": {
+            "name": "List tags",
+            "description": {
+              "content": "Request a list of tags with optional filters and pagination",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tags"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Deprecated. Use `q.search` instead. When both are provided, `q.search` is used."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_by",
+                  "value": "<string>",
+                  "description": "Sort instructions. Provide either 'key' (ascending) or 'key desc' (descending). Default sort order is ascending."
+                },
+                {
+                  "disabled": false,
+                  "key": "order_by",
+                  "value": "<string>",
+                  "description": "Sort instructions. Provide either 'key' (ascending) or 'key desc' (descending). Default sort order is ascending."
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "54a8a6a2-3798-40cf-bcd1-44169ce4b8f6",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tags"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 3727.866562700581,\n    \"team\": 1284.295561678257,\n    \"name\": \"string\",\n    \"modification_date\": \"1984-12-28T19:07:56.524Z\",\n    \"creation_date\": \"2010-09-06T16:29:54.069Z\",\n    \"account_count\": 4228.314938359216,\n    \"person_count\": 497.36931432219467,\n    \"opportunity_count\": 6146.631292592487,\n    \"total_count\": 5400.109932538294,\n    \"automated\": false\n  },\n  {\n    \"id\": 3682.5496730476602,\n    \"team\": 89.63681317090466,\n    \"name\": \"string\",\n    \"modification_date\": \"1956-07-23T22:09:13.546Z\",\n    \"creation_date\": \"1989-03-20T11:50:07.374Z\",\n    \"account_count\": 1486.135523550054,\n    \"person_count\": 4925.2629957602785,\n    \"opportunity_count\": 6051.8833756678405,\n    \"total_count\": 8439.393639316217,\n    \"automated\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9893ada7-4d9c-4aa9-aeb5-374291f17a7e",
+          "name": "Create a tag",
+          "request": {
+            "name": "Create a tag",
+            "description": {},
+            "url": {
+              "path": [
+                "tags"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c6a28f92-88bc-42ac-8853-6f17551db910",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tags"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"id\": 7390.810295343914\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8e5ddb6b-fd83-4258-9bf2-c90cc8125f34",
+          "name": "Get tag details",
+          "request": {
+            "name": "Get tag details",
+            "description": {},
+            "url": {
+              "path": [
+                "tags",
+                ":tag_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "tag_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d2c33f44-eb45-48e3-ae33-821e4c9caf6b",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tags",
+                    ":tag_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "tag_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c0705df-b8a1-4640-8bb4-6c92669c4337",
+          "name": "Update a tag",
+          "request": {
+            "name": "Update a tag",
+            "description": {},
+            "url": {
+              "path": [
+                "tags",
+                ":tag_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "tag_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2ce758f2-5617-464b-a503-5634424a5278",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tags",
+                    ":tag_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "tag_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"success\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2cf9445d-3191-4c57-bc4b-6a4594c7d949",
+          "name": "Delete a tag",
+          "request": {
+            "name": "Delete a tag",
+            "description": {},
+            "url": {
+              "path": [
+                "tags",
+                ":tag_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "tag_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3a32447e-13a9-460b-84aa-53aca374dd45",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tags",
+                    ":tag_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "tag_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"success\": \"true\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e9b839e8-b1a4-4d40-ba30-4dd8e3f5fcef",
+          "name": "Get tag details on usage in workflows, saved filters & reports",
+          "request": {
+            "name": "Get tag details on usage in workflows, saved filters & reports",
+            "description": {},
+            "url": {
+              "path": [
+                "tags",
+                ":tag_id",
+                "usage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "tag_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5fc3dee0-84e5-43c3-a136-00e9417c798b",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tags",
+                    ":tag_id",
+                    "usage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "tag_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.salesflare.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "20c149d6-7b0d-43a1-bc2a-55b9ab9b6c62",
+    "name": "Salesflare Accounts Tags API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Introduction\n\n## Getting Started\n\nThe Salesflare API allows you to access and build your own applications or integrations that interact with Salesflare.\n\nThe Salesflare API provides a RESTful interface with JSON-formatted responses to access most Salesflare resources.\n\n## Authentication\n\nThe Salesflare API uses bearer token based authentication, which means you need to use the key-value pair \"Authorization : Bearer APIKEY\" in the header to authenticate.\n\nYou can make an API key in [\"Settings\" > \"API keys\"](https://app.salesflare.com/#/settings/apikeys).\n\nClick on the large orange \"+\" button on the bottom right of the screen to create an API key.\n\n![Screenshot API Key Settings](https://lib.salesflare.com/api_docs/screenshot_settings_apikeys.png?v=2)\n\n## Requests\n\nAll requests must be sent using HTTPS with TLS 1.2 or higher. Please make sure your developer tools support this version of TLS as older versions or SSL are not supported for security reasons.\n\nFor PUT or POST requests (e.g. create, update), the payload must be provided as JSON in the request body.\n\n## Responses\n\nResponses use HTTP status codes, with the most typical ones being:\n\n| Code                   | Meaning               |\n|------------------------|-----------------------|\n| Successful Responses                           |\n| 200                    | OK                    |\n| Error Responses                                |\n| 400                    | Bad Request           |\n| 401                    | Unauthorized          |\n| 404                    | Not Found             |\n| 429                    | Too Many Requests     |\n| 500                    | Internal Server Error |\n\n## Testing\n\nWe recommend testing our API with Postman.\n\n### Download specification\n\nOur API is documented following the OpenAPI specification. You can download it [here](https://api.salesflare.com/openapi.json)\n\n### Import in Postman\n\nTo import the collection, open Postman and click Import, then select \"Import From Link\"\n\nCopy & Paste the following link and press the \"Import\" button:\n\n> https://api.salesflare.com/openapi.json\n\n![Screenshot Postman Import](https://lib.salesflare.com/api_docs/screenshot_postman_import.png)\n\n## Support\n\nFor API questions and support, please email support@salesflare.com or click the chat bubble below.\n\nContact Support:\n Email: support@salesflare.com",
+      "type": "text/plain"
+    }
+  }
+}

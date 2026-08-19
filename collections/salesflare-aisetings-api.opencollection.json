@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Salesflare Accounts AISetings API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AISetings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get AI Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.salesflare.com/settings/ai"
+          },
+          "docs": "Get AI Settings"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

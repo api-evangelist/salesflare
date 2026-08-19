@@ -1,0 +1,55 @@
+generated: '2026-08-13'
+method: probed
+source: https://api.salesflare.com/.well-known/oauth-authorization-server
+note: >-
+  Salesflare's OpenAPI declares no oauth2 securityScheme, so
+  0-working/derive-oauth-scopes.py returns nothing. The OAuth surface is real but
+  lives outside the spec: it authorizes the hosted MCP server, and it advertises
+  its scopes through RFC 8414 authorization-server metadata and RFC 9728
+  protected-resource metadata. Both were fetched live. Salesflare publishes no
+  scopes/permissions reference page — the only scopes it advertises are the two
+  OIDC baseline scopes below, which means the MCP connection is an
+  all-or-nothing grant over the user's CRM rather than a least-privilege one.
+  The REST API uses unscoped account-level API keys and has no scope surface at all.
+schemes:
+  - name: salesflareOIDC
+    type: openIdConnect
+    issuer: https://api.salesflare.com/oidc
+    source: https://api.salesflare.com/.well-known/oauth-authorization-server
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://api.salesflare.com/oidc/auth
+        tokenUrl: https://api.salesflare.com/oidc/token
+        pkce: S256
+      - flow: implicit
+        authorizationUrl: https://api.salesflare.com/oidc/auth
+      - flow: clientCredentials
+        tokenUrl: https://api.salesflare.com/oidc/token
+scopes:
+  - scope: openid
+    description: >-
+      OIDC baseline scope. Issues an ID token identifying the Salesflare user who
+      authorized the client. Claims advertised: sub, sid, auth_time, iss.
+    flows: [authorizationCode, implicit]
+    sources: [https://api.salesflare.com/.well-known/oauth-authorization-server]
+  - scope: offline_access
+    description: >-
+      Issues a refresh token so the client can keep calling after the access token
+      expires. Required for a persistent MCP connection.
+    flows: [authorizationCode]
+    sources: [https://api.salesflare.com/.well-known/oauth-authorization-server]
+protected_resources:
+  - resource: https://mcp.salesflare.com/mcp
+    authorization_servers: [https://api.salesflare.com/oidc]
+    scopes_supported: [openid, offline_access]
+    bearer_methods_supported: [header]
+    spec: RFC 9728
+    source: https://mcp.salesflare.com/.well-known/oauth-protected-resource
+scope_count: 2
+gaps:
+  - >-
+    No resource-level or action-level scopes. Nothing distinguishes a read-only
+    agent connection from one that can create and update accounts, contacts,
+    opportunities and tasks — the two published scopes govern identity and token
+    lifetime only.
+  - No public scopes/permissions reference page.

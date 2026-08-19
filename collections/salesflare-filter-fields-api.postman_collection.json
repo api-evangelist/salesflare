@@ -1,0 +1,137 @@
+{
+  "item": [
+    {
+      "id": "ea4c362a-a391-4071-a363-cf457b4efe33",
+      "name": "Filter Fields",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "78d48b34-be0a-480e-b9b5-b690be2a9409",
+          "name": "List filter fields for an entity",
+          "request": {
+            "name": "List filter fields for an entity",
+            "description": {},
+            "url": {
+              "path": [
+                "filterfields",
+                ":entity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pipeline",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "includePipelineSpecificPredefinedFilterFields",
+                  "value": "true"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "entity",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c75a920b-7176-4706-a6a7-1f5a05a5e2fd",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "filterfields",
+                    ":entity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pipeline",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "includePipelineSpecificPredefinedFilterFields",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "entity",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"customfield_id\": \"string\",\n    \"label\": \"string\",\n    \"type\": \"string\",\n    \"enabled\": \"string\",\n    \"query_builder_id\": \"string\",\n    \"name\": \"string\",\n    \"input\": \"string\",\n    \"values\": {},\n    \"validation\": {},\n    \"operators\": [\n      \"before\",\n      \"future_less\"\n    ],\n    \"fixed_operator\": \"not_contains\",\n    \"group\": \"Account\",\n    \"entity\": \"workflow_step_record\",\n    \"display_entity\": \"Contact\",\n    \"search_entity\": \"pipeline\",\n    \"options\": [\n      {\n        \"name\": \"string\",\n        \"id\": [\n          \"string\",\n          \"string\"\n        ],\n        \"order\": 3831.2668077497215\n      },\n      {\n        \"name\": \"string\",\n        \"id\": [\n          \"string\",\n          \"string\"\n        ],\n        \"order\": 7484.973855409641\n      }\n    ],\n    \"sortable\": false,\n    \"pipeline\": 8164.451790093158,\n    \"param_less\": true\n  },\n  {\n    \"id\": \"string\",\n    \"customfield_id\": \"string\",\n    \"label\": \"string\",\n    \"type\": \"string\",\n    \"enabled\": \"string\",\n    \"query_builder_id\": \"string\",\n    \"name\": \"string\",\n    \"input\": \"string\",\n    \"values\": {},\n    \"validation\": {},\n    \"operators\": [\n      \"not_ends_with\",\n      \"not_begins_with\"\n    ],\n    \"fixed_operator\": \"past_exactly\",\n    \"group\": \"Account\",\n    \"entity\": \"campaign\",\n    \"display_entity\": \"Task\",\n    \"search_entity\": \"account\",\n    \"options\": [\n      {\n        \"name\": \"string\",\n        \"id\": [\n          \"string\",\n          \"string\"\n        ],\n        \"order\": 7039.439162415354\n      },\n      {\n        \"name\": \"string\",\n        \"id\": [\n          \"string\",\n          \"string\"\n        ],\n        \"order\": 4092.505077028438\n      }\n    ],\n    \"sortable\": true,\n    \"pipeline\": 6428.312075545621,\n    \"param_less\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.salesflare.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f4622629-765f-4221-ac6b-219e0f2cabbb",
+    "name": "Salesflare Accounts Filter Fields API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Introduction\n\n## Getting Started\n\nThe Salesflare API allows you to access and build your own applications or integrations that interact with Salesflare.\n\nThe Salesflare API provides a RESTful interface with JSON-formatted responses to access most Salesflare resources.\n\n## Authentication\n\nThe Salesflare API uses bearer token based authentication, which means you need to use the key-value pair \"Authorization : Bearer APIKEY\" in the header to authenticate.\n\nYou can make an API key in [\"Settings\" > \"API keys\"](https://app.salesflare.com/#/settings/apikeys).\n\nClick on the large orange \"+\" button on the bottom right of the screen to create an API key.\n\n![Screenshot API Key Settings](https://lib.salesflare.com/api_docs/screenshot_settings_apikeys.png?v=2)\n\n## Requests\n\nAll requests must be sent using HTTPS with TLS 1.2 or higher. Please make sure your developer tools support this version of TLS as older versions or SSL are not supported for security reasons.\n\nFor PUT or POST requests (e.g. create, update), the payload must be provided as JSON in the request body.\n\n## Responses\n\nResponses use HTTP status codes, with the most typical ones being:\n\n| Code                   | Meaning               |\n|------------------------|-----------------------|\n| Successful Responses                           |\n| 200                    | OK                    |\n| Error Responses                                |\n| 400                    | Bad Request           |\n| 401                    | Unauthorized          |\n| 404                    | Not Found             |\n| 429                    | Too Many Requests     |\n| 500                    | Internal Server Error |\n\n## Testing\n\nWe recommend testing our API with Postman.\n\n### Download specification\n\nOur API is documented following the OpenAPI specification. You can download it [here](https://api.salesflare.com/openapi.json)\n\n### Import in Postman\n\nTo import the collection, open Postman and click Import, then select \"Import From Link\"\n\nCopy & Paste the following link and press the \"Import\" button:\n\n> https://api.salesflare.com/openapi.json\n\n![Screenshot Postman Import](https://lib.salesflare.com/api_docs/screenshot_postman_import.png)\n\n## Support\n\nFor API questions and support, please email support@salesflare.com or click the chat bubble below.\n\nContact Support:\n Email: support@salesflare.com",
+      "type": "text/plain"
+    }
+  }
+}

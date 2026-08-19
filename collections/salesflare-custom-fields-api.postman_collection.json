@@ -1,0 +1,759 @@
+{
+  "item": [
+    {
+      "id": "3357d2b6-f96b-4ea5-b331-96ef116f1f60",
+      "name": "Custom Fields",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a28456d6-5aa6-424e-a377-b91a0b3ff7cd",
+          "name": "List custom field types",
+          "request": {
+            "name": "List custom field types",
+            "description": {},
+            "url": {
+              "path": [
+                "customfields",
+                "types"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a14e7920-d805-43b3-b611-c97fe5b09231",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customfields",
+                    "types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "75ec128c-39fb-49d6-abb2-f40a5db6767c",
+          "name": "List custom fields of a type",
+          "request": {
+            "name": "List custom fields of a type",
+            "description": {},
+            "url": {
+              "path": [
+                "customfields",
+                ":itemClass"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "includeDisabled",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pipeline",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "itemClass",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eba14c5a-64de-4dd6-ba0b-c03af3660cf2",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customfields",
+                    ":itemClass"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeDisabled",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "pipeline",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "itemClass",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "03d09b82-516b-4ec0-8d17-648bda0b928b",
+          "name": "Create a custom field of a type",
+          "request": {
+            "name": "Create a custom field of a type",
+            "description": {},
+            "url": {
+              "path": [
+                "customfields",
+                ":itemClass"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "itemClass",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"<number>\",\n  \"name\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"archived\": \"<boolean>\",\n  \"required\": \"<boolean>\",\n  \"pipeline\": \"<number>\",\n  \"predefined_customfield\": \"<number>\",\n  \"users_can_add_options\": \"<boolean>\",\n  \"options\": [\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<number>\",\n      \"order\": \"<number>\",\n      \"archived\": \"<boolean>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<number>\",\n      \"order\": \"<number>\",\n      \"archived\": \"<boolean>\"\n    }\n  ],\n  \"order_alphabetically\": false,\n  \"min_number\": \"<number>\",\n  \"max_number\": \"<number>\",\n  \"min_date\": \"<dateTime>\",\n  \"max_date\": \"<dateTime>\",\n  \"default_boolean_value\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4d6ac409-2f9a-457a-9450-9e57e7dcca6f",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customfields",
+                    ":itemClass"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "itemClass",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<number>\",\n  \"name\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"archived\": \"<boolean>\",\n  \"required\": \"<boolean>\",\n  \"pipeline\": \"<number>\",\n  \"predefined_customfield\": \"<number>\",\n  \"users_can_add_options\": \"<boolean>\",\n  \"options\": [\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<number>\",\n      \"order\": \"<number>\",\n      \"archived\": \"<boolean>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<number>\",\n      \"order\": \"<number>\",\n      \"archived\": \"<boolean>\"\n    }\n  ],\n  \"order_alphabetically\": false,\n  \"min_number\": \"<number>\",\n  \"max_number\": \"<number>\",\n  \"min_date\": \"<dateTime>\",\n  \"max_date\": \"<dateTime>\",\n  \"default_boolean_value\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"id\": 2674.212092585637\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f22a7210-62a1-47cc-827f-c0b3cec2e836",
+          "name": "Get custom field details",
+          "request": {
+            "name": "Get custom field details",
+            "description": {},
+            "url": {
+              "path": [
+                "customfields",
+                ":itemClass",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "itemClass",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "41913b0d-2381-4c11-b2f3-feb2b8906c69",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customfields",
+                    ":itemClass",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "itemClass",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "16943b1e-9919-4b47-8973-44a658f70721",
+          "name": "Update a custom field",
+          "request": {
+            "name": "Update a custom field",
+            "description": {},
+            "url": {
+              "path": [
+                "customfields",
+                ":itemClass",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "itemClass",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<number>\",\n  \"type\": \"<number>\",\n  \"name\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"archived\": \"<boolean>\",\n  \"required\": \"<boolean>\",\n  \"pipeline\": \"<number>\",\n  \"pipelineName\": \"<string>\",\n  \"order\": \"<number>\",\n  \"predefined_customfield\": \"<number>\",\n  \"users_can_add_options\": \"<boolean>\",\n  \"options\": [\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<number>\",\n      \"order\": \"<number>\",\n      \"archived\": \"<boolean>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<number>\",\n      \"order\": \"<number>\",\n      \"archived\": \"<boolean>\"\n    }\n  ],\n  \"order_alphabetically\": \"<boolean>\",\n  \"min_number\": \"<number>\",\n  \"max_number\": \"<number>\",\n  \"min_date\": \"<dateTime>\",\n  \"max_date\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1a2d93db-2058-45de-9f93-ac4bdca1fc2c",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customfields",
+                    ":itemClass",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "itemClass",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<number>\",\n  \"type\": \"<number>\",\n  \"name\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"archived\": \"<boolean>\",\n  \"required\": \"<boolean>\",\n  \"pipeline\": \"<number>\",\n  \"pipelineName\": \"<string>\",\n  \"order\": \"<number>\",\n  \"predefined_customfield\": \"<number>\",\n  \"users_can_add_options\": \"<boolean>\",\n  \"options\": [\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<number>\",\n      \"order\": \"<number>\",\n      \"archived\": \"<boolean>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"id\": \"<number>\",\n      \"order\": \"<number>\",\n      \"archived\": \"<boolean>\"\n    }\n  ],\n  \"order_alphabetically\": \"<boolean>\",\n  \"min_number\": \"<number>\",\n  \"max_number\": \"<number>\",\n  \"min_date\": \"<dateTime>\",\n  \"max_date\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "beb2a031-40d2-44b5-ae33-4407d84432f2",
+          "name": "Delete a custom field",
+          "request": {
+            "name": "Delete a custom field",
+            "description": {},
+            "url": {
+              "path": [
+                "customfields",
+                ":itemClass",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "itemClass",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "44a46f4c-235b-4d16-8638-4860e1092826",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customfields",
+                    ":itemClass",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "itemClass",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b5a5c79d-16bd-4689-83d2-609c3fbd209c",
+          "name": "List a custom field's options",
+          "request": {
+            "name": "List a custom field's options",
+            "description": {},
+            "url": {
+              "path": [
+                "customfields",
+                ":itemClass",
+                ":customFieldApiField",
+                "options"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "searchString",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "itemClass",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "customFieldApiField",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6146c6ab-00d5-470b-b683-5c57772a6dc6",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customfields",
+                    ":itemClass",
+                    ":customFieldApiField",
+                    "options"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "searchString",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "itemClass",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "customFieldApiField",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.salesflare.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bdce0b6f-f663-452d-a757-43bf1c0a55c2",
+    "name": "Salesflare Accounts Custom Fields API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Introduction\n\n## Getting Started\n\nThe Salesflare API allows you to access and build your own applications or integrations that interact with Salesflare.\n\nThe Salesflare API provides a RESTful interface with JSON-formatted responses to access most Salesflare resources.\n\n## Authentication\n\nThe Salesflare API uses bearer token based authentication, which means you need to use the key-value pair \"Authorization : Bearer APIKEY\" in the header to authenticate.\n\nYou can make an API key in [\"Settings\" > \"API keys\"](https://app.salesflare.com/#/settings/apikeys).\n\nClick on the large orange \"+\" button on the bottom right of the screen to create an API key.\n\n![Screenshot API Key Settings](https://lib.salesflare.com/api_docs/screenshot_settings_apikeys.png?v=2)\n\n## Requests\n\nAll requests must be sent using HTTPS with TLS 1.2 or higher. Please make sure your developer tools support this version of TLS as older versions or SSL are not supported for security reasons.\n\nFor PUT or POST requests (e.g. create, update), the payload must be provided as JSON in the request body.\n\n## Responses\n\nResponses use HTTP status codes, with the most typical ones being:\n\n| Code                   | Meaning               |\n|------------------------|-----------------------|\n| Successful Responses                           |\n| 200                    | OK                    |\n| Error Responses                                |\n| 400                    | Bad Request           |\n| 401                    | Unauthorized          |\n| 404                    | Not Found             |\n| 429                    | Too Many Requests     |\n| 500                    | Internal Server Error |\n\n## Testing\n\nWe recommend testing our API with Postman.\n\n### Download specification\n\nOur API is documented following the OpenAPI specification. You can download it [here](https://api.salesflare.com/openapi.json)\n\n### Import in Postman\n\nTo import the collection, open Postman and click Import, then select \"Import From Link\"\n\nCopy & Paste the following link and press the \"Import\" button:\n\n> https://api.salesflare.com/openapi.json\n\n![Screenshot Postman Import](https://lib.salesflare.com/api_docs/screenshot_postman_import.png)\n\n## Support\n\nFor API questions and support, please email support@salesflare.com or click the chat bubble below.\n\nContact Support:\n Email: support@salesflare.com",
+      "type": "text/plain"
+    }
+  }
+}

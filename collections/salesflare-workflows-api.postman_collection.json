@@ -1,0 +1,616 @@
+{
+  "item": [
+    {
+      "id": "d62fb0e4-fbbc-409e-9b8a-73c4ba22fda5",
+      "name": "Workflows",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c45f2781-4167-49fa-b834-9944d1968a1a",
+          "name": "List workflows",
+          "request": {
+            "name": "List workflows",
+            "description": {},
+            "url": {
+              "path": [
+                "workflows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_by",
+                  "value": "<string>",
+                  "description": "Sort instructions. Provide either 'key' (ascending) or 'key desc' (descending). Default sort order is ascending."
+                },
+                {
+                  "disabled": false,
+                  "key": "order_by",
+                  "value": "<string>",
+                  "description": "Sort instructions. Provide either 'key' (ascending) or 'key desc' (descending). Default sort order is ascending."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "855adcc3-f35c-4a42-9363-fbdb895dd4db",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "workflows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 8504.632147540546,\n    \"team\": 5824.571608682781,\n    \"name\": \"string\",\n    \"filter\": {\n      \"ids\": [\n        7148.3615794105435,\n        997.6999640992112\n      ]\n    },\n    \"individual_record_filter\": null,\n    \"status\": \"draft\",\n    \"status_message\": \"string\",\n    \"record_type\": \"contact\",\n    \"goal\": \"clicked\",\n    \"continuous\": true,\n    \"exit_after_days\": 5427.887382970811,\n    \"schedule_date\": \"1962-11-20T16:41:13.370Z\",\n    \"schedule_time_start\": \"22:49:46\",\n    \"schedule_time_end\": \"14:31:02\",\n    \"schedule_days\": [\n      1.9145504379261047,\n      3.592604774039584\n    ],\n    \"analytics\": {\n      \"total\": {\n        \"name\": \"string\",\n        \"value\": 425.5944782178722,\n        \"type\": \"percentage\"\n      },\n      \"in\": {\n        \"name\": \"string\",\n        \"value\": 8532.27476585383,\n        \"type\": \"percentage\"\n      },\n      \"exited\": {\n        \"name\": \"string\",\n        \"value\": 468.86073106884083,\n        \"type\": \"percentage\"\n      },\n      \"met_goal\": {\n        \"name\": \"string\",\n        \"value\": 7757.797506635453,\n        \"type\": \"percentage\"\n      }\n    },\n    \"archived\": false,\n    \"steps\": [\n      {\n        \"order\": 5268.352449595448,\n        \"id\": 8775.170608536353,\n        \"name\": \"string\",\n        \"filter\": 7345.196851930514,\n        \"trigger_step\": 7035.705951132867,\n        \"trigger_step_index\": 6671.972461354168,\n        \"trigger_after_days\": 5926.757676286284,\n        \"trigger\": \"sent\",\n        \"action_type\": \"send_email\",\n        \"action_config\": {},\n        \"action_status\": \"string\",\n        \"action_source\": 8544.564720590919,\n        \"action_source_email\": \"string\",\n        \"analytics\": {\n          \"total\": {\n            \"name\": \"string\",\n            \"value\": 1880.1090348480377,\n            \"type\": \"percentage\"\n          },\n          \"sent\": {\n            \"name\": \"string\",\n            \"value\": 2495.054270036494,\n            \"type\": \"absolute\"\n          },\n          \"interacted\": {\n            \"name\": \"string\",\n            \"value\": 1746.7672146999657,\n            \"type\": \"absolute\"\n          },\n          \"replied\": {\n            \"name\": \"string\",\n            \"value\": 3946.9946502025155,\n            \"type\": \"absolute\"\n          },\n          \"failed\": {\n            \"name\": \"string\",\n            \"value\": 6694.369702495371,\n            \"type\": \"percentage\"\n          }\n        },\n        \"metrics_data\": {},\n        \"workflow\": 4174.886991145304,\n        \"team\": 5545.075370779272,\n        \"archived\": true,\n        \"archived_by\": 9958.865261383322,\n        \"archived_date\": \"1979-02-14T03:34:22.599Z\",\n        \"created_by\": {\n          \"id\": 2797.578320009586,\n          \"name\": \"string\",\n          \"email\": \"string\",\n          \"picture\": \"string\"\n        },\n        \"last_modified_by\": 7390.626975110445,\n        \"creation_date\": \"2023-06-24T14:25:06.717Z\",\n        \"modification_date\": \"2002-12-10T04:19:18.842Z\"\n      },\n      {\n        \"order\": 2467.201801874489,\n        \"id\": 5499.6690787384205,\n        \"name\": \"string\",\n        \"trigger_step\": 3696.93876542367,\n        \"trigger_step_index\": 119.66277457074015,\n        \"trigger_after_days\": 3442.9238954674,\n        \"trigger\": \"not_replied\",\n        \"action_type\": \"send_email\",\n        \"action_config\": {},\n        \"action_status\": \"string\",\n        \"action_source\": 4616.58612156211,\n        \"action_source_email\": \"string\",\n        \"analytics\": {\n          \"total\": {\n            \"name\": \"string\",\n            \"value\": 103.96611464921213,\n            \"type\": \"absolute\"\n          },\n          \"sent\": {\n            \"name\": \"string\",\n            \"value\": 4109.634689130663,\n            \"type\": \"percentage\"\n          },\n          \"interacted\": {\n            \"name\": \"string\",\n            \"value\": 7755.547973176867,\n            \"type\": \"percentage\"\n          },\n          \"replied\": {\n            \"name\": \"string\",\n            \"value\": 8561.396080468467,\n            \"type\": \"percentage\"\n          },\n          \"failed\": {\n            \"name\": \"string\",\n            \"value\": 6889.6137367210395,\n            \"type\": \"percentage\"\n          }\n        },\n        \"metrics_data\": {},\n        \"workflow\": 4646.891195507295,\n        \"team\": 7061.494499871128,\n        \"archived\": true,\n        \"archived_by\": 6282.5280705324185,\n        \"archived_date\": \"1960-04-10T08:39:27.737Z\",\n        \"created_by\": {\n          \"id\": 4786.543701831915,\n          \"name\": \"string\",\n          \"email\": \"string\",\n          \"picture\": \"string\"\n        },\n        \"last_modified_by\": 9549.968981262438,\n        \"creation_date\": \"2019-03-12T17:31:51.936Z\",\n        \"modification_date\": \"1994-03-12T19:04:22.555Z\"\n      }\n    ],\n    \"creator_name\": \"string\",\n    \"created_by\": 2293.0109245157114,\n    \"last_modified_by\": 4677.690329483603,\n    \"can_edit\": false,\n    \"creation_date\": \"1962-09-29T05:52:42.361Z\",\n    \"modification_date\": \"1975-08-24T00:44:26.050Z\",\n    \"step_amount\": 3812.923604335171,\n    \"multi_step_before_pro_release\": false,\n    \"scheduled_before_pro_release\": false\n  },\n  {\n    \"id\": 107.20929650572364,\n    \"team\": 6925.595861001216,\n    \"name\": \"string\",\n    \"filter\": {\n      \"ids\": [\n        209.72435331667594,\n        9628.278813189117\n      ]\n    },\n    \"individual_record_filter\": \"string\",\n    \"status\": \"scheduled\",\n    \"status_message\": \"string\",\n    \"record_type\": \"contact\",\n    \"goal\": \"replied\",\n    \"continuous\": true,\n    \"exit_after_days\": 1635.9888107288778,\n    \"schedule_date\": \"2012-12-19T23:06:08.457Z\",\n    \"schedule_time_start\": \"17:34:92\",\n    \"schedule_time_end\": \"21:08:74\",\n    \"schedule_days\": [\n      1.6526573776029707,\n      5.1310730856791\n    ],\n    \"analytics\": {\n      \"total\": {\n        \"name\": \"string\",\n        \"value\": 4187.619853407705,\n        \"type\": \"percentage\"\n      },\n      \"in\": {\n        \"name\": \"string\",\n        \"value\": 8236.566495511504,\n        \"type\": \"percentage\"\n      },\n      \"exited\": {\n        \"name\": \"string\",\n        \"value\": 37.15039175118173,\n        \"type\": \"percentage\"\n      },\n      \"met_goal\": {\n        \"name\": \"string\",\n        \"value\": 8465.257538676078,\n        \"type\": \"percentage\"\n      }\n    },\n    \"archived\": false,\n    \"steps\": [\n      {\n        \"order\": 1603.0011101214204,\n        \"id\": 7103.869059782758,\n        \"name\": \"string\",\n        \"filter\": 2126.2614453410047,\n        \"trigger_step\": 1113.4349357921524,\n        \"trigger_step_index\": 7218.450321996877,\n        \"trigger_after_days\": 1854.0271452748746,\n        \"trigger\": \"not_opened\",\n        \"action_type\": \"send_email\",\n        \"action_config\": {},\n        \"action_status\": \"string\",\n        \"action_source\": 1908.1436334065681,\n        \"action_source_email\": \"string\",\n        \"analytics\": {\n          \"total\": {\n            \"name\": \"string\",\n            \"value\": 485.24780098517573,\n            \"type\": \"percentage\"\n          },\n          \"sent\": {\n            \"name\": \"string\",\n            \"value\": 4257.823278035503,\n            \"type\": \"percentage\"\n          },\n          \"interacted\": {\n            \"name\": \"string\",\n            \"value\": 425.9459635525564,\n            \"type\": \"absolute\"\n          },\n          \"replied\": {\n            \"name\": \"string\",\n            \"value\": 7213.539421105182,\n            \"type\": \"percentage\"\n          },\n          \"failed\": {\n            \"name\": \"string\",\n            \"value\": 7844.422078409219,\n            \"type\": \"absolute\"\n          }\n        },\n        \"metrics_data\": {},\n        \"workflow\": 7768.400131412704,\n        \"team\": 3669.6851916772935,\n        \"archived\": true,\n        \"archived_by\": 9932.537685574976,\n        \"archived_date\": \"2014-03-20T06:20:32.459Z\",\n        \"created_by\": {\n          \"id\": 8908.572572506908,\n          \"name\": \"string\",\n          \"email\": \"string\",\n          \"picture\": \"string\"\n        },\n        \"last_modified_by\": 1516.5324453227847,\n        \"creation_date\": \"2025-03-05T05:35:40.909Z\",\n        \"modification_date\": \"1998-04-15T08:08:23.817Z\"\n      },\n      {\n        \"order\": 9420.600747349506,\n        \"id\": 8162.281135592312,\n        \"name\": \"string\",\n        \"filter\": 9129,\n        \"trigger_step\": 2833.844852112901,\n        \"trigger_step_index\": 6354.906702792825,\n        \"trigger_after_days\": 6748.327787029954,\n        \"trigger\": \"not_opened\",\n        \"action_type\": \"send_email\",\n        \"action_config\": {},\n        \"action_status\": \"string\",\n        \"action_source\": 8917.766296446769,\n        \"action_source_email\": \"string\",\n        \"analytics\": {\n          \"total\": {\n            \"name\": \"string\",\n            \"value\": 3622.2924454221115,\n            \"type\": \"absolute\"\n          },\n          \"sent\": {\n            \"name\": \"string\",\n            \"value\": 1028.3556032913032,\n            \"type\": \"absolute\"\n          },\n          \"interacted\": {\n            \"name\": \"string\",\n            \"value\": 3984.8656405196834,\n            \"type\": \"percentage\"\n          },\n          \"replied\": {\n            \"name\": \"string\",\n            \"value\": 4863.098468093342,\n            \"type\": \"absolute\"\n          },\n          \"failed\": {\n            \"name\": \"string\",\n            \"value\": 7631.135800371426,\n            \"type\": \"absolute\"\n          }\n        },\n        \"metrics_data\": {},\n        \"workflow\": 7119.312627555714,\n        \"team\": 248.07947454837387,\n        \"archived\": false,\n        \"archived_by\": 1052.0453649278916,\n        \"archived_date\": \"1959-02-18T22:14:47.140Z\",\n        \"created_by\": {\n          \"id\": 9301.96013465733,\n          \"name\": \"string\",\n          \"email\": \"string\",\n          \"picture\": \"string\"\n        },\n        \"last_modified_by\": 1329.402207291388,\n        \"creation_date\": \"1958-02-17T19:41:35.654Z\",\n        \"modification_date\": \"1996-04-21T04:47:58.629Z\"\n      }\n    ],\n    \"creator_name\": \"string\",\n    \"created_by\": 8935.087922329983,\n    \"last_modified_by\": 6563.366546692021,\n    \"can_edit\": false,\n    \"creation_date\": \"1995-12-25T07:22:56.821Z\",\n    \"modification_date\": \"2023-06-24T09:21:26.384Z\",\n    \"step_amount\": 7438.156384723476,\n    \"multi_step_before_pro_release\": true,\n    \"scheduled_before_pro_release\": false\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "98319535-df74-4f09-ac76-e7e95f609bd8",
+          "name": "Create a workflow",
+          "request": {
+            "name": "Create a workflow",
+            "description": {},
+            "url": {
+              "path": [
+                "workflows"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"filter\": {\n    \"ids\": [\n      \"<number>\",\n      \"<number>\"\n    ]\n  },\n  \"individual_record_filter\": null,\n  \"status\": \"<string>\",\n  \"status_message\": \"<string>\",\n  \"record_type\": \"<string>\",\n  \"goal\": \"<string>\",\n  \"continuous\": \"<boolean>\",\n  \"exit_after_days\": \"<number>\",\n  \"schedule_date\": \"<dateTime>\",\n  \"schedule_time_start\": \"<string>\",\n  \"schedule_time_end\": \"<string>\",\n  \"schedule_days\": [\n    \"<number>\",\n    \"<number>\"\n  ],\n  \"steps\": [\n    {\n      \"order\": \"<number>\",\n      \"id\": \"<number>\",\n      \"name\": \"<string>\",\n      \"filter\": null,\n      \"trigger_step\": \"<number>\",\n      \"trigger_step_index\": \"<number>\",\n      \"trigger_after_days\": \"<number>\",\n      \"trigger\": \"<string>\",\n      \"action_type\": \"<string>\",\n      \"action_config\": \"<object>\",\n      \"action_status\": \"<string>\",\n      \"action_source\": \"<number>\",\n      \"action_source_email\": \"<string>\",\n      \"analytics\": {\n        \"total\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        },\n        \"sent\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        },\n        \"interacted\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        },\n        \"replied\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        },\n        \"failed\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        }\n      },\n      \"metrics_data\": \"<object>\"\n    },\n    {\n      \"order\": \"<number>\",\n      \"id\": \"<number>\",\n      \"name\": \"<string>\",\n      \"filter\": \"string\",\n      \"trigger_step\": \"<number>\",\n      \"trigger_step_index\": \"<number>\",\n      \"trigger_after_days\": \"<number>\",\n      \"trigger\": \"<string>\",\n      \"action_type\": \"<string>\",\n      \"action_config\": \"<object>\",\n      \"action_status\": \"<string>\",\n      \"action_source\": \"<number>\",\n      \"action_source_email\": \"<string>\",\n      \"analytics\": {\n        \"total\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        },\n        \"sent\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        },\n        \"interacted\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        },\n        \"replied\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        },\n        \"failed\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        }\n      },\n      \"metrics_data\": \"<object>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "51d7663a-baf5-4ecb-891b-c77c66824f28",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "workflows"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"id\": 9184.71821682175\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0d4a6eff-1e5b-4f00-b134-4c2cbe7bfadc",
+          "name": "Get a workflow's merge fields",
+          "request": {
+            "name": "Get a workflow's merge fields",
+            "description": {
+              "content": "Note that this route is currently still under `/campaigns` but might be moved in the future.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "campaigns",
+                "mergefields"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ccdf0071-5358-4f0a-b937-939613b762aa",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "campaigns",
+                    "mergefields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"entity_type\": \"account\",\n    \"display_name\": \"string\",\n    \"api_field\": \"string\",\n    \"is_custom\": true,\n    \"custom_type\": \"string\"\n  },\n  {\n    \"entity_type\": \"contact\",\n    \"display_name\": \"string\",\n    \"api_field\": \"string\",\n    \"is_custom\": true,\n    \"custom_type\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1323a3ff-0b85-436f-8ff8-d9bd2b54b1af",
+          "name": "Get workflow details",
+          "request": {
+            "name": "Get workflow details",
+            "description": {},
+            "url": {
+              "path": [
+                "workflows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "094520de-7620-433f-a6f9-759e90e9c28f",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "workflows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"id\": 3855.962212959031,\n  \"team\": 5666.332521239309,\n  \"name\": \"string\",\n  \"filter\": {\n    \"ids\": [\n      2224.003676439976,\n      6479.1510546334475\n    ]\n  },\n  \"individual_record_filter\": 308.2485472416685,\n  \"status\": \"finished\",\n  \"status_message\": \"string\",\n  \"record_type\": \"contact\",\n  \"goal\": \"opened\",\n  \"continuous\": true,\n  \"exit_after_days\": 3095.927243804388,\n  \"schedule_date\": \"1951-05-11T11:54:42.231Z\",\n  \"schedule_time_start\": \"23:44:23\",\n  \"schedule_time_end\": \"9:31:15\",\n  \"schedule_days\": [\n    5.459786628198792,\n    4.599028389032889\n  ],\n  \"analytics\": {\n    \"total\": {\n      \"name\": \"string\",\n      \"value\": 3363.0326134077272,\n      \"type\": \"percentage\"\n    },\n    \"in\": {\n      \"name\": \"string\",\n      \"value\": 9809.684162817093,\n      \"type\": \"absolute\"\n    },\n    \"exited\": {\n      \"name\": \"string\",\n      \"value\": 3529.9411953720737,\n      \"type\": \"absolute\"\n    },\n    \"met_goal\": {\n      \"name\": \"string\",\n      \"value\": 8638.505797134221,\n      \"type\": \"absolute\"\n    }\n  },\n  \"archived\": true,\n  \"steps\": [\n    {\n      \"order\": 3179.38818563591,\n      \"id\": 6882.159907811885,\n      \"name\": \"string\",\n      \"filter\": {},\n      \"trigger_step\": 5496.771071247927,\n      \"trigger_step_index\": 8108.3435126950335,\n      \"trigger_after_days\": 3909.512377018368,\n      \"trigger\": \"not_replied\",\n      \"action_type\": \"send_email\",\n      \"action_config\": {},\n      \"action_status\": \"string\",\n      \"action_source\": 7845.886670432558,\n      \"action_source_email\": \"string\",\n      \"analytics\": {\n        \"total\": {\n          \"name\": \"string\",\n          \"value\": 8374.400667993335,\n          \"type\": \"percentage\"\n        },\n        \"sent\": {\n          \"name\": \"string\",\n          \"value\": 6363.235715253885,\n          \"type\": \"percentage\"\n        },\n        \"interacted\": {\n          \"name\": \"string\",\n          \"value\": 7123.783287086183,\n          \"type\": \"percentage\"\n        },\n        \"replied\": {\n          \"name\": \"string\",\n          \"value\": 287.1507894337433,\n          \"type\": \"percentage\"\n        },\n        \"failed\": {\n          \"name\": \"string\",\n          \"value\": 8004.638606027651,\n          \"type\": \"percentage\"\n        }\n      },\n      \"metrics_data\": {},\n      \"workflow\": 2374.5656437892294,\n      \"team\": 776.881461179687,\n      \"archived\": false,\n      \"archived_by\": 3184.2095398371184,\n      \"archived_date\": \"2000-05-12T15:24:08.189Z\",\n      \"created_by\": {\n        \"id\": 1332.2349998896589,\n        \"name\": \"string\",\n        \"email\": \"string\",\n        \"picture\": \"string\"\n      },\n      \"last_modified_by\": 4132.564421951319,\n      \"creation_date\": \"1974-06-03T06:05:14.865Z\",\n      \"modification_date\": \"1969-10-01T04:34:45.434Z\"\n    },\n    {\n      \"order\": 32.82023046875749,\n      \"id\": 3623.829038276799,\n      \"name\": \"string\",\n      \"filter\": \"string\",\n      \"trigger_step\": 6725.70262634278,\n      \"trigger_step_index\": 7465.112633951626,\n      \"trigger_after_days\": 5823.122110598157,\n      \"trigger\": \"not_clicked\",\n      \"action_type\": \"send_email\",\n      \"action_config\": {},\n      \"action_status\": \"string\",\n      \"action_source\": 9079.80101387659,\n      \"action_source_email\": \"string\",\n      \"analytics\": {\n        \"total\": {\n          \"name\": \"string\",\n          \"value\": 7521.293127425655,\n          \"type\": \"absolute\"\n        },\n        \"sent\": {\n          \"name\": \"string\",\n          \"value\": 3404.6917466050686,\n          \"type\": \"percentage\"\n        },\n        \"interacted\": {\n          \"name\": \"string\",\n          \"value\": 6056.354007693355,\n          \"type\": \"percentage\"\n        },\n        \"replied\": {\n          \"name\": \"string\",\n          \"value\": 1052.135960344711,\n          \"type\": \"absolute\"\n        },\n        \"failed\": {\n          \"name\": \"string\",\n          \"value\": 9763.300998039133,\n          \"type\": \"absolute\"\n        }\n      },\n      \"metrics_data\": {},\n      \"workflow\": 1539.0546759219192,\n      \"team\": 5104.577855679527,\n      \"archived\": false,\n      \"archived_by\": 6886.309583370806,\n      \"archived_date\": \"1996-12-01T10:10:15.773Z\",\n      \"created_by\": {\n        \"id\": 4538.089161814523,\n        \"name\": \"string\",\n        \"email\": \"string\",\n        \"picture\": \"string\"\n      },\n      \"last_modified_by\": 9760.967570493272,\n      \"creation_date\": \"1953-11-09T07:17:11.830Z\",\n      \"modification_date\": \"1981-05-17T10:18:39.568Z\"\n    }\n  ],\n  \"creator_name\": \"string\",\n  \"created_by\": 2687.716150798085,\n  \"last_modified_by\": 1111.1180895618288,\n  \"can_edit\": true,\n  \"creation_date\": \"1977-04-26T08:33:08.317Z\",\n  \"modification_date\": \"1952-03-12T15:09:00.279Z\",\n  \"step_amount\": 869.1993752436755,\n  \"multi_step_before_pro_release\": false,\n  \"scheduled_before_pro_release\": true,\n  \"workflow_steps\": [\n    {\n      \"order\": 189.3178794194683,\n      \"id\": 6296.989426907988,\n      \"name\": \"string\",\n      \"filter\": 2331,\n      \"trigger_step\": 6410.303173855446,\n      \"trigger_step_index\": 1868.631569464183,\n      \"trigger_after_days\": 2627.4254548890617,\n      \"trigger\": \"clicked\",\n      \"action_type\": \"send_email\",\n      \"action_config\": {},\n      \"action_status\": \"string\",\n      \"action_source\": 1959.1666949536057,\n      \"action_source_email\": \"string\",\n      \"analytics\": {\n        \"total\": {\n          \"name\": \"string\",\n          \"value\": 4032.092208656548,\n          \"type\": \"percentage\"\n        },\n        \"sent\": {\n          \"name\": \"string\",\n          \"value\": 7317.836780470659,\n          \"type\": \"absolute\"\n        },\n        \"interacted\": {\n          \"name\": \"string\",\n          \"value\": 558.7834441384465,\n          \"type\": \"absolute\"\n        },\n        \"replied\": {\n          \"name\": \"string\",\n          \"value\": 3742.8850457871144,\n          \"type\": \"absolute\"\n        },\n        \"failed\": {\n          \"name\": \"string\",\n          \"value\": 3618.5180470498544,\n          \"type\": \"absolute\"\n        }\n      },\n      \"metrics_data\": {},\n      \"workflow\": 9475.98399033071,\n      \"team\": 7214.749191253394,\n      \"archived\": true,\n      \"archived_by\": 35.78105283989386,\n      \"archived_date\": \"1969-07-26T16:07:00.789Z\",\n      \"created_by\": {\n        \"id\": 2417.92084923396,\n        \"name\": \"string\",\n        \"email\": \"string\",\n        \"picture\": \"string\"\n      },\n      \"last_modified_by\": 4084.795546237818,\n      \"creation_date\": \"1995-09-11T10:15:42.152Z\",\n      \"modification_date\": \"1997-06-10T04:55:42.544Z\"\n    },\n    {\n      \"order\": 8533.647646562838,\n      \"id\": 1756.1376221317382,\n      \"name\": \"string\",\n      \"filter\": 8497,\n      \"trigger_step\": 7561.595891110636,\n      \"trigger_step_index\": 1511.7570309791972,\n      \"trigger_after_days\": 7701.138981584099,\n      \"trigger\": \"opened\",\n      \"action_type\": \"send_email\",\n      \"action_config\": {},\n      \"action_status\": \"string\",\n      \"action_source\": 9589.336275877165,\n      \"action_source_email\": \"string\",\n      \"analytics\": {\n        \"total\": {\n          \"name\": \"string\",\n          \"value\": 6627.881283056232,\n          \"type\": \"absolute\"\n        },\n        \"sent\": {\n          \"name\": \"string\",\n          \"value\": 4663.013532987841,\n          \"type\": \"percentage\"\n        },\n        \"interacted\": {\n          \"name\": \"string\",\n          \"value\": 3990.5729871726926,\n          \"type\": \"absolute\"\n        },\n        \"replied\": {\n          \"name\": \"string\",\n          \"value\": 9134.382531334579,\n          \"type\": \"absolute\"\n        },\n        \"failed\": {\n          \"name\": \"string\",\n          \"value\": 7537.82551778804,\n          \"type\": \"percentage\"\n        }\n      },\n      \"metrics_data\": {},\n      \"workflow\": 8926.34068275076,\n      \"team\": 3260.5786277909033,\n      \"archived\": false,\n      \"archived_by\": 3838.496719030605,\n      \"archived_date\": \"1956-01-12T09:26:23.308Z\",\n      \"created_by\": {\n        \"id\": 613.1866691839705,\n        \"name\": \"string\",\n        \"email\": \"string\",\n        \"picture\": \"string\"\n      },\n      \"last_modified_by\": 8085.055071836195,\n      \"creation_date\": \"1986-09-04T21:52:05.214Z\",\n      \"modification_date\": \"1977-08-03T14:41:48.415Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bba25859-54fb-4907-bc95-892b2e0da5f1",
+          "name": "Update a workflow",
+          "request": {
+            "name": "Update a workflow",
+            "description": {},
+            "url": {
+              "path": [
+                "workflows",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"filter\": {\n    \"ids\": [\n      \"<number>\",\n      \"<number>\"\n    ]\n  },\n  \"individual_record_filter\": null,\n  \"status\": \"<string>\",\n  \"status_message\": \"<string>\",\n  \"record_type\": \"<string>\",\n  \"goal\": \"<string>\",\n  \"continuous\": \"<boolean>\",\n  \"exit_after_days\": \"<number>\",\n  \"schedule_date\": \"<dateTime>\",\n  \"schedule_time_start\": \"<string>\",\n  \"schedule_time_end\": \"<string>\",\n  \"schedule_days\": [\n    \"<number>\",\n    \"<number>\"\n  ],\n  \"steps\": [\n    {\n      \"order\": \"<number>\",\n      \"id\": \"<number>\",\n      \"name\": \"<string>\",\n      \"filter\": \"string\",\n      \"trigger_step\": \"<number>\",\n      \"trigger_step_index\": \"<number>\",\n      \"trigger_after_days\": \"<number>\",\n      \"trigger\": \"<string>\",\n      \"action_type\": \"<string>\",\n      \"action_config\": \"<object>\",\n      \"action_status\": \"<string>\",\n      \"action_source\": \"<number>\",\n      \"action_source_email\": \"<string>\",\n      \"analytics\": {\n        \"total\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        },\n        \"sent\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        },\n        \"interacted\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        },\n        \"replied\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        },\n        \"failed\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        }\n      },\n      \"metrics_data\": \"<object>\"\n    },\n    {\n      \"order\": \"<number>\",\n      \"id\": \"<number>\",\n      \"name\": \"<string>\",\n      \"filter\": null,\n      \"trigger_step\": \"<number>\",\n      \"trigger_step_index\": \"<number>\",\n      \"trigger_after_days\": \"<number>\",\n      \"trigger\": \"<string>\",\n      \"action_type\": \"<string>\",\n      \"action_config\": \"<object>\",\n      \"action_status\": \"<string>\",\n      \"action_source\": \"<number>\",\n      \"action_source_email\": \"<string>\",\n      \"analytics\": {\n        \"total\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        },\n        \"sent\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        },\n        \"interacted\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        },\n        \"replied\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        },\n        \"failed\": {\n          \"name\": \"<string>\",\n          \"value\": \"<number>\",\n          \"type\": \"<string>\"\n        }\n      },\n      \"metrics_data\": \"<object>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e314a86c-cf0a-42e4-8d57-c5cb606dbb32",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "workflows",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"success\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8525e968-a39f-4be0-9a08-5773909e630e",
+          "name": "Re-enter or exit an entity from a workflow",
+          "request": {
+            "name": "Re-enter or exit an entity from a workflow",
+            "description": {},
+            "url": {
+              "path": [
+                "workflows",
+                ":id",
+                "audience",
+                ":record_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "record_id",
+                  "description": "(Required) This is the entity id. For email workflows this should be the contact id."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"exited\": \"<boolean>\",\n  \"met_goal\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9801f33c-2ec4-478f-961c-a35b16af1059",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "workflows",
+                    ":id",
+                    "audience",
+                    ":record_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "record_id",
+                      "description": "(Required) This is the entity id. For email workflows this should be the contact id."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exited\": \"<boolean>\",\n  \"met_goal\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"success\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.salesflare.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "87865eba-76b5-49e6-ad53-fa8ee3140dba",
+    "name": "Salesflare Accounts Workflows API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Introduction\n\n## Getting Started\n\nThe Salesflare API allows you to access and build your own applications or integrations that interact with Salesflare.\n\nThe Salesflare API provides a RESTful interface with JSON-formatted responses to access most Salesflare resources.\n\n## Authentication\n\nThe Salesflare API uses bearer token based authentication, which means you need to use the key-value pair \"Authorization : Bearer APIKEY\" in the header to authenticate.\n\nYou can make an API key in [\"Settings\" > \"API keys\"](https://app.salesflare.com/#/settings/apikeys).\n\nClick on the large orange \"+\" button on the bottom right of the screen to create an API key.\n\n![Screenshot API Key Settings](https://lib.salesflare.com/api_docs/screenshot_settings_apikeys.png?v=2)\n\n## Requests\n\nAll requests must be sent using HTTPS with TLS 1.2 or higher. Please make sure your developer tools support this version of TLS as older versions or SSL are not supported for security reasons.\n\nFor PUT or POST requests (e.g. create, update), the payload must be provided as JSON in the request body.\n\n## Responses\n\nResponses use HTTP status codes, with the most typical ones being:\n\n| Code                   | Meaning               |\n|------------------------|-----------------------|\n| Successful Responses                           |\n| 200                    | OK                    |\n| Error Responses                                |\n| 400                    | Bad Request           |\n| 401                    | Unauthorized          |\n| 404                    | Not Found             |\n| 429                    | Too Many Requests     |\n| 500                    | Internal Server Error |\n\n## Testing\n\nWe recommend testing our API with Postman.\n\n### Download specification\n\nOur API is documented following the OpenAPI specification. You can download it [here](https://api.salesflare.com/openapi.json)\n\n### Import in Postman\n\nTo import the collection, open Postman and click Import, then select \"Import From Link\"\n\nCopy & Paste the following link and press the \"Import\" button:\n\n> https://api.salesflare.com/openapi.json\n\n![Screenshot Postman Import](https://lib.salesflare.com/api_docs/screenshot_postman_import.png)\n\n## Support\n\nFor API questions and support, please email support@salesflare.com or click the chat bubble below.\n\nContact Support:\n Email: support@salesflare.com",
+      "type": "text/plain"
+    }
+  }
+}

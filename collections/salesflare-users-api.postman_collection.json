@@ -1,0 +1,727 @@
+{
+  "item": [
+    {
+      "id": "9f66a0f5-760f-4990-b6bf-0f20c1cdef7a",
+      "name": "Users",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "02dbac00-3161-4328-bae6-e824b0780662",
+          "name": "Get current user's details",
+          "request": {
+            "name": "Get current user's details",
+            "description": {},
+            "url": {
+              "path": [
+                "me"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fd237a13-5937-42bd-b6a4-9156b2d64708",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "me"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"id\": 7446.66035186354,\n  \"team\": {\n    \"id\": 3935.252143422633,\n    \"name\": \"string\",\n    \"tracking_token\": \"string\",\n    \"days_until_account_inactive\": 4946.012236857675,\n    \"total_user_count\": 5818.987374975461,\n    \"enabled_user_count\": 6780.205113873361,\n    \"paid_user_count\": 5559.927202532568,\n    \"free_users\": 1151.5022641318328,\n    \"subscribed\": true,\n    \"payment_type\": \"free\",\n    \"discount_code\": \"string\",\n    \"discount_type\": \"string\",\n    \"promo_description\": \"string\",\n    \"promo_redeem_by\": \"2024-03-30T17:35:51.040Z\",\n    \"promo_code\": \"string\",\n    \"plan\": 2679.3427112321087,\n    \"currency\": {\n      \"id\": 3648.0931531526917,\n      \"html\": \"string\",\n      \"iso\": \"string\"\n    },\n    \"billing_currency\": {\n      \"id\": 6853.118990600335,\n      \"html\": \"string\",\n      \"iso\": \"string\"\n    },\n    \"billing_frequency\": \"annually\",\n    \"creation_date\": \"1955-01-24T08:30:04.888Z\",\n    \"time_zone\": \"string\",\n    \"stripe_customer_id\": \"string\",\n    \"stripe_subscription_date\": \"1996-10-22T04:50:57.116Z\",\n    \"campaign\": \"string\",\n    \"credit_usage\": 1339.3318578685087,\n    \"credit_quota\": 7114.715716715922,\n    \"credit_package\": \"XL\",\n    \"input_token_usage\": 9723.30497392256,\n    \"output_token_usage\": 3476.9824422178076,\n    \"ai_inference_usage\": 2486.0484712626494,\n    \"ai_inference_quota\": 1909.9145661913208,\n    \"email_tracking_subdomain\": \"string\",\n    \"email_tracking_domain\": {\n      \"url\": \"string\",\n      \"enabled\": true,\n      \"timeZones\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"automated_tagging\": false,\n    \"domain\": \"string\"\n  },\n  \"group\": 3826.199718504234,\n  \"amount_of_trial_days_earned\": 4201.162106231529,\n  \"setup_completion_percentage\": 2690.810302619069,\n  \"has_received_account_suggestions\": true,\n  \"has_archived_contacts\": false,\n  \"notification_channel_id\": \"string\",\n  \"needs_password\": true,\n  \"disabled\": false,\n  \"creation_date\": \"1998-11-03T05:08:52.901Z\",\n  \"modification_date\": \"2002-05-28T15:06:46.976Z\",\n  \"prefix\": \"string\",\n  \"firstname\": \"string\",\n  \"middle\": \"string\",\n  \"lastname\": \"string\",\n  \"suffix\": \"string\",\n  \"name\": \"string\",\n  \"email\": \"string\",\n  \"domain\": \"string\",\n  \"picture\": \"string\",\n  \"type\": \"string\",\n  \"is_admin\": true,\n  \"credit_usage\": 3831.5610303527324,\n  \"is_importing\": false,\n  \"sync_status\": \"string\",\n  \"calendar_sync_status\": \"string\",\n  \"first_calendar_sync_done\": false,\n  \"trial_expired\": true,\n  \"trial_expiry_date\": \"1999-10-16T15:26:10.412Z\",\n  \"trial_extended\": true,\n  \"restricted\": true,\n  \"restricted_reason\": \"string\",\n  \"team_discount_code\": \"string\",\n  \"is_delinquent\": false,\n  \"input_token_usage\": 1889.3961997726128,\n  \"output_token_usage\": 2548.065760016932,\n  \"ai_inference_usage\": 4661.165119394059,\n  \"social_profiles\": [\n    {\n      \"id\": 8367.929358599415,\n      \"username\": \"string\",\n      \"url\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"id\": 9046.94448804223,\n      \"username\": \"string\",\n      \"url\": \"string\",\n      \"type\": \"string\"\n    }\n  ],\n  \"phone_numbers\": [\n    {\n      \"id\": 6878.325543836463,\n      \"number\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"id\": 1343.8540196265346,\n      \"number\": \"string\",\n      \"type\": \"string\"\n    }\n  ],\n  \"positions\": [\n    {\n      \"id\": 8071.340268044789,\n      \"organisation\": \"string\",\n      \"role\": \"string\"\n    },\n    {\n      \"id\": 2227.964514688012,\n      \"organisation\": \"string\",\n      \"role\": \"string\"\n    }\n  ],\n  \"intercom_hash\": \"string\",\n  \"first_day_of_week\": 8786.954057094985,\n  \"theme\": \"system\",\n  \"language\": \"fr\",\n  \"am_pm_notation\": true,\n  \"auto_find_email_linkedin\": false,\n  \"data_sources_to_reconnect\": [\n    {\n      \"id\": 7467.7972626594565,\n      \"email\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"id\": 6922.74731142054,\n      \"email\": \"string\",\n      \"type\": \"string\"\n    }\n  ],\n  \"data_sources\": [\n    {\n      \"id\": 3434.3875101253298,\n      \"email\": \"string\",\n      \"type\": \"string\",\n      \"sync_status\": \"string\",\n      \"status\": \"RECONNECT\",\n      \"status_message\": \"string\"\n    },\n    {\n      \"id\": 2748.403669113386,\n      \"email\": \"string\",\n      \"type\": \"string\",\n      \"sync_status\": \"string\",\n      \"status\": \"RECONNECT\",\n      \"status_message\": \"string\"\n    }\n  ],\n  \"plan_flags\": {},\n  \"flags\": [\n    {\n      \"flag\": 1924.2114588780246,\n      \"name\": \"string\",\n      \"state\": true,\n      \"id\": 8072.902622944489,\n      \"user\": 52.607777373733235,\n      \"plan\": 3898.7033841105,\n      \"creation_date\": \"1995-04-02T07:53:13.460Z\",\n      \"modification_date\": \"1999-11-08T11:29:59.631Z\"\n    },\n    {\n      \"flag\": 7108.519651367229,\n      \"name\": \"string\",\n      \"state\": true,\n      \"id\": 9717.5987098985,\n      \"user\": 9901.896685267158,\n      \"plan\": 8503.724013987348,\n      \"creation_date\": \"1960-03-03T13:35:45.797Z\",\n      \"modification_date\": \"2007-06-16T10:17:00.351Z\"\n    }\n  ],\n  \"role\": {\n    \"id\": 156.492634328389,\n    \"name\": \"string\",\n    \"permissions\": {\n      \"view\": \"CED\",\n      \"ced\": \"VIEW\"\n    }\n  },\n  \"call_log_sync_date\": \"2015-06-28T23:31:16.916Z\",\n  \"two_fa_enabled\": true,\n  \"has_recently_failed_workflows\": false,\n  \"amount_of_failed_workflows\": 5367.107110337291\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2430f756-c55d-4885-88fc-e52305823ce0",
+          "name": "List users",
+          "request": {
+            "name": "List users",
+            "description": {
+              "content": "Request a list of users with optional filters and pagination",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_by",
+                  "value": "<string>",
+                  "description": "Sort instructions. Provide either 'key' (ascending) or 'key desc' (descending). Default sort order is ascending."
+                },
+                {
+                  "disabled": false,
+                  "key": "order_by",
+                  "value": "<string>",
+                  "description": "Sort instructions. Provide either 'key' (ascending) or 'key desc' (descending). Default sort order is ascending."
+                },
+                {
+                  "disabled": false,
+                  "key": "onlyEnabled",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aa19759c-6e42-467d-ad13-6434d42ae921",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "onlyEnabled",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "335d7e27-d26a-4f70-a366-845fe5852913",
+          "name": "List current user's contacts",
+          "request": {
+            "name": "List current user's contacts",
+            "description": {},
+            "url": {
+              "path": [
+                "me",
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "phone_number",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "domain",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "modification_after",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "modification_before",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "creation_after",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "creation_before",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "account",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "account",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tag",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tag",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tag.name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tag.name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "position.role",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "position.role",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "address.country",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "address.country",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "address.state_region",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "address.state_region",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "address.city",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "address.city",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeArchived",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "custom",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_by",
+                  "value": "<string>",
+                  "description": "Sort instructions. Provide either 'key' (ascending) or 'key desc' (descending). Default sort order is ascending."
+                },
+                {
+                  "disabled": false,
+                  "key": "order_by",
+                  "value": "<string>",
+                  "description": "Sort instructions. Provide either 'key' (ascending) or 'key desc' (descending). Default sort order is ascending."
+                },
+                {
+                  "disabled": false,
+                  "key": "export",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "95c597d2-ba07-44b9-b015-605d453a668a",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "me",
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "phone_number",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "modification_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "modification_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "creation_after",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "creation_before",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "account",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "account",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "tag",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "tag",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "tag.name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tag.name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "position.role",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "position.role",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address.country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address.country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address.state_region",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address.state_region",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address.city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address.city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeArchived",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "custom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "export",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 7019.071286712066,\n    \"account\": {\n      \"id\": 9618.16890106736,\n      \"picture\": \"string\",\n      \"name\": \"string\",\n      \"domain\": \"string\"\n    },\n    \"prefix\": \"string\",\n    \"firstname\": \"string\",\n    \"middle\": \"string\",\n    \"lastname\": \"string\",\n    \"suffix\": \"string\",\n    \"name\": \"string\",\n    \"email\": \"string\",\n    \"domain\": \"string\",\n    \"birth_date\": \"string\",\n    \"opt-out\": true,\n    \"opt-out_date\": \"2008-10-19T17:44:04.650Z\",\n    \"opt-out_campaign\": \"string\",\n    \"bounced\": true,\n    \"bounced_date\": \"2018-07-26T09:26:40.772Z\",\n    \"owner\": {\n      \"id\": 8499.556359761902,\n      \"name\": \"string\",\n      \"email\": \"string\",\n      \"picture\": \"string\"\n    },\n    \"picture\": \"string\",\n    \"archived\": true,\n    \"not_viewed\": true,\n    \"can_edit\": true,\n    \"creation_date\": \"2015-08-01T07:32:56.758Z\",\n    \"modification_date\": \"1949-12-19T03:33:08.831Z\",\n    \"type\": \"string\",\n    \"tags\": [\n      {\n        \"id\": 1980.642129239697,\n        \"name\": \"string\"\n      },\n      {\n        \"id\": 1820.0154750999432,\n        \"name\": \"string\"\n      }\n    ],\n    \"addresses\": [\n      {\n        \"id\": 1028.2564823706052,\n        \"city\": \"string\",\n        \"country\": \"string\",\n        \"region\": \"string\",\n        \"state_region\": \"string\",\n        \"street\": \"string\",\n        \"type\": \"string\",\n        \"zip\": \"string\"\n      },\n      {\n        \"id\": 6697.2311117568115,\n        \"city\": \"string\",\n        \"country\": \"string\",\n        \"region\": \"string\",\n        \"state_region\": \"string\",\n        \"street\": \"string\",\n        \"type\": \"string\",\n        \"zip\": \"string\"\n      }\n    ],\n    \"phone_number\": \"string\",\n    \"mobile_phone_number\": \"string\",\n    \"home_phone_number\": \"string\",\n    \"fax_number\": \"string\",\n    \"phone_numbers\": [\n      {\n        \"id\": 9732.376428823522,\n        \"number\": \"string\",\n        \"type\": \"string\"\n      },\n      {\n        \"id\": 3358.9400964195515,\n        \"number\": \"string\",\n        \"type\": \"string\"\n      }\n    ],\n    \"positions\": [\n      {\n        \"id\": 5612.259930950007,\n        \"organisation\": \"string\",\n        \"role\": \"string\"\n      },\n      {\n        \"id\": 7217.165208811436,\n        \"organisation\": \"string\",\n        \"role\": \"string\"\n      }\n    ],\n    \"social_profiles\": [\n      {\n        \"id\": 1993.6820913737674,\n        \"type\": \"string\",\n        \"url\": \"string\",\n        \"username\": \"string\"\n      },\n      {\n        \"id\": 4423.963041840333,\n        \"type\": \"string\",\n        \"url\": \"string\",\n        \"username\": \"string\"\n      }\n    ],\n    \"organisation\": \"string\",\n    \"role\": \"string\",\n    \"custom\": {},\n    \"last_email_date\": \"2014-11-16T02:52:33.306Z\",\n    \"last_meeting_date\": \"1995-11-18T14:40:13.733Z\",\n    \"connection_strength\": 584.5223880253259\n  },\n  {\n    \"id\": 8075.24508277741,\n    \"account\": {\n      \"id\": 6502.215366027797,\n      \"picture\": \"string\",\n      \"name\": \"string\",\n      \"domain\": \"string\"\n    },\n    \"prefix\": \"string\",\n    \"firstname\": \"string\",\n    \"middle\": \"string\",\n    \"lastname\": \"string\",\n    \"suffix\": \"string\",\n    \"name\": \"string\",\n    \"email\": \"string\",\n    \"domain\": \"string\",\n    \"birth_date\": \"string\",\n    \"opt-out\": true,\n    \"opt-out_date\": \"1947-12-22T15:48:59.623Z\",\n    \"opt-out_campaign\": \"string\",\n    \"bounced\": true,\n    \"bounced_date\": \"2003-05-28T16:53:16.873Z\",\n    \"owner\": {\n      \"id\": 8078.060534474396,\n      \"name\": \"string\",\n      \"email\": \"string\",\n      \"picture\": \"string\"\n    },\n    \"picture\": \"string\",\n    \"archived\": false,\n    \"not_viewed\": true,\n    \"can_edit\": true,\n    \"creation_date\": \"1975-03-18T16:53:22.230Z\",\n    \"modification_date\": \"2019-10-06T20:25:51.818Z\",\n    \"type\": \"string\",\n    \"tags\": [\n      {\n        \"id\": 363.30497319367885,\n        \"name\": \"string\"\n      },\n      {\n        \"id\": 1721.710003816872,\n        \"name\": \"string\"\n      }\n    ],\n    \"addresses\": [\n      {\n        \"id\": 4331.340234863639,\n        \"city\": \"string\",\n        \"country\": \"string\",\n        \"region\": \"string\",\n        \"state_region\": \"string\",\n        \"street\": \"string\",\n        \"type\": \"string\",\n        \"zip\": \"string\"\n      },\n      {\n        \"id\": 7836.203134244848,\n        \"city\": \"string\",\n        \"country\": \"string\",\n        \"region\": \"string\",\n        \"state_region\": \"string\",\n        \"street\": \"string\",\n        \"type\": \"string\",\n        \"zip\": \"string\"\n      }\n    ],\n    \"phone_number\": \"string\",\n    \"mobile_phone_number\": \"string\",\n    \"home_phone_number\": \"string\",\n    \"fax_number\": \"string\",\n    \"phone_numbers\": [\n      {\n        \"id\": 4111.085314955902,\n        \"number\": \"string\",\n        \"type\": \"string\"\n      },\n      {\n        \"id\": 7147.639557542452,\n        \"number\": \"string\",\n        \"type\": \"string\"\n      }\n    ],\n    \"positions\": [\n      {\n        \"id\": 7774.102645301499,\n        \"organisation\": \"string\",\n        \"role\": \"string\"\n      },\n      {\n        \"id\": 8853.771360779063,\n        \"organisation\": \"string\",\n        \"role\": \"string\"\n      }\n    ],\n    \"social_profiles\": [\n      {\n        \"id\": 3873.503679669953,\n        \"type\": \"string\",\n        \"url\": \"string\",\n        \"username\": \"string\"\n      },\n      {\n        \"id\": 7109.793310625196,\n        \"type\": \"string\",\n        \"url\": \"string\",\n        \"username\": \"string\"\n      }\n    ],\n    \"organisation\": \"string\",\n    \"role\": \"string\",\n    \"custom\": {},\n    \"last_email_date\": \"1958-05-26T16:11:27.888Z\",\n    \"last_meeting_date\": \"1949-10-22T11:50:11.588Z\",\n    \"connection_strength\": 1735.0557014719448\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4334ccd1-ff88-485f-a235-548c09c63958",
+          "name": "Get user details",
+          "request": {
+            "name": "Get user details",
+            "description": {},
+            "url": {
+              "path": [
+                "users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6cf70a8d-b214-4d31-ab23-8da0fa50196a",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.salesflare.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1445a838-da0f-4534-8833-349c4a6bb35d",
+    "name": "Salesflare Accounts Users API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Introduction\n\n## Getting Started\n\nThe Salesflare API allows you to access and build your own applications or integrations that interact with Salesflare.\n\nThe Salesflare API provides a RESTful interface with JSON-formatted responses to access most Salesflare resources.\n\n## Authentication\n\nThe Salesflare API uses bearer token based authentication, which means you need to use the key-value pair \"Authorization : Bearer APIKEY\" in the header to authenticate.\n\nYou can make an API key in [\"Settings\" > \"API keys\"](https://app.salesflare.com/#/settings/apikeys).\n\nClick on the large orange \"+\" button on the bottom right of the screen to create an API key.\n\n![Screenshot API Key Settings](https://lib.salesflare.com/api_docs/screenshot_settings_apikeys.png?v=2)\n\n## Requests\n\nAll requests must be sent using HTTPS with TLS 1.2 or higher. Please make sure your developer tools support this version of TLS as older versions or SSL are not supported for security reasons.\n\nFor PUT or POST requests (e.g. create, update), the payload must be provided as JSON in the request body.\n\n## Responses\n\nResponses use HTTP status codes, with the most typical ones being:\n\n| Code                   | Meaning               |\n|------------------------|-----------------------|\n| Successful Responses                           |\n| 200                    | OK                    |\n| Error Responses                                |\n| 400                    | Bad Request           |\n| 401                    | Unauthorized          |\n| 404                    | Not Found             |\n| 429                    | Too Many Requests     |\n| 500                    | Internal Server Error |\n\n## Testing\n\nWe recommend testing our API with Postman.\n\n### Download specification\n\nOur API is documented following the OpenAPI specification. You can download it [here](https://api.salesflare.com/openapi.json)\n\n### Import in Postman\n\nTo import the collection, open Postman and click Import, then select \"Import From Link\"\n\nCopy & Paste the following link and press the \"Import\" button:\n\n> https://api.salesflare.com/openapi.json\n\n![Screenshot Postman Import](https://lib.salesflare.com/api_docs/screenshot_postman_import.png)\n\n## Support\n\nFor API questions and support, please email support@salesflare.com or click the chat bubble below.\n\nContact Support:\n Email: support@salesflare.com",
+      "type": "text/plain"
+    }
+  }
+}

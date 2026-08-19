@@ -1,0 +1,341 @@
+{
+  "item": [
+    {
+      "id": "79b77f5d-897d-4cc0-8583-530940551fdf",
+      "name": "Pipelines",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1e457c7d-22be-403c-83f0-9945360561ea",
+          "name": "List pipelines",
+          "request": {
+            "name": "List pipelines",
+            "description": {
+              "content": "Request a list of pipelines with optional filters and pagination",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "pipelines"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_by",
+                  "value": "<string>",
+                  "description": "Sort instructions. Provide either 'key' (ascending) or 'key desc' (descending). Default sort order is ascending."
+                },
+                {
+                  "disabled": false,
+                  "key": "order_by",
+                  "value": "<string>",
+                  "description": "Sort instructions. Provide either 'key' (ascending) or 'key desc' (descending). Default sort order is ascending."
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ea68e88a-04f1-4d97-8b83-4fa2692096ca",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "pipelines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 1486.329929310679,\n    \"team\": 8175.040739624281,\n    \"name\": \"string\",\n    \"currency\": {\n      \"id\": 1538.6095442033377,\n      \"html\": \"string\",\n      \"iso\": \"string\"\n    },\n    \"follows_default_team_currency\": true,\n    \"order\": 8378.614214685986,\n    \"stages\": [\n      {\n        \"name\": \"string\",\n        \"id\": 6653.296242655268,\n        \"color\": \"string\",\n        \"probability\": 7811.408331245788,\n        \"fixed_stage\": 5599.290456324528,\n        \"days_until_account_inactive\": 412.573668790166,\n        \"order\": 9630.83009036401\n      },\n      {\n        \"name\": \"string\",\n        \"id\": 2269.3496132609794,\n        \"color\": \"string\",\n        \"probability\": 2154.1744111213,\n        \"fixed_stage\": 3546.8876649257686,\n        \"days_until_account_inactive\": 3040.3876594284675,\n        \"order\": 3930.580169213765\n      }\n    ],\n    \"groups\": [\n      {\n        \"id\": 1023.2967475765209,\n        \"name\": \"string\"\n      },\n      {\n        \"id\": 2637.557573626064,\n        \"name\": \"string\"\n      }\n    ],\n    \"recurring\": false,\n    \"default_pipeline\": true,\n    \"expected_customer_lifetime_months\": 9084.05881892406,\n    \"standard_price_per_unit_annually\": 4406.794626534694,\n    \"standard_price_per_unit_monthly\": 4010.1882096229792,\n    \"standard_price_per_unit_weekly\": 9427.893131054914,\n    \"standard_price_per_unit_daily\": 2207.4922783971506,\n    \"archived\": false,\n    \"creation_date\": \"2003-08-22T23:41:19.617Z\",\n    \"modification_date\": \"2003-07-19T15:31:29.918Z\"\n  },\n  {\n    \"id\": 6828.114858669994,\n    \"team\": 3729.0928116909995,\n    \"name\": \"string\",\n    \"currency\": {\n      \"id\": 9468.840654884196,\n      \"html\": \"string\",\n      \"iso\": \"string\"\n    },\n    \"follows_default_team_currency\": false,\n    \"order\": 2173.673437380458,\n    \"stages\": [\n      {\n        \"name\": \"string\",\n        \"id\": 3186.0533250859235,\n        \"color\": \"string\",\n        \"probability\": 6322.907326398721,\n        \"fixed_stage\": 5447.55978603821,\n        \"days_until_account_inactive\": 7617.649951951585,\n        \"order\": 1035.138150763899\n      },\n      {\n        \"name\": \"string\",\n        \"id\": 3816.419495605222,\n        \"color\": \"string\",\n        \"probability\": 4983.690719163443,\n        \"fixed_stage\": 9524.811197913776,\n        \"days_until_account_inactive\": 877.1905037023397,\n        \"order\": 8190.978712971803\n      }\n    ],\n    \"groups\": [\n      {\n        \"id\": 2060.8088996654574,\n        \"name\": \"string\"\n      },\n      {\n        \"id\": 7159.6629237151155,\n        \"name\": \"string\"\n      }\n    ],\n    \"recurring\": false,\n    \"default_pipeline\": true,\n    \"expected_customer_lifetime_months\": 8036.959702320334,\n    \"standard_price_per_unit_annually\": 1206.7250279401753,\n    \"standard_price_per_unit_monthly\": 8529.720943597178,\n    \"standard_price_per_unit_weekly\": 1632.6823175856441,\n    \"standard_price_per_unit_daily\": 1936.297687401828,\n    \"archived\": true,\n    \"creation_date\": \"2014-09-14T10:03:48.036Z\",\n    \"modification_date\": \"1954-06-19T22:40:40.981Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c013157-736a-4ed2-b0bc-5b69150d21e5",
+          "name": "List stages",
+          "request": {
+            "name": "List stages",
+            "description": {},
+            "url": {
+              "path": [
+                "stages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pipeline.id",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pipeline.name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order_by",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c3203916-87fe-4a79-ac42-dbc6cd1fe78f",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "pipeline.id",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "pipeline.name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order_by",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe4b0d99-3a6b-4296-afb8-74b58f822850",
+          "name": "Get stage details",
+          "request": {
+            "name": "Get stage details",
+            "description": {},
+            "url": {
+              "path": [
+                "stages",
+                ":stage_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "stage_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "251a11c7-78d2-4602-85e0-a90cc2db34dd",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stages",
+                    ":stage_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "stage_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.salesflare.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "96445211-5414-49ef-ad00-3d240e100e5b",
+    "name": "Salesflare Accounts Pipelines API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Introduction\n\n## Getting Started\n\nThe Salesflare API allows you to access and build your own applications or integrations that interact with Salesflare.\n\nThe Salesflare API provides a RESTful interface with JSON-formatted responses to access most Salesflare resources.\n\n## Authentication\n\nThe Salesflare API uses bearer token based authentication, which means you need to use the key-value pair \"Authorization : Bearer APIKEY\" in the header to authenticate.\n\nYou can make an API key in [\"Settings\" > \"API keys\"](https://app.salesflare.com/#/settings/apikeys).\n\nClick on the large orange \"+\" button on the bottom right of the screen to create an API key.\n\n![Screenshot API Key Settings](https://lib.salesflare.com/api_docs/screenshot_settings_apikeys.png?v=2)\n\n## Requests\n\nAll requests must be sent using HTTPS with TLS 1.2 or higher. Please make sure your developer tools support this version of TLS as older versions or SSL are not supported for security reasons.\n\nFor PUT or POST requests (e.g. create, update), the payload must be provided as JSON in the request body.\n\n## Responses\n\nResponses use HTTP status codes, with the most typical ones being:\n\n| Code                   | Meaning               |\n|------------------------|-----------------------|\n| Successful Responses                           |\n| 200                    | OK                    |\n| Error Responses                                |\n| 400                    | Bad Request           |\n| 401                    | Unauthorized          |\n| 404                    | Not Found             |\n| 429                    | Too Many Requests     |\n| 500                    | Internal Server Error |\n\n## Testing\n\nWe recommend testing our API with Postman.\n\n### Download specification\n\nOur API is documented following the OpenAPI specification. You can download it [here](https://api.salesflare.com/openapi.json)\n\n### Import in Postman\n\nTo import the collection, open Postman and click Import, then select \"Import From Link\"\n\nCopy & Paste the following link and press the \"Import\" button:\n\n> https://api.salesflare.com/openapi.json\n\n![Screenshot Postman Import](https://lib.salesflare.com/api_docs/screenshot_postman_import.png)\n\n## Support\n\nFor API questions and support, please email support@salesflare.com or click the chat bubble below.\n\nContact Support:\n Email: support@salesflare.com",
+      "type": "text/plain"
+    }
+  }
+}

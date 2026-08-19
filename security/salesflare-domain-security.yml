@@ -1,4 +1,4 @@
-generated: '2026-07-11'
+generated: '2026-08-13'
 method: probed
 source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
 hosts:
@@ -11,7 +11,7 @@ hosts:
 - host: api.salesflare.com
   https: true
   tls_version: TLSv1.3
-  cert_expires: Sep 18 10:16:35 2026 GMT
+  cert_expires: Nov 10 19:36:24 2026 GMT
   hsts: null
 domains:
 - domain: salesflare.com

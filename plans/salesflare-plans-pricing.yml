@@ -1,3 +1,13 @@
+generated: '2026-08-13'
+method: searched
+source: https://salesflare.com/pricing
+plan_count: 3
+currencies: [USD, EUR]
+verified: >-
+  Re-read live on 2026-08-13. Every tier, price and lead-credit figure below was
+  confirmed against the published pricing page unchanged. Salesflare quotes the
+  same numbers in EUR as in USD (Growth €39/€29, Pro €64/€49, Enterprise
+  €124/€99); the USD figures are recorded in the plans[] below.
 name: Salesflare Plans and Pricing
 description: >-
   Salesflare offers three subscription tiers designed for B2B sales teams of

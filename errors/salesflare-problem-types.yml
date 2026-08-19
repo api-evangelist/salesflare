@@ -1,0 +1,76 @@
+generated: '2026-08-13'
+method: searched
+source: https://api.salesflare.com/docs
+format: http-status
+note: >-
+  Not RFC 9457. Salesflare publishes a plain HTTP status-code table in the
+  OpenAPI info.description and nothing more — no error type URIs, no machine
+  error codes, no problem+json media type, and no error schema anywhere in the
+  spec. The spec is also thin on the response side: of 71 operations, 47 declare
+  only a `default` response with an untyped string body and 24 declare a 200;
+  NOT ONE declares a 4xx or 5xx response. So the status codes below are the
+  provider's documented contract in prose, and they are deliberately NOT
+  attributed to individual operations, because the spec does not say which
+  operation returns which. The observed error envelope shown under
+  `observed_envelope` is what api.salesflare.com actually returned on a live
+  unauthenticated probe.
+observed_envelope:
+  method: probed
+  source: 'GET https://api.salesflare.com/swagger.json (2026-08-13)'
+  shape:
+    statusCode: integer
+    error: string
+    message: string
+  example: '{"statusCode":404,"error":"Not Found","message":"Not Found"}'
+  note: >-
+    Hapi/Boom-style envelope. Consistent across the 404s observed on this host.
+    It is not documented by the provider — it is recorded here as an observation.
+problems:
+  - status: 200
+    title: OK
+    class: success
+    documented: true
+  - status: 400
+    title: Bad Request
+    class: client-error
+    documented: true
+    remediation: >-
+      Malformed request. For PUT/POST the payload must be valid JSON in the
+      request body; check filter-rule objects passed to `q` and value types on
+      query parameters.
+  - status: 401
+    title: Unauthorized
+    class: client-error
+    documented: true
+    remediation: >-
+      Missing or invalid credential. Send `Authorization: Bearer {APIKEY}` with a
+      key created at https://app.salesflare.com/#/settings/apikeys. On the MCP
+      surface a 401 carries a WWW-Authenticate Bearer challenge pointing at
+      https://mcp.salesflare.com/.well-known/oauth-protected-resource.
+  - status: 404
+    title: Not Found
+    class: client-error
+    documented: true
+    remediation: The addressed record or route does not exist for this account.
+  - status: 429
+    title: Too Many Requests
+    class: client-error
+    documented: true
+    remediation: >-
+      Back off and retry with exponential backoff. Salesflare publishes no
+      numeric rate limit and documents no Retry-After or RateLimit-* response
+      header — see rate-limits/salesflare-rate-limits.yml.
+  - status: 500
+    title: Internal Server Error
+    class: server-error
+    documented: true
+    remediation: >-
+      Retry; if it persists contact support@salesflare.com. Note that no
+      operation in the spec declares a 5xx response, so a generated client will
+      not model this.
+gaps:
+  - No RFC 9457 application/problem+json.
+  - No stable machine-readable error codes — only the HTTP status and a human message.
+  - Zero 4xx/5xx responses declared across all 71 operations in the OpenAPI.
+  - No per-operation error documentation.
+  - No documented rate-limit headers on the 429.

@@ -1,0 +1,121 @@
+generated: '2026-08-13'
+method: derived
+source: >-
+  openapi/_original/salesflare-openapi.json,
+  well-known/salesflare-well-known.yml, and live probes of
+  https://api.salesflare.com and https://mcp.salesflare.com
+note: >-
+  Salesflare's standards posture is lopsided and interesting: its REST contract is
+  two major versions behind (Swagger 2.0, no declared security, no error schema),
+  while its agent surface is close to state of the art (MCP over Streamable HTTP,
+  RFC 8414 + RFC 9728 discovery, OIDC with PKCE/DPoP/PAR and dynamic client
+  registration). No published compliance certifications were found on any
+  Salesflare property, so no Compliance pointer is emitted.
+standards:
+  - id: openapi
+    conforms: true
+    version: Swagger 2.0
+    evidence: >-
+      https://api.salesflare.com/openapi.json returns a parsing Swagger 2.0
+      document, host api.salesflare.com, 46 paths / 71 operations.
+    note: Predates OpenAPI 3.x. Not OpenAPI 3.0 or 3.1 conformant.
+  - id: openapi-3
+    conforms: false
+    evidence: >-
+      Published document declares "swagger": "2.0"; no 3.x document is served.
+  - id: oauth2
+    conforms: true
+    evidence: >-
+      RFC 6749 authorization_code / implicit / refresh_token / client_credentials
+      grants advertised at https://api.salesflare.com/.well-known/oauth-authorization-server
+  - id: oauth2-pkce
+    conforms: true
+    evidence: code_challenge_methods_supported ["S256"]
+  - id: rfc8414-authorization-server-metadata
+    conforms: true
+    evidence: 200 at https://api.salesflare.com/.well-known/oauth-authorization-server
+  - id: rfc9728-protected-resource-metadata
+    conforms: true
+    evidence: >-
+      200 at https://mcp.salesflare.com/.well-known/oauth-protected-resource,
+      resource https://mcp.salesflare.com/mcp
+  - id: rfc7591-dynamic-client-registration
+    conforms: true
+    evidence: registration_endpoint https://api.salesflare.com/oidc/register
+  - id: rfc9126-pushed-authorization-requests
+    conforms: true
+    evidence: pushed_authorization_request_endpoint https://api.salesflare.com/oidc/request
+  - id: rfc9449-dpop
+    conforms: true
+    evidence: dpop_signing_alg_values_supported [ES256, EdDSA]
+  - id: oidc
+    conforms: true
+    evidence: >-
+      issuer https://api.salesflare.com/oidc with jwks_uri, userinfo_endpoint,
+      end_session_endpoint and id_token_signing_alg_values_supported [RS256].
+    note: >-
+      Partial on discovery — the RFC 8414 path answers but
+      /.well-known/openid-configuration returns 404, so a strict OIDC Discovery
+      client will not find the provider.
+  - id: oidc-discovery
+    conforms: false
+    evidence: 404 at https://api.salesflare.com/.well-known/openid-configuration
+  - id: mcp
+    conforms: true
+    version: Streamable HTTP with OAuth 2.1 authorization
+    evidence: >-
+      https://mcp.salesflare.com/mcp answers a JSON-RPC POST with 401 and an
+      RFC 9728-compliant WWW-Authenticate Bearer challenge naming its
+      resource_metadata document.
+  - id: a2a
+    conforms: false
+    evidence: >-
+      404 on /.well-known/agent-card.json and /.well-known/agent.json across
+      salesflare.com, api.salesflare.com, app.salesflare.com and mcp.salesflare.com.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      No application/problem+json anywhere in the spec; observed errors use a
+      {statusCode, error, message} envelope.
+  - id: rfc9116-security-txt
+    conforms: false
+    evidence: 404 at /.well-known/security.txt on salesflare.com and api.salesflare.com
+  - id: rfc9727-api-catalog
+    conforms: false
+    evidence: 404 at /.well-known/api-catalog on all hosts
+  - id: rfc8594-sunset-header
+    conforms: false
+    evidence: No Sunset or Deprecation header documented; no deprecation policy published.
+  - id: idempotency-key
+    conforms: false
+    evidence: >-
+      No Idempotency-Key header or equivalent in any of the 71 operations or in
+      the docs.
+  - id: pagination
+    conforms: true
+    style: limit-offset
+    evidence: >-
+      limit (default 10, minimum 1) and offset query parameters on the list
+      operations; no cursor, no total count, no Link header.
+  - id: json-api
+    conforms: false
+    evidence: Bare JSON arrays and objects; no JSON:API media type or envelope.
+  - id: asyncapi
+    conforms: false
+    evidence: No event, streaming or webhook surface published.
+  - id: graphql
+    conforms: false
+    evidence: No /graphql endpoint.
+  - id: grpc
+    conforms: false
+    evidence: No .proto in the Salesflare GitHub organization or on buf.build.
+compliance_certifications:
+  found: []
+  note: >-
+    No trust center, no security page and no named certification (SOC 2, ISO
+    27001, PCI DSS, HIPAA, FedRAMP) was found on any Salesflare property.
+    salesflare.com/security, /trust, /gdpr and /security-and-privacy all return
+    404. Salesflare publishes a Terms of Use and a Privacy Policy only. Third-party
+    vendor pages asserting Salesflare "supports SOC 2 / ISO 27001" describe the
+    vendor's own evidence-collection integration, not a Salesflare certification,
+    and are not treated as provider evidence here.

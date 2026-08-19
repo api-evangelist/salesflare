@@ -1,0 +1,218 @@
+{
+  "item": [
+    {
+      "id": "5ddc7d79-de44-43c7-9e96-82d095db3dfa",
+      "name": "Calls",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d0d428c7-aff9-4c72-bd0c-153fbee4fa60",
+          "name": "Create a call",
+          "request": {
+            "name": "Create a call",
+            "description": {},
+            "url": {
+              "path": [
+                "calls"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"date\": \"<dateTime>\",\n    \"participants\": [\n      \"<number>\",\n      \"<number>\"\n    ],\n    \"end_date\": \"<dateTime>\",\n    \"subject\": \"<string>\",\n    \"description\": \"<string>\",\n    \"minutes\": \"<string>\",\n    \"notes\": \"<string>\",\n    \"phone_type\": \"<string>\",\n    \"phone_number_hash\": \"<string>\"\n  },\n  {\n    \"date\": \"<dateTime>\",\n    \"participants\": [\n      \"<number>\",\n      \"<number>\"\n    ],\n    \"end_date\": \"<dateTime>\",\n    \"subject\": \"<string>\",\n    \"description\": \"<string>\",\n    \"minutes\": \"<string>\",\n    \"notes\": \"<string>\",\n    \"phone_type\": \"<string>\",\n    \"phone_number_hash\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ec33187d-f586-490d-aa8c-76d27235b236",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "calls"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"date\": \"<dateTime>\",\n    \"participants\": [\n      \"<number>\",\n      \"<number>\"\n    ],\n    \"end_date\": \"<dateTime>\",\n    \"subject\": \"<string>\",\n    \"description\": \"<string>\",\n    \"minutes\": \"<string>\",\n    \"notes\": \"<string>\",\n    \"phone_type\": \"<string>\",\n    \"phone_number_hash\": \"<string>\"\n  },\n  {\n    \"date\": \"<dateTime>\",\n    \"participants\": [\n      \"<number>\",\n      \"<number>\"\n    ],\n    \"end_date\": \"<dateTime>\",\n    \"subject\": \"<string>\",\n    \"description\": \"<string>\",\n    \"minutes\": \"<string>\",\n    \"notes\": \"<string>\",\n    \"phone_type\": \"<string>\",\n    \"phone_number_hash\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c13987d-0e54-4fff-8c60-26cf55b49e57",
+          "name": "Update a call",
+          "request": {
+            "name": "Update a call",
+            "description": {},
+            "url": {
+              "path": [
+                "calls",
+                ":meeting_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<number>",
+                  "key": "meeting_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"calendar_id\": \"<string>\",\n  \"external_id\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"minutes\": \"<string>\",\n  \"edited_by\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bc9b5159-324d-41da-a5c2-df46ba05c6c1",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "calls",
+                    ":meeting_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<number>",
+                      "key": "meeting_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.salesflare.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "12aff17a-5537-40c4-b40b-b9d2aa99348e",
+    "name": "Salesflare Accounts Calls API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Introduction\n\n## Getting Started\n\nThe Salesflare API allows you to access and build your own applications or integrations that interact with Salesflare.\n\nThe Salesflare API provides a RESTful interface with JSON-formatted responses to access most Salesflare resources.\n\n## Authentication\n\nThe Salesflare API uses bearer token based authentication, which means you need to use the key-value pair \"Authorization : Bearer APIKEY\" in the header to authenticate.\n\nYou can make an API key in [\"Settings\" > \"API keys\"](https://app.salesflare.com/#/settings/apikeys).\n\nClick on the large orange \"+\" button on the bottom right of the screen to create an API key.\n\n![Screenshot API Key Settings](https://lib.salesflare.com/api_docs/screenshot_settings_apikeys.png?v=2)\n\n## Requests\n\nAll requests must be sent using HTTPS with TLS 1.2 or higher. Please make sure your developer tools support this version of TLS as older versions or SSL are not supported for security reasons.\n\nFor PUT or POST requests (e.g. create, update), the payload must be provided as JSON in the request body.\n\n## Responses\n\nResponses use HTTP status codes, with the most typical ones being:\n\n| Code                   | Meaning               |\n|------------------------|-----------------------|\n| Successful Responses                           |\n| 200                    | OK                    |\n| Error Responses                                |\n| 400                    | Bad Request           |\n| 401                    | Unauthorized          |\n| 404                    | Not Found             |\n| 429                    | Too Many Requests     |\n| 500                    | Internal Server Error |\n\n## Testing\n\nWe recommend testing our API with Postman.\n\n### Download specification\n\nOur API is documented following the OpenAPI specification. You can download it [here](https://api.salesflare.com/openapi.json)\n\n### Import in Postman\n\nTo import the collection, open Postman and click Import, then select \"Import From Link\"\n\nCopy & Paste the following link and press the \"Import\" button:\n\n> https://api.salesflare.com/openapi.json\n\n![Screenshot Postman Import](https://lib.salesflare.com/api_docs/screenshot_postman_import.png)\n\n## Support\n\nFor API questions and support, please email support@salesflare.com or click the chat bubble below.\n\nContact Support:\n Email: support@salesflare.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,146 @@
+generated: '2026-08-13'
+method: derived
+source: >-
+  openapi/_original/salesflare-openapi.json (71 operations) plus the prose
+  conventions published in info.description at https://api.salesflare.com/docs
+note: >-
+  Cross-cutting request/response semantics for the Salesflare REST API. Derived by
+  reading the live Swagger 2.0 across all 71 operations and the provider's own
+  introduction text. Where a convention does not exist it is recorded as absent
+  rather than inferred — in particular Salesflare documents NO idempotency
+  contract, NO request-id tracing header and NO rate-limit response headers, and
+  those absences are the honest finding.
+authentication:
+  style: bearer-token
+  header: 'Authorization: Bearer {APIKEY}'
+  scoped: false
+  artifact: authentication/salesflare-authentication.yml
+  note: >-
+    Account-level API key for REST. A separate OIDC/OAuth surface authorizes the
+    hosted MCP server only.
+transport:
+  scheme: https
+  minimum_tls: '1.2'
+  content_type: application/json
+  note: >-
+    "For PUT or POST requests (e.g. create, update), the payload must be provided
+    as JSON in the request body."
+idempotency:
+  supported: false
+  header: null
+  note: >-
+    No Idempotency-Key header, no idempotency parameter and no retry-safety
+    contract appears anywhere in the 71 operations or in the docs. POST /accounts,
+    POST /contacts, POST /opportunities and POST /tasks are not safe to blindly
+    retry — a duplicate call creates a duplicate record. Agents should read back
+    with a filter (see filtering, below) before retrying a create.
+pagination:
+  style: limit-offset
+  parameters:
+    limit:
+      in: query
+      type: number
+      default: 10
+      minimum: 1
+      note: >-
+        Default page size is 10 on every list operation. Present on 10 list
+        operations.
+    offset:
+      in: query
+      type: number
+      note: Zero-based record offset. Present on 8 list operations.
+  response_envelope: bare-array
+  total_count: not returned
+  cursor: false
+  link_header: false
+  note: >-
+    List operations return a bare JSON array with no envelope, no total count and
+    no next-page link. A client cannot tell whether it has reached the end except
+    by receiving fewer than `limit` records — the classic offset-pagination
+    failure mode under concurrent writes.
+sorting:
+  parameter: order_by
+  style: repeated query parameter (collectionFormat multi)
+  syntax: "'key' for ascending, 'key desc' for descending"
+  default: ascending
+  source: openapi parameter description on getAccounts and 9 other list operations
+filtering:
+  simple:
+    - parameter: search
+      note: Free-text search across the entity.
+    - parameter: id
+      note: Repeated parameter, fetch specific records by id.
+    - parameter: creation_after / creation_before / modification_after / modification_before
+      type: date-time
+    - parameter: tag / tag.name / domain / email / account / pipeline / address.country / address.city / address.state_region
+      note: Repeated parameters, dotted paths address nested fields.
+  structured:
+    parameter: q
+    encoding: JSON object passed as a query-string value (x-type object)
+    shape:
+      condition: AND | OR
+      rules: array of {id, operator, value}
+    field_registry: getFilterfieldsEntity (GET /filterfields/{entity})
+    note: >-
+      The filter-rule object is Salesflare's own query-builder format. The spec
+      marks the FAT rule shape (id, customfield_id, operator, enabled, label,
+      type, query_builder_id) as "Deprecated. Use the slim version with only
+      `id`, `operator`, and `value`." That deprecation is inline in the schema
+      only — there is no dated deprecation policy behind it. Salesflare open-sources
+      the transformer for this format as @salesflare/optimus on npm.
+custom_fields:
+  parameter: custom
+  encoding: JSON object passed as a query-string value (x-type object)
+  registry:
+    - getCustomfieldsTypes
+    - getCustomfieldsItemclass
+    - getCustomfieldsItemclassCustomfieldapifieldOptions
+  note: >-
+    Custom fields are addressed by api_field name under a `custom` object on both
+    filter and payload, and the field registry is itself an API — so an agent can
+    discover an account's custom schema at runtime.
+field_expansion:
+  parameter: details
+  type: boolean
+  default: true
+  note: >-
+    Coarse on/off expansion of related detail on getAccounts and getContacts.
+    There is no sparse-fieldset or per-field selection mechanism.
+export:
+  parameter: export
+  note: >-
+    Present on 5 list operations. Switches the response to an export
+    representation; the spec types it only as a string and does not document the
+    accepted values.
+request_tracing:
+  supported: false
+  note: No request-id / correlation-id header is documented or declared.
+versioning:
+  scheme: none
+  current: null
+  note: >-
+    No version segment in the path (basePath is "/"), no version header, no date
+    pinning. info.version reads 1.0.0 and has not been used to express change.
+    Breaking changes would arrive unannounced. See lifecycle/salesflare-lifecycle.yml.
+errors:
+  envelope: '{statusCode, error, message}'
+  format: http-status
+  problem_json: false
+  artifact: errors/salesflare-problem-types.yml
+rate_limits:
+  signalled_by: HTTP 429 only
+  headers: none documented
+  retry_after: not documented
+  artifact: rate-limits/salesflare-rate-limits.yml
+webhooks:
+  supported: false
+  note: >-
+    No first-party webhook or event-subscription surface. The webhook listing on
+    integrations.salesflare.com is a third-party connector request page, not a
+    Salesflare API feature.
+cross_links:
+  authentication: authentication/salesflare-authentication.yml
+  errors: errors/salesflare-problem-types.yml
+  lifecycle: lifecycle/salesflare-lifecycle.yml
+  rate_limits: rate-limits/salesflare-rate-limits.yml
+  data_model: data-model/salesflare-data-model.yml

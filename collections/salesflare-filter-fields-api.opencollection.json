@@ -1,0 +1,46 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Salesflare Accounts Filter Fields API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Filter Fields",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List filter fields for an entity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.salesflare.com/filterfields/:entity",
+            "params": [
+              {
+                "name": "entity",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pipeline",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includePipelineSpecificPredefinedFilterFields",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List filter fields for an entity"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,267 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Salesflare Accounts Opportunities API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Opportunities",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List opportunities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.salesflare.com/opportunities",
+            "params": [
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Deprecated. Do not use this field."
+              },
+              {
+                "name": "stage",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "stage.name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "owner",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "team_member",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "owner_group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "assignee_group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "team_member_group",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "account",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "assignee",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "min_value",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "max_value",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "close_after",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "close_before",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "creation_after",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "creation_before",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "closed",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "done",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tag",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tag.name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "hotness",
+                "value": "",
+                "type": "query",
+                "description": "Hotness level. Allowed values: 1 (Room temp), 2 (Hot), 3 (On fire)."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order_by",
+                "value": "",
+                "type": "query",
+                "description": "Sort instructions. Provide either 'key' (ascending) or 'key desc' (descending). Default sort order is ascending."
+              },
+              {
+                "name": "pipeline",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "custom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "details",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "export",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Request a list of opportunities with optional filters and pagination<br/><br/>default date filter (from/to) is on close_date<br/><br/>setting scope to user gives back all opportunities from the user"
+        },
+        {
+          "info": {
+            "name": "Create an opportunity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.salesflare.com/opportunities",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an opportunity"
+        },
+        {
+          "info": {
+            "name": "Get opportunity details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.salesflare.com/opportunities/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get opportunity details"
+        },
+        {
+          "info": {
+            "name": "Update an opportunity",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.salesflare.com/opportunities/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an opportunity"
+        },
+        {
+          "info": {
+            "name": "Delete an opportunity",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.salesflare.com/opportunities/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete an opportunity"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
