@@ -34,6 +34,16 @@ tags:
   - Sales
   - B2B
   - Contacts
+  - Account
+  - Opportunities
+  - Email
+  - Automation
+  - Lead Generation
+tags_raw:
+  - CRM
+  - Sales
+  - B2B
+  - Contacts
   - Accounts
   - Opportunities
   - Email
@@ -46,6 +56,8 @@ apis:
   humanURL: https://api.salesflare.com/docs
   baseURL: https://api.salesflare.com
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -115,6 +127,8 @@ apis:
   humanURL: https://api.salesflare.com/docs
   baseURL: https://api.salesflare.com
   tags:
+  - AI Settings
+  tags_raw:
   - AISettings
   properties:
   - type: OpenAPI
@@ -253,6 +267,8 @@ apis:
   humanURL: https://api.salesflare.com/docs
   baseURL: https://api.salesflare.com
   tags:
+  - Group
+  tags_raw:
   - Groups
   properties:
   - type: OpenAPI
@@ -437,6 +453,8 @@ apis:
   humanURL: https://api.salesflare.com/docs
   baseURL: https://api.salesflare.com
   tags:
+  - Task
+  tags_raw:
   - Tasks
   properties:
   - type: OpenAPI
@@ -460,6 +478,8 @@ apis:
   humanURL: https://api.salesflare.com/docs
   baseURL: https://api.salesflare.com
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
