@@ -139,7 +139,7 @@ apis:
   humanURL: https://api.salesflare.com/docs
   baseURL: https://api.salesflare.com
   tags:
-  - AISettings
+  - AI Settings
   tags_raw:
   - AISettings
   properties:
