@@ -2,23 +2,21 @@
   "repo": "salesflare",
   "feeds": [
     {
-      "source": "https://blog.salesflare.com/feed/",
-      "feed_url": "https://blog.salesflare.com/feed/",
-      "title": "",
-      "saved": 0,
-      "method": "feed",
-      "nature": "vendor-blog",
-      "nature_basis": "blog_subdomain"
-    },
-    {
       "source": "https://www.linkedin.com/company/salesflare",
       "feed_url": "https://www.linkedin.com/company/salesflare",
       "title": "",
       "saved": 0,
       "method": "none"
+    },
+    {
+      "source": "https://blog.salesflare.com/feed/",
+      "feed_url": "https://blog.salesflare.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
     }
   ],
-  "fetched": "2026-08-30T22:33:40Z",
+  "fetched": "2026-09-06T19:17:18Z",
   "post_count": 23,
   "feed_nature": "vendor-blog",
   "feed_nature_basis": "blog_subdomain",
