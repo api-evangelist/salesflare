@@ -133,31 +133,6 @@ apis:
   - type: Vocabulary
     url: >-
       https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
-- aid: salesflare:salesflare-aisettings-api
-  name: Salesflare AISettings API
-  description: The AISettings API from Salesflare — 1 operation(s) for aisettings.
-  humanURL: https://api.salesflare.com/docs
-  baseURL: https://api.salesflare.com
-  tags:
-  - AI Settings
-  tags_raw:
-  - AISettings
-  properties:
-  - type: OpenAPI
-    url: openapi/salesflare-aisettings-api-openapi.yml
-  - type: Overlay
-    url: overlays/salesflare-aisettings-overlay.yaml
-  - type: Documentation
-    url: https://api.salesflare.com/docs
-  - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
-  - type: JSONLDContext
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
-  - type: Vocabulary
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
 - aid: salesflare:salesflare-calls-api
   name: Salesflare Calls API
   description: The Calls API from Salesflare — 2 operation(s) for calls.
@@ -532,7 +507,30 @@ apis:
   - type: Vocabulary
     url: >-
       https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
+- aid: salesflare:salesflare-ai-settings-api
+  name: Salesflare AI Settings API
+  description: The AI Settings API from Salesflare — 1 operation(s) for ai settings.
+  humanURL: https://api.salesflare.com/docs
+  baseURL: https://api.salesflare.com
+  tags:
+  - AI Settings
+  properties:
+  - type: OpenAPI
+    url: openapi/salesflare-ai-settings-api-openapi.yml
+  - type: Documentation
+    url: https://api.salesflare.com/docs
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-schema/salesflare-schemas.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/json-ld/salesflare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
 common:
+  - type: Overlay
+    url: overlays/salesflare-aisettings-overlay.yaml
   - type: AgenticAccess
     url: agentic-access/salesflare-agentic-access.yml
   - type: DomainSecurity
