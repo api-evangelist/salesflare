@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Salesflare Persons API
+  title: Salesflare AI Settings API
   version: 1.0.0
   description: '# Introduction
 
@@ -18,36 +18,36 @@ info:
 servers:
 - url: https://api.salesflare.com
 tags:
-- name: Persons
+- name: AI Settings
 paths:
-  /persons:
-    get:
-      summary: List persons
-      operationId: getPersons
-      parameters:
-      - x-constraint:
-          single: true
-        name: id
-        in: query
-        explode: true
-        schema:
-          type: array
-          items:
-            type: number
-      - name: name
-        in: query
-        schema:
-          type: string
-      - name: email
-        in: query
-        schema:
-          type: string
-      - name: search
-        in: query
-        schema:
-          type: string
+  /settings/ai:
+    put:
+      summary: Update AI Settings
+      operationId: putSettingsAi
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                company:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    summary:
+                      type: string
+                    generated:
+                      type: boolean
+                user:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    summary:
+                      type: string
       tags:
-      - Persons
+      - AI Settings
       responses:
         default:
           description: Successful
