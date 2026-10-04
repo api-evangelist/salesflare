@@ -529,6 +529,9 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/vocabulary/salesflare-vocabulary.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/salesflare-capability-edges.yml
+    name: Salesflare Business Capability Map
   - type: Overlay
     url: overlays/salesflare-aisettings-overlay.yaml
   - type: AgenticAccess
