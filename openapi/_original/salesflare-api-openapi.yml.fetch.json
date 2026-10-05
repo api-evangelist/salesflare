@@ -1,0 +1,12 @@
+{
+ "url": "https://api.salesflare.com/openapi.json",
+ "requested_url": "https://api.salesflare.com/openapi.json",
+ "status": 200,
+ "content_type": "application/json; charset=utf-8",
+ "bytes": 524492,
+ "sha256": "69beed0597d82e7bea49805f58409ec1124d1a2fc300ad2d167a3b2c6eab4f13",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 0.986), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
