@@ -1,0 +1,464 @@
+generated: '2026-10-12'
+method: searched
+source:
+- https://zapier.com/apps/salesflare/integrations
+checked:
+- https://composio.dev/toolkits/salesflare
+- https://monid.ai/tools/salesflare
+- https://n8n.io/integrations/salesflare/
+- https://zapier.com/apps/salesflare/integrations
+summary: null
+marketplace_apps:
+- marketplace: zapier
+  channel: ipaas-listing
+  app: salesflare
+  url: https://zapier.com/apps/salesflare/integrations
+  external_url: https://app.salesflare.com/
+  partner_tier: SILVER
+  triggers:
+  - key: New_Account
+    label: New Account
+  - key: New_Contact
+    label: New Contact
+  - key: New_Opportunity
+    label: New Opportunity
+  - key: New_Task
+    label: New Task
+  - key: New_Workflow_Event
+    label: New Workflow Event
+  - key: New_Workflow_Step_Event
+    label: New Workflow Step Event
+  actions:
+  - key: Add_Contact_To_Account
+    label: Add Contact to Account
+  - key: Add_User_To_Account
+    label: Add User to Account
+  - key: Create_Account
+    label: Create Account
+  - key: Create_Call
+    label: Create Call
+  - key: Create_Contact
+    label: Create Contact
+  - key: Create_Meeting
+    label: Create Meeting
+  - key: Create_Note
+    label: Create Internal Note
+  - key: Create_Opportunity
+    label: Create Opportunity
+  - key: Create_Task
+    label: Create Task
+  - key: Remove_Contact_from_Workflow
+    label: Remove Contact From Workflow
+  - key: Update_Account
+    label: Update Account
+  - key: Update_Contact
+    label: Update Contact
+  - key: Update_Opportunity
+    label: Update Opportunity
+  searches:
+  - key: Find_Account
+    label: Find Account
+  - key: Find_Contact
+    label: Find Contact
+  - key: Find_Opportunity
+    label: Find Opportunity
+  - key: Find_Person
+    label: Find Person
+  - key: Find_Stage
+    label: Find Pipeline Stage
+  - key: Find_User
+    label: Find User
+  - key: Find_Workflow
+    label: Find Workflow
+edges:
+- partner_name: Mailshake
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/mailshake
+  direction: third-party
+  category: Drip Emails
+  partner_url: https://mailshake.com/
+- partner_name: Typeform
+  partner: typeform
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/typeform
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://www.typeform.com/signup?utm_medium=referral&utm_source=zapier&utm_campaign=zapier_integration&utm_content=marketplace
+- partner_name: QuickBooks Online
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/quickbooks
+  direction: third-party
+  category: Accounting
+  partner_url: http://intuit.com/
+- partner_name: Book Like A Boss
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/book-like-a-boss
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://booklikeaboss.com/
+- partner_name: Calendly
+  partner: calendly
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/calendly
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://calendly.com/?utm_medium=partner&utm_source=zapier&utm_campaign=main_partner_page&utm_content=main_inbound_link
+- partner_name: RingCentral
+  partner: ringcentral
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/ringcentral
+  direction: third-party
+  category: Phone & SMS
+  partner_url: http://www.ringcentral.com/
+- partner_name: Better Proposals
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/better-proposals
+  direction: third-party
+  category: Proposal & Invoice Management
+  partner_url: https://betterproposals.io/
+- partner_name: Quora Lead Gen Forms
+  partner: quora
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/quora-lead-gen-forms
+  direction: third-party
+  category: Analytics
+  partner_url: https://www.quora.com/business
+- partner_name: Google Contacts
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/google-contacts
+  direction: third-party
+  category: Contact Management
+  partner_url: https://www.google.com/contacts/
+- partner_name: Nusii Proposals
+  partner: null
+  partner_match: null
+  partner_candidate: zapier
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/nusii-proposals
+  direction: third-party
+  category: Proposal & Invoice Management
+  partner_url: https://zapier.com/nusii.com
+- partner_name: Airtable
+  partner: airtable
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/airtable
+  direction: third-party
+  category: Databases
+  partner_url: https://airtable.com/
+- partner_name: Google Forms (Legacy)
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/google-forms-legacy
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: http://google.com/
+- partner_name: Gravity Forms
+  partner: gravity-forms
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/gravity-forms
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://www.gravityforms.com/?utm_campaign=partners&utm_source=zapier-listing-learn-more&utm_medium=free-placement
+- partner_name: Microsoft Outlook
+  partner: microsoft-outlook
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/microsoft-outlook
+  direction: third-party
+  category: Calendar
+  partner_url: https://outlook.live.com/
+- partner_name: ClickUp
+  partner: clickup
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/clickup
+  direction: third-party
+  category: Project Management
+  partner_url: https://clickup.com/zapier
+- partner_name: Apollo
+  partner: apollo
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/apollo
+  direction: third-party
+  category: Sales & CRM
+  partner_url: https://www.apollo.io/
+- partner_name: Contacts+
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/contacts-plus
+  direction: third-party
+  category: Contact Management
+  partner_url: https://www.contactsplus.com/integrations
+- partner_name: Google Sheets
+  partner: google-sheets
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/google-sheets
+  direction: third-party
+  category: Google
+  partner_url: http://sheets.google.com/
+- partner_name: Reply
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/reply
+  direction: third-party
+  category: Marketing Automation
+  partner_url: http://reply.io/
+- partner_name: Asana
+  partner: asana
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/asana
+  direction: third-party
+  category: Project Management
+  partner_url: http://asana.com/
+- partner_name: Wix
+  partner: wix
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/wix
+  direction: third-party
+  category: Website Builders
+  partner_url: https://www.wix.com/
+- partner_name: Brevo
+  partner: brevo
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/brevo
+  direction: third-party
+  category: Email Newsletters
+  partner_url: https://www.sendinblue.com/?utm_medium=plugin&utm_source=zapier
+- partner_name: Xero
+  partner: xero
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/xero
+  direction: third-party
+  category: Accounting
+  partner_url: https://xero5440.partnerlinks.io/uvwuuwrxyoi8
+- partner_name: Bookafy
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/bookafy
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://www.bookafy.com/
+- partner_name: Solid Performers CRM
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/solid-performers-crm
+  direction: third-party
+  category: Sales & CRM
+  partner_url: https://solidperformers.com/
+- partner_name: Stripe (Legacy)
+  partner: stripe
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/stripe-legacy
+  direction: third-party
+  category: Payment Processing
+  partner_url: https://stripe.com/
+- partner_name: Google Tasks
+  partner: google-tasks
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/google-tasks
+  direction: third-party
+  category: Google
+  partner_url: https://google.com/
+- partner_name: TidyCal
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/tidycal
+  direction: third-party
+  category: Calendar
+  partner_url: https://tidycal.com/
+- partner_name: Moosend
+  partner: moosend
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/moosend
+  direction: third-party
+  category: Marketing Automation
+  partner_url: https://moosend.com/
+- partner_name: MySQL
+  partner: mysql
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/salesflare/integrations/mysql
+  direction: third-party
+  category: Databases
+  partner_url: https://www.mysql.com/
+templates:
+- title: Create contacts in Salesflare from new Google Contacts
+  url: https://zapier.com/apps/google-contacts/integrations/salesflare/21206/create-contacts-in-salesflare-from-new-google-contacts
+  apps:
+  - google-contacts
+  - salesflare
+- title: Create contacts in Salesflare from new Calendly invitees
+  url: https://zapier.com/apps/calendly/integrations/salesflare/21203/create-contacts-in-salesflare-from-new-calendly-invitees
+  apps:
+  - calendly
+  - salesflare
+- title: Create contacts in Google Contacts from new contacts in Salesflare
+  url: https://zapier.com/apps/google-contacts/integrations/salesflare/21207/create-contacts-in-google-contacts-from-new-contacts-in-salesflare
+  apps:
+  - salesflare
+  - google-contacts
+- title: Create new Salesflare contacts from new Gmail emails
+  url: https://zapier.com/apps/gmail/integrations/salesflare/1668775/create-new-salesflare-contacts-from-new-gmail-emails
+  apps:
+  - gmail
+  - salesflare
+- title: Send channel messages in Slack for new won opportunities in Salesflare
+  url: https://zapier.com/apps/salesflare/integrations/slack/20722/send-channel-messages-in-slack-for-new-won-opportunities-in-salesflare
+  apps:
+  - salesflare
+  - slack
+- title: Create Salesflare tasks when new opportunities are won in Salesflare
+  url: https://zapier.com/apps/salesflare/integrations/salesflare/20886/create-salesflare-tasks-when-new-opportunities-are-won-in-salesflare
+  apps:
+  - salesflare
+- title: Create new Microsoft Outlook contacts from new Salesflare contacts
+  url: https://zapier.com/apps/microsoft-outlook/integrations/salesflare/1803887/create-new-microsoft-outlook-contacts-from-new-salesflare-contacts
+  apps:
+  - salesflare
+  - microsoft-outlook
+- title: Add new Salesflare contacts to Mailchimp lists
+  url: https://zapier.com/apps/mailchimp/integrations/salesflare/20838/add-new-salesflare-contacts-to-mailchimp-lists
+  apps:
+  - salesflare
+  - mailchimp
+- title: Create Salesflare opportunities from new Google Sheets rows
+  url: https://zapier.com/apps/google-sheets/integrations/salesflare/1289829/create-salesflare-opportunities-from-new-google-sheets-rows
+  apps:
+  - google-sheets
+  - salesflare
+- title: Add new Bookafy customers to Salesflare as contacts
+  url: https://zapier.com/apps/bookafy/integrations/salesflare/24709/add-new-bookafy-customers-to-salesflare-as-contacts
+  apps:
+  - bookafy
+  - salesflare
+- title: Create new Salesflare opportunities when Calendly invitees are created
+  url: https://zapier.com/apps/calendly/integrations/salesflare/1663476/create-new-salesflare-opportunities-when-calendly-invitees-are-created
+  apps:
+  - calendly
+  - salesflare
+- title: Create spreadsheet rows in Google Sheets for new contacts in Salesflare
+  url: https://zapier.com/apps/google-sheets/integrations/salesflare/1663326/create-spreadsheet-rows-in-google-sheets-for-new-contacts-in-salesflare
+  apps:
+  - salesflare
+  - google-sheets
+template_total: 240
