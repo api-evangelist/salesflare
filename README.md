@@ -1,4 +1,4 @@
-# Salesflare (salesflare)
+# Salesflare
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,58 +64,234 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Salesflare is an intelligent CRM built for B2B startups and small businesses that automates data input by pulling contact and company information from emails, calendars, phone logs, and social profiles. The platform provides a REST API for programmatically managing accounts, contacts, opportunities, tasks, and email messages. Developers can integrate CRM data into their own applications, automate sales workflows, and synchronize data across systems using bearer token authentication.
+Salesflare is an intelligent CRM built for B2B startups and small businesses that automates data input by pulling contact and company information from emails, calendars, phone logs, and social profiles. The platform provides a REST API for programmatically managing accounts, contacts, opportunities, tasks, and email messages. Developers can use the API to integrate CRM data into their own applications, automate sales workflows, and synchronize data across systems. Salesflare supports bearer token authentication via API keys generated from the settings dashboard, with endpoints covering the full CRM object model including leads, pipelines, and enriched contact records.
 
-APIs.json: https://raw.githubusercontent.com/api-evangelist/salesflare/refs/heads/main/apis.yml
+**Areas:** CRM · Sales · B2B · Contacts · Account · Opportunities · Email · Automation · Lead Generation
 
-Naftiko: https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=salesflare-api-evangelist&utm_content=repo
+## Salesflare on APIs.io
 
-## Tags
+Everything profiled for Salesflare is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/salesflare/](https://apis.io/providers/salesflare/)** — or go straight to one of the APIs or properties below.
 
-- CRM
-- Sales
-- B2B
-- Contacts
-- Accounts
-- Opportunities
-- Email
-- Automation
-- Lead Generation
+### APIs (20)
 
-## APIs
+- [Salesflare Accounts API](https://apis.io/apis/salesflare/salesflare-accounts-api/) — The Accounts API from Salesflare — 6 operation(s) for accounts.
+- [Salesflare AI Message Feedbacks API](https://apis.io/apis/salesflare/salesflare-ai-message-feedbacks-api/) — The AI Message Feedbacks API from Salesflare — 2 operation(s) for ai message feedbacks.
+- [Salesflare AISetings API](https://apis.io/apis/salesflare/salesflare-aisetings-api/) — The AISetings API from Salesflare — 1 operation(s) for aisetings.
+- [Salesflare Calls API](https://apis.io/apis/salesflare/salesflare-calls-api/) — The Calls API from Salesflare — 2 operation(s) for calls.
+- [Salesflare Contacts API](https://apis.io/apis/salesflare/salesflare-contacts-api/) — The Contacts API from Salesflare — 2 operation(s) for contacts.
+- [Salesflare Custom Fields API](https://apis.io/apis/salesflare/salesflare-custom-fields-api/) — The Custom Fields API from Salesflare — 4 operation(s) for custom fields.
+- [Salesflare Email Data Sources API](https://apis.io/apis/salesflare/salesflare-email-data-sources-api/) — The Email Data Sources API from Salesflare — 2 operation(s) for email data sources.
+- [Salesflare Filter Fields API](https://apis.io/apis/salesflare/salesflare-filter-fields-api/) — The Filter Fields API from Salesflare — 1 operation(s) for filter fields.
+- [Salesflare Groups API](https://apis.io/apis/salesflare/salesflare-groups-api/) — The Groups API from Salesflare — 2 operation(s) for groups.
+- [Salesflare Internal Notes API](https://apis.io/apis/salesflare/salesflare-internal-notes-api/) — The Internal Notes API from Salesflare — 2 operation(s) for internal notes.
+- [Salesflare Meetings API](https://apis.io/apis/salesflare/salesflare-meetings-api/) — The Meetings API from Salesflare — 3 operation(s) for meetings.
+- [Salesflare Opportunities API](https://apis.io/apis/salesflare/salesflare-opportunities-api/) — The Opportunities API from Salesflare — 2 operation(s) for opportunities.
+- [Salesflare Persons API](https://apis.io/apis/salesflare/salesflare-persons-api/) — The Persons API from Salesflare — 1 operation(s) for persons.
+- [Salesflare Pipelines API](https://apis.io/apis/salesflare/salesflare-pipelines-api/) — The Pipelines API from Salesflare — 3 operation(s) for pipelines.
+- [Salesflare Regional Settings API](https://apis.io/apis/salesflare/salesflare-regional-settings-api/) — The Regional Settings API from Salesflare — 1 operation(s) for regional settings.
+- [Salesflare Tags API](https://apis.io/apis/salesflare/salesflare-tags-api/) — The Tags API from Salesflare — 3 operation(s) for tags.
+- [Salesflare Tasks API](https://apis.io/apis/salesflare/salesflare-tasks-api/) — The Tasks API from Salesflare — 2 operation(s) for tasks.
+- [Salesflare Users API](https://apis.io/apis/salesflare/salesflare-users-api/) — The Users API from Salesflare — 4 operation(s) for users.
+- [Salesflare Workflows API](https://apis.io/apis/salesflare/salesflare-workflows-api/) — The Workflows API from Salesflare — 4 operation(s) for workflows.
+- [Salesflare AI Settings API](https://apis.io/apis/salesflare/salesflare-ai-settings-api/) — The AI Settings API from Salesflare — 1 operation(s) for ai settings.
 
-| Name | Description | Docs |
-|------|-------------|------|
-| Salesflare API | REST API for CRM data management including accounts, contacts, opportunities, tasks, and email communications | [Documentation](https://api.salesflare.com/docs) |
+### Published properties
 
-## Plans / Rate Limits / FinOps
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-| Resource | Path |
-|----------|------|
-| Plans and Pricing | [plans/salesflare-plans-pricing.yml](plans/salesflare-plans-pricing.yml) |
-| Rate Limits | [rate-limits/salesflare-rate-limits.yml](rate-limits/salesflare-rate-limits.yml) |
-| FinOps Framework | [finops/salesflare-finops.yml](finops/salesflare-finops.yml) |
+#### MCP servers (1)
 
-**Pricing summary:** Three tiers — Growth ($29/user/month annual), Pro ($49/user/month annual), Enterprise ($99/user/month annual, 5-user minimum). All plans include a 30-day free trial. Pricing is seat-based with no API call surcharges.
+Model Context Protocol servers that expose the API to agents.
 
-## Timestamps
+- [salesflare](https://apis.io/servers/salesflare/salesflare/)
 
-- Created: 2026-06-12
-- Modified: 2026-06-12
+#### Agentic access (1)
 
-## Common
+Which operations an agent can call, which act, and which need a human in the loop.
 
-| Type | URL |
-|------|-----|
-| Website | https://salesflare.com |
-| Documentation | https://api.salesflare.com/docs |
-| GitHub Organization | https://github.com/Salesflare |
-| LinkedIn | https://www.linkedin.com/company/salesflare |
-| Blog | https://blog.salesflare.com |
-| Pricing | https://salesflare.com/pricing |
-| Status Page | https://status.salesflare.com |
-| X (Twitter) | https://twitter.com/salesflare |
+- [Salesflare Agentic Access](https://apis.io/agentic-access/salesflare/salesflare-agentic-access/)
 
-## Maintainers
+#### JSON Schema (1)
 
-- Kin Lane (kin@apievangelist.com)
+The data models the API reads and writes.
+
+- [Salesflare API Schemas](https://apis.io/schemas/salesflare/salesflare-schemas/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Salesflare Context](https://apis.io/jsonld/salesflare/salesflare-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Salesflare API Vocabulary](https://apis.io/vocabularies/salesflare/salesflare-vocabulary/)
+
+#### Examples (4)
+
+Example requests and responses.
+
+- [Salesflare Account Example](https://apis.io/examples/salesflare/salesflare-account-example/)
+- [Salesflare Contact Example](https://apis.io/examples/salesflare/salesflare-contact-example/)
+- [Salesflare Opportunity Example](https://apis.io/examples/salesflare/salesflare-opportunity-example/)
+- [Salesflare Task Example](https://apis.io/examples/salesflare/salesflare-task-example/)
+
+#### Collections (20)
+
+Postman and Open Collection request collections.
+
+- [Salesflare Accounts API](https://apis.io/collections/salesflare/open-salesflare-accounts-api/)
+- [Salesflare Accounts AI Message Feedbacks API](https://apis.io/collections/salesflare/open-salesflare-ai-message-feedbacks-api/)
+- [Salesflare Accounts AISetings API](https://apis.io/collections/salesflare/open-salesflare-aisetings-api/)
+- [Salesflare Accounts AISettings API](https://apis.io/collections/salesflare/open-salesflare-aisettings-api/)
+- [Salesflare Accounts Calls API](https://apis.io/collections/salesflare/open-salesflare-calls-api/)
+- [Salesflare Accounts Contacts API](https://apis.io/collections/salesflare/open-salesflare-contacts-api/)
+- [Salesflare Accounts Custom Fields API](https://apis.io/collections/salesflare/open-salesflare-custom-fields-api/)
+- [Salesflare Accounts Email Data Sources API](https://apis.io/collections/salesflare/open-salesflare-email-data-sources-api/)
+- [Salesflare Accounts Filter Fields API](https://apis.io/collections/salesflare/open-salesflare-filter-fields-api/)
+- [Salesflare Accounts Groups API](https://apis.io/collections/salesflare/open-salesflare-groups-api/)
+- [Salesflare Accounts Internal Notes API](https://apis.io/collections/salesflare/open-salesflare-internal-notes-api/)
+- [Salesflare Accounts Meetings API](https://apis.io/collections/salesflare/open-salesflare-meetings-api/)
+- [Salesflare Accounts Opportunities API](https://apis.io/collections/salesflare/open-salesflare-opportunities-api/)
+- [Salesflare Accounts Persons API](https://apis.io/collections/salesflare/open-salesflare-persons-api/)
+- [Salesflare Accounts Pipelines API](https://apis.io/collections/salesflare/open-salesflare-pipelines-api/)
+- [Salesflare Accounts Regional Settings API](https://apis.io/collections/salesflare/open-salesflare-regional-settings-api/)
+- [Salesflare Accounts Tags API](https://apis.io/collections/salesflare/open-salesflare-tags-api/)
+- [Salesflare Accounts Tasks API](https://apis.io/collections/salesflare/open-salesflare-tasks-api/)
+- [Salesflare Accounts Users API](https://apis.io/collections/salesflare/open-salesflare-users-api/)
+- [Salesflare Accounts Workflows API](https://apis.io/collections/salesflare/open-salesflare-workflows-api/)
+
+#### Overlays (20)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Salesflare Accounts Overlay](https://apis.io/overlays/salesflare/salesflare-accounts-overlay/)
+- [Salesflare Ai Message Feedbacks Overlay](https://apis.io/overlays/salesflare/salesflare-ai-message-feedbacks-overlay/)
+- [Salesflare Aisetings Overlay](https://apis.io/overlays/salesflare/salesflare-aisetings-overlay/)
+- [Salesflare Aisettings Overlay](https://apis.io/overlays/salesflare/salesflare-aisettings-overlay/)
+- [Salesflare Calls Overlay](https://apis.io/overlays/salesflare/salesflare-calls-overlay/)
+- [Salesflare Contacts Overlay](https://apis.io/overlays/salesflare/salesflare-contacts-overlay/)
+- [Salesflare Custom Fields Overlay](https://apis.io/overlays/salesflare/salesflare-custom-fields-overlay/)
+- [Salesflare Email Data Sources Overlay](https://apis.io/overlays/salesflare/salesflare-email-data-sources-overlay/)
+- [Salesflare Filter Fields Overlay](https://apis.io/overlays/salesflare/salesflare-filter-fields-overlay/)
+- [Salesflare Groups Overlay](https://apis.io/overlays/salesflare/salesflare-groups-overlay/)
+- [Salesflare Internal Notes Overlay](https://apis.io/overlays/salesflare/salesflare-internal-notes-overlay/)
+- [Salesflare Meetings Overlay](https://apis.io/overlays/salesflare/salesflare-meetings-overlay/)
+- [Salesflare Opportunities Overlay](https://apis.io/overlays/salesflare/salesflare-opportunities-overlay/)
+- [Salesflare Persons Overlay](https://apis.io/overlays/salesflare/salesflare-persons-overlay/)
+- [Salesflare Pipelines Overlay](https://apis.io/overlays/salesflare/salesflare-pipelines-overlay/)
+- [Salesflare Regional Settings Overlay](https://apis.io/overlays/salesflare/salesflare-regional-settings-overlay/)
+- [Salesflare Tags Overlay](https://apis.io/overlays/salesflare/salesflare-tags-overlay/)
+- [Salesflare Tasks Overlay](https://apis.io/overlays/salesflare/salesflare-tasks-overlay/)
+- [Salesflare Users Overlay](https://apis.io/overlays/salesflare/salesflare-users-overlay/)
+- [Salesflare Workflows Overlay](https://apis.io/overlays/salesflare/salesflare-workflows-overlay/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Salesflare — jsonschema rules](https://apis.io/rules/salesflare/salesflare-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Salesflare Authentication](https://apis.io/security/salesflare/salesflare-authentication/)
+- [Salesflare Domain Security](https://apis.io/security/salesflare/salesflare-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Salesflare Scopes](https://apis.io/scopes/salesflare/salesflare-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Salesflare Plans Pricing](https://apis.io/plans/salesflare/salesflare-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Salesflare Rate Limits](https://apis.io/rate-limits/salesflare/salesflare-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Salesflare Finops](https://apis.io/finops/salesflare/salesflare-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://salesflare.com)
+- [Documentation](https://api.salesflare.com/docs)
+- [Getting started](https://api.salesflare.com/docs#section/Introduction/Getting-Started)
+- [API reference](https://api.salesflare.com/docs)
+- [Pricing](https://salesflare.com/pricing)
+- [Sign up](https://salesflare.com/signup)
+- [Support](https://howto.salesflare.com)
+- [Blog](https://blog.salesflare.com)
+- [Terms of service](https://salesflare.com/terms)
+- [Privacy policy](https://salesflare.com/privacy)
+- [Status](https://status.salesflare.com)
+
+## API Evangelist rating
+
+**Kin Score 59.3** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 68.3 |
+| Contract quality | 49.9 |
+| Contract governance | 28.0 |
+| Operational transparency | 42.1 |
+| Developer ergonomics | 49.4 |
+| Access clarity | 76.3 |
+
+**Agent readiness 46.8** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | mostly (partial credit) |
+
+**Regulatory alignment 34.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/salesflare/](https://apis.io/providers/salesflare/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Salesflare: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/salesflare/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
